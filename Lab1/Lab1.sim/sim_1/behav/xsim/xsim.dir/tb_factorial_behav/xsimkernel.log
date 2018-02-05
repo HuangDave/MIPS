@@ -2,3 +2,6 @@ Running: xsim.dir/tb_factorial_behav/xsimk.exe -simmode gui -wdb tb_factorial_be
 Design successfully loaded
 Design Loading Memory Usage: 6612 KB (Peak: 6612 KB)
 Design Loading CPU Usage: 46 ms
+Simulation completed
+Simulation Memory Usage: 7332 KB (Peak: 7332 KB)
+Simulation CPU Usage: 93 ms

@@ -1,13 +1,14 @@
-
-*** Running vivado
-    with args -log factorial_fpga.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source factorial_fpga.tcl
-
-
-****** Vivado v2017.3 (64-bit)
-  **** SW Build 2018833 on Wed Oct  4 19:58:22 MDT 2017
-  **** IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
-    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
-
+#-----------------------------------------------------------
+# Vivado v2017.3 (64-bit)
+# SW Build 2018833 on Wed Oct  4 19:58:22 MDT 2017
+# IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
+# Start of session at: Mon Feb  5 09:35:09 2018
+# Process ID: 8008
+# Current directory: C:/Users/huang/Documents/School/CMPE140/Lab1/Lab1.runs/synth_1
+# Command line: vivado.exe -log factorial_fpga.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source factorial_fpga.tcl
+# Log file: C:/Users/huang/Documents/School/CMPE140/Lab1/Lab1.runs/synth_1/factorial_fpga.vds
+# Journal file: C:/Users/huang/Documents/School/CMPE140/Lab1/Lab1.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
 source factorial_fpga.tcl -notrace
 Command: synth_design -top factorial_fpga -part xc7a100tcsg324-1
 Starting synth_design

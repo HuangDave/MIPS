@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log factorial.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source factorial.tcl
+EAStep vivado -log factorial_fpga.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source factorial_fpga.tcl

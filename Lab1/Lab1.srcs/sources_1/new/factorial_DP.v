@@ -23,4 +23,5 @@ module factorial_DP #(parameter WIDTH=32) (
     mul        #(WIDTH) MUL ( .A(cnt_out), .B(reg_out), .Y(mul_out) );
 
     buffer     #(WIDTH) BUF ( .in(reg_out), .EN(OE), .out(out) );
+    
 endmodule

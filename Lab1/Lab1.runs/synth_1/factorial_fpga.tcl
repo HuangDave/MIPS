@@ -16,7 +16,8 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_msg_config -id {Common 17-41} -limit 10000000
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 create_project -in_memory -part xc7a100tcsg324-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -29,15 +30,22 @@ set_property target_language Verilog [current_project]
 set_property ip_output_repo c:/Users/huang/Documents/School/CMPE140/Lab1/Lab1.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
+  C:/Users/huang/Documents/School/CMPE140/Lab1/Lab1.srcs/sources_1/new/bcd_to_7seg.v
+  C:/Users/huang/Documents/School/CMPE140/Lab1/Lab1.srcs/sources_1/new/bin2bcd32.v
+  C:/Users/huang/Documents/School/CMPE140/Lab1/Lab1.srcs/sources_1/new/bin32_to_7seg.v
   C:/Users/huang/Documents/School/CMPE140/Lab1/Lab1.srcs/sources_1/new/buffer.v
+  C:/Users/huang/Documents/School/CMPE140/Lab1/Lab1.srcs/sources_1/new/clk_gen.v
   C:/Users/huang/Documents/School/CMPE140/Lab1/Lab1.srcs/sources_1/new/comparator.v
   C:/Users/huang/Documents/School/CMPE140/Lab1/Lab1.srcs/sources_1/new/counter.v
   C:/Users/huang/Documents/School/CMPE140/Lab1/Lab1.srcs/sources_1/new/d_reg.v
+  C:/Users/huang/Documents/School/CMPE140/Lab1/Lab1.srcs/sources_1/new/debouncer.v
+  C:/Users/huang/Documents/School/CMPE140/Lab1/Lab1.srcs/sources_1/new/factorial.v
   C:/Users/huang/Documents/School/CMPE140/Lab1/Lab1.srcs/sources_1/new/factorial_CU.v
   C:/Users/huang/Documents/School/CMPE140/Lab1/Lab1.srcs/sources_1/new/factorial_DP.v
+  C:/Users/huang/Documents/School/CMPE140/Lab1/Lab1.srcs/sources_1/new/led_mux.v
   C:/Users/huang/Documents/School/CMPE140/Lab1/Lab1.srcs/sources_1/new/mul.v
   C:/Users/huang/Documents/School/CMPE140/Lab1/Lab1.srcs/sim_1/new/mux.v
-  C:/Users/huang/Documents/School/CMPE140/Lab1/Lab1.srcs/sources_1/new/factorial.v
+  C:/Users/huang/Documents/School/CMPE140/Lab1/Lab1.srcs/sources_1/new/factorial_fpga.v
 }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -47,11 +55,14 @@ read_verilog -library xil_defaultlib {
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
+read_xdc C:/Users/huang/Documents/School/CMPE140/Lab1/Lab1.srcs/constrs_1/new/factorial_fpga.xdc
+set_property used_in_implementation false [get_files C:/Users/huang/Documents/School/CMPE140/Lab1/Lab1.srcs/constrs_1/new/factorial_fpga.xdc]
 
-synth_design -top factorial -part xc7a100tcsg324-1
+
+synth_design -top factorial_fpga -part xc7a100tcsg324-1
 
 
 # disable binary constraint mode for synth run checkpoints
 set_param constraints.enableBinaryConstraints false
-write_checkpoint -force -noxdef factorial.dcp
-create_report "synth_1_synth_report_utilization_0" "report_utilization -file factorial_utilization_synth.rpt -pb factorial_DP_utilization_synth.pb"
+write_checkpoint -force -noxdef factorial_fpga.dcp
+create_report "synth_1_synth_report_utilization_0" "report_utilization -file factorial_fpga_utilization_synth.rpt -pb factorial_DP_utilization_synth.pb"

@@ -23,7 +23,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log factorial.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source factorial.tcl" );
+         "-log factorial_fpga.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source factorial_fpga.tcl" );
 
 
 
