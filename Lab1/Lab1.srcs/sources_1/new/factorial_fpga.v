@@ -1,22 +1,22 @@
 `timescale 1ns / 1ps
 
 module factorial_fpga (
-    input rst, button, clk100MHz, go,
-    input [3:0] in,
-    output [31:0] out,
-    output done,
-    output [7:0] LEDSEL, LEDOUT );
+    input  wire rst, button, clk100MHz, go,
+    input  wire [3:0] in,
+    output wire done,
+    output wire cs,
+    output wire [7:0] LEDSEL, LEDOUT );
 
     wire clk5KHz, bDebounced, DONT_USE;
     supply1 [7:0] vcc;
     wire [7:0] s[7:0];
-    wire [3:0] cs;
+    wire [31:0] out;
 
     clk_gen     u0 (clk100MHz, rst, DONT_USE, clk5KHz);
     debouncer   u1 (clk5KHz, button, bDebounced);
 
     factorial   u2 ( .clk(bDebounced), .rst(rst), .go(go),
-                      .X({28'b0, in}),
+                      .X(in),
                       .done(done),
                       .Y(out),
                       .cs(cs) );

@@ -9,10 +9,9 @@ Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
 Compiling module xil_defaultlib.mux
 Compiling module xil_defaultlib.counter
-Compiling module xil_defaultlib.comparator(WIDTH=32)
+Compiling module xil_defaultlib.comparator(WIDTH=4)
 Compiling module xil_defaultlib.d_reg
 Compiling module xil_defaultlib.mul
-Compiling module xil_defaultlib.buffer
 Compiling module xil_defaultlib.factorial_DP
 Compiling module xil_defaultlib.factorial_CU
 Compiling module xil_defaultlib.factorial

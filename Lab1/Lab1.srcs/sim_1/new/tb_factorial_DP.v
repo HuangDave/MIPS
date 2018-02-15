@@ -9,7 +9,7 @@ module tb_factorial_DP;
               DONE = 5'b00001;
 
     reg tb_clk, tb_rst;
-    reg [31:0] tb_n;
+    reg [3:0] tb_n;
     reg tb_load_cnt, tb_en_cnt, tb_load_reg, tb_sel, tb_OE;
     wire tb_gt;
     wire [31:0] tb_out;
@@ -59,7 +59,7 @@ module tb_factorial_DP;
     initial begin
         RESET; TICK; // reset
 
-        for (integer n = 0; n < 10; n = n + 1) begin
+        for (integer n = 0; n <= 10; n = n + 1) begin
             tb_n = n;
 
             $display("\n%d!", tb_n);
@@ -70,8 +70,7 @@ module tb_factorial_DP;
             expected_out = 0;
             factorial = 1;
             ctrl = LOAD; TICK;
-
-            ctrl = WAIT; TICK;
+            //ctrl = WAIT; TICK;
 
             while (i > 1) begin
                 ctrl = WAIT;

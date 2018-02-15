@@ -1,5 +1,6 @@
-module bcd_to_7seg
-(input [3:0] BCD, output reg [7:0] s);
+module bcd_to_7seg (
+    input  wire [3:0] BCD, 
+    output reg [7:0] s);
 
     always@(BCD) begin
         casex (BCD)

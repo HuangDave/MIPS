@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 
 module bin32_to_7seg(
-    input wire [31:0] bin,
+    input  wire [31:0] bin,
     output wire [7:0] s7, s6, s5, s4, s3, s2, s1, s0
     );
 

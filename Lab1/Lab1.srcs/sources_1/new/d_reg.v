@@ -1,8 +1,8 @@
 `timescale 1ns / 1ps
 
 module d_reg #(parameter WIDTH=32) (
-    input clk, rst, EN,
-    input [WIDTH-1:0] D,
+    input  wire clk, rst, EN,
+    input  wire [WIDTH-1:0] D,
     output reg [WIDTH-1:0] Q );
 
     always @(posedge clk, posedge rst) begin

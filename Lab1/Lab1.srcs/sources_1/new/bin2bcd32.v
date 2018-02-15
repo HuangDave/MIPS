@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 
 module bin2bcd32(
-    input wire [31:0] in,
+    input  wire [31:0] in,
     output wire [3:0] out7, out6, out5, out4, out3, out2, out1, out0
     );
 

@@ -1,7 +1,8 @@
 `timescale 1ns / 1ps
 
-module clk_gen
-(input clk100MHz, rst, output reg clk_4sec, clk_5KHz);
+module clk_gen (
+    input  wire clk100MHz, rst,
+    output reg  clk_4sec, clk_5KHz);
 
     integer count1, count2;
     always @ (posedge clk100MHz)

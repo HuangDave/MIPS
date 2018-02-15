@@ -1,7 +1,7 @@
-Running: xsim.dir/tb_factorial_CU_behav/xsimk.exe -simmode gui -wdb tb_factorial_CU_behav.wdb -simrunnum 0 -socket 57745
+Running: xsim.dir/tb_factorial_CU_behav/xsimk.exe -simmode gui -wdb tb_factorial_CU_behav.wdb -simrunnum 0 -socket 63079
 Design successfully loaded
 Design Loading Memory Usage: 6624 KB (Peak: 6624 KB)
-Design Loading CPU Usage: 15 ms
+Design Loading CPU Usage: 31 ms
 Simulation completed
-Simulation Memory Usage: 7296 KB (Peak: 7296 KB)
+Simulation Memory Usage: 7288 KB (Peak: 7288 KB)
 Simulation CPU Usage: 46 ms

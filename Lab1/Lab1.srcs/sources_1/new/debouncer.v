@@ -1,8 +1,8 @@
 `timescale 1ns / 1ps
 
 module debouncer #(parameter depth = 16) (
-    input wire clk,                 /* 5 KHz clock */
-    input wire button,              /* Input button from constraints */
+    input  wire clk,                 /* 5 KHz clock */
+    input  wire button,              /* Input button from constraints */
     output reg debounced_button
     );
 

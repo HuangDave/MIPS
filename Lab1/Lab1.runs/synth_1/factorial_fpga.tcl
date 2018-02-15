@@ -16,8 +16,7 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
+set_param xicom.use_bs_reader 1
 create_project -in_memory -part xc7a100tcsg324-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -33,7 +32,6 @@ read_verilog -library xil_defaultlib {
   C:/Users/huang/Documents/School/CMPE140/Lab1/Lab1.srcs/sources_1/new/bcd_to_7seg.v
   C:/Users/huang/Documents/School/CMPE140/Lab1/Lab1.srcs/sources_1/new/bin2bcd32.v
   C:/Users/huang/Documents/School/CMPE140/Lab1/Lab1.srcs/sources_1/new/bin32_to_7seg.v
-  C:/Users/huang/Documents/School/CMPE140/Lab1/Lab1.srcs/sources_1/new/buffer.v
   C:/Users/huang/Documents/School/CMPE140/Lab1/Lab1.srcs/sources_1/new/clk_gen.v
   C:/Users/huang/Documents/School/CMPE140/Lab1/Lab1.srcs/sources_1/new/comparator.v
   C:/Users/huang/Documents/School/CMPE140/Lab1/Lab1.srcs/sources_1/new/counter.v

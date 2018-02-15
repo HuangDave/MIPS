@@ -1,8 +1,9 @@
 `timescale 1ns / 1ps
 
-module led_mux
-(input clk, rst, input [7:0] LED7, LED6, LED5, LED4, LED3, LED2, LED1, LED0,
- output [7:0] LEDSEL, LEDOUT);
+module led_mux (
+    input  wire clk, rst,
+    input  wire [7:0] LED7, LED6, LED5, LED4, LED3, LED2, LED1, LED0,
+    output wire [7:0] LEDSEL, LEDOUT);
 
     reg [2:0]  index;
     reg [15:0] led_ctrl;

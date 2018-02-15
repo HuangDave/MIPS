@@ -1,6 +1,62 @@
 Vivado Simulator 2017.3
 Time resolution is 1 ps
+Y - expected:          0, result:          0
+Y - expected:          0, result:          0
+Y - expected:          0, result:          0
+Y - expected:          0, result:          0
+Y - expected:          0, result:          0
+Y - expected:          0, result:          0
+Y - expected:          0, result:          0
+Y - expected:          0, result:          0
+Y - expected:          0, result:          0
+Y - expected:          0, result:          0
+Y - expected:          0, result:          0
+Y - expected:          0, result:          0
+Y - expected:          0, result:          0
+Y - expected:          0, result:          0
+Y - expected:          0, result:          0
+Y - expected:          0, result:          0
+Y - expected:          0, result:          0
+Y - expected:          0, result:          0
+Y - expected:          0, result:          0
+Y - expected:          0, result:          0
+Y - expected:          0, result:          0
+Y - expected:          0, result:          0
+Y - expected:          0, result:          0
+Y - expected:          0, result:          0
+Y - expected:          0, result:          0
+Y - expected:          0, result:          0
+Y - expected:          0, result:          0
+Y - expected:          0, result:          0
+Y - expected:          0, result:          0
+Y - expected:          0, result:          0
+Y - expected:          0, result:          0
+Y - expected:          0, result:          0
+Y - expected:          0, result:          0
+Y - expected:          0, result:          0
+Y - expected:          0, result:          0
+Y - expected:          0, result:          0
+Y - expected:          0, result:          0
+Y - expected:          0, result:          0
+Y - expected:          0, result:          0
+Y - expected:          0, result:          0
+Y - expected:          0, result:          0
+Y - expected:          0, result:          0
+Y - expected:          0, result:          0
+Y - expected:          0, result:          0
+Y - expected:          0, result:          0
+Y - expected:          0, result:          0
+Y - expected:          0, result:          0
+Y - expected:          0, result:          0
+Y - expected:          0, result:          0
+Y - expected:          0, result:          0
+Y - expected:          0, result:          0
+Y - expected:          0, result:          0
+Y - expected:          0, result:          0
+Y - expected:          0, result:          0
+Y - expected:          0, result:          0
+Y - expected:          0, result:          0
 
 Simulation Finished
 total failures:           0
-$finish called at time : 810 ns : File "C:/Users/huang/Documents/School/CMPE140/Lab1/Lab1.srcs/sim_1/new/tb_factorial.v" Line 108
+$finish called at time : 800 ns : File "C:/Users/huang/Documents/School/CMPE140/Lab1/Lab1.srcs/sim_1/new/tb_factorial.v" Line 105

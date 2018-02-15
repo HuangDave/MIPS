@@ -1,13 +1,12 @@
 `timescale 1ns / 1ps
 
 module factorial_CU (
-        input clk, rst, go, gt,
-        output load_cnt, en_cnt, load_reg, sel, OE,
-        output reg [3:0] cs );
+    input  wire clk, rst, go, gt,
+    output wire load_cnt, en_cnt, load_reg, sel, OE,
+    output reg cs );
 
-    parameter S0 = 4'b0000,
-              S1 = 4'b0001,
-              S2 = 4'b0010;
+    parameter S0 = 1'b0,
+              S1 = 1'b1;
 
     parameter IDLE = 5'b00000,
               LOAD = 5'b11110,
@@ -15,7 +14,7 @@ module factorial_CU (
               DEC  = 5'b01100,
               DONE = 5'b00001;
 
-    reg [3:0] ns;
+    reg ns;
     reg [4:0] ctrl;
 
     assign { load_cnt, en_cnt, load_reg, sel, OE } = ctrl;
@@ -27,16 +26,16 @@ module factorial_CU (
 
     always @(go, cs, gt) begin
         case (cs)
-            S0: begin ctrl = IDLE; ns = go ? S1 : S0; end
+            S0: begin
+                if (go) begin ctrl = LOAD; ns = S1; end
+                else    begin ctrl = IDLE; ns = S0; end
+            end
 
-            S1: begin ctrl = LOAD; ns = S2;           end
-
-            S2: begin
+            S1: begin
                 ctrl = WAIT;
-                if (gt) begin  ctrl = DEC;  ns = S2; end
+                if (gt) begin  ctrl = DEC;  ns = S1; end
                 else    begin  ctrl = DONE; ns = S0; end
             end
         endcase
     end
-
 endmodule

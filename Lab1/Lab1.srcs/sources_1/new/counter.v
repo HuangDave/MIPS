@@ -1,8 +1,8 @@
 `timescale 1ns / 1ps
 
-module counter #(WIDTH=32)(
-    input rst, clk, load, en,
-    input [WIDTH-1:0] D,
+module counter #(WIDTH=4)(
+    input  wire rst, clk, load, en,
+    input  wire [WIDTH-1:0] D,
     output reg [WIDTH-1:0] Q );
 
     always @(posedge clk, posedge rst) begin
