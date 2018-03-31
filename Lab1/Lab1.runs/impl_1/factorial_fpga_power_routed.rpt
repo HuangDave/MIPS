@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.3 (win64) Build 2018833 Wed Oct  4 19:58:22 MDT 2017
-| Date             : Wed Feb 14 18:20:09 2018
+| Date             : Wed Feb 14 18:41:35 2018
 | Host             : DESKTOP-OQNQAOP running 64-bit major release  (build 9200)
 | Command          : report_power -file factorial_fpga_power_routed.rpt -pb factorial_fpga_power_summary_routed.pb -rpx factorial_fpga_power_routed.rpx
 | Design           : factorial_fpga
@@ -62,7 +62,7 @@ Table of Contents
 |   F7/F8 Muxes  |     0.000 |        7 |     63400 |            0.01 |
 | Signals        |     0.001 |     3524 |       --- |             --- |
 | DSPs           |     0.000 |        2 |       240 |            0.83 |
-| I/O            |     0.013 |       29 |       210 |           13.81 |
+| I/O            |     0.013 |       26 |       210 |           12.38 |
 | Static Power   |     0.097 |          |           |                 |
 | Total          |     0.114 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+

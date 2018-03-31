@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.3 (win64) Build 2018833 Wed Oct  4 19:58:22 MDT 2017
-| Date         : Wed Feb 14 18:19:21 2018
+| Date         : Wed Feb 14 18:40:42 2018
 | Host         : DESKTOP-OQNQAOP running 64-bit major release  (build 9200)
 | Command      : report_control_sets -file factorial_fpga_control_sets_placed.rpt
 | Design       : factorial_fpga

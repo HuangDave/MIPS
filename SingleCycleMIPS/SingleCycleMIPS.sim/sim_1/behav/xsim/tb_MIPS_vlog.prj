@@ -1,0 +1,15 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../SingleCycleMIPS.srcs/sources_1/new/MIPS.v" \
+"../../../../SingleCycleMIPS.srcs/sources_1/new/control_unit.v" \
+"../../../../SingleCycleMIPS.srcs/sources_1/new/cu_parts.v" \
+"../../../../SingleCycleMIPS.srcs/sources_1/new/datapath.v" \
+"../../../../SingleCycleMIPS.srcs/sources_1/new/dp_parts.v" \
+"../../../../SingleCycleMIPS.srcs/sources_1/new/memory.v" \
+"../../../../SingleCycleMIPS.srcs/sim_1/new/tb_MIPS.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

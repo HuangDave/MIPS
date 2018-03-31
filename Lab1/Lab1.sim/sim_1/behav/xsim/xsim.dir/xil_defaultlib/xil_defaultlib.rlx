@@ -12,6 +12,6 @@ C:/Users/huang/Documents/School/CMPE140/Lab1/Lab1.srcs/sources_1/new/comparator.
 C:/Users/huang/Documents/School/CMPE140/Lab1/Lab1.srcs/sources_1/new/counter.v,1518129753,verilog,,C:/Users/huang/Documents/School/CMPE140/Lab1/Lab1.srcs/sources_1/new/d_reg.v,,counter,,,,,,,,
 C:/Users/huang/Documents/School/CMPE140/Lab1/Lab1.srcs/sources_1/new/d_reg.v,1518129198,verilog,,C:/Users/huang/Documents/School/CMPE140/Lab1/Lab1.srcs/sources_1/new/factorial.v,,d_reg,,,,,,,,
 C:/Users/huang/Documents/School/CMPE140/Lab1/Lab1.srcs/sources_1/new/factorial.v,1518134037,verilog,,C:/Users/huang/Documents/School/CMPE140/Lab1/Lab1.srcs/sources_1/new/factorial_CU.v,,factorial,,,,,,,,
-C:/Users/huang/Documents/School/CMPE140/Lab1/Lab1.srcs/sources_1/new/factorial_CU.v,1518133479,verilog,,C:/Users/huang/Documents/School/CMPE140/Lab1/Lab1.srcs/sources_1/new/factorial_DP.v,,factorial_CU,,,,,,,,
+C:/Users/huang/Documents/School/CMPE140/Lab1/Lab1.srcs/sources_1/new/factorial_CU.v,1518661892,verilog,,C:/Users/huang/Documents/School/CMPE140/Lab1/Lab1.srcs/sim_1/new/tb_factorial_CU.v,,factorial_CU,,,,,,,,
 C:/Users/huang/Documents/School/CMPE140/Lab1/Lab1.srcs/sources_1/new/factorial_DP.v,1518141010,verilog,,C:/Users/huang/Documents/School/CMPE140/Lab1/Lab1.srcs/sources_1/new/mul.v,,factorial_DP,,,,,,,,
 C:/Users/huang/Documents/School/CMPE140/Lab1/Lab1.srcs/sources_1/new/mul.v,1518134268,verilog,,C:/Users/huang/Documents/School/CMPE140/Lab1/Lab1.srcs/sim_1/new/mux.v,,mul,,,,,,,,

@@ -1,0 +1,28 @@
+main:   addiu   $a0, $0, 0x8000     # 1. a = 0x8000
+        addiu   $a1, $0, 0x00A9     # 2. b = 0x00A9
+        addiu   $s0, $0, 1974       # 3. c = 1974
+        multu   $a0, $a0            # 4. {hi, lo} = a * a
+        mflo    $s1                 # x = lo = a * a
+        sw      $s1, 0x20($0)       # 5. [0x20] = x
+        multu   $s1, $a1            # 6. {hi, lo} = x * b
+        mflo    $s2
+        mfhi    $t0
+        sw      $s2, 0x24($0)       # 7. [0x24] = y
+        srl     $s2, $s2, 16        # 8. y = y >> 16
+        sll     $t0, $t0, 16
+        or      $s2, $s2, $t0
+        divu    $s2, $s0            # lo = y / c
+        mflo    $t0                 # $t0 = lo
+        add     $s0, $s0, $t0       # c = c + y
+        srl     $s0, $s0, 1         # c = c / 2
+        sw      $s0, 0x2C($0)       # 10. [0x2C] = c
+        j       while
+L1:     divu    $s2, $s0            # lo = y / c
+        mflo    $t0                 # $t0 = lo
+        add     $s0, $s0, $t0       # c = c + y
+        srl     $s0, $s0, 1         # c = c / 2
+        j       while
+while:  slti    $t0, $s0, 1665      # 11. while (c >= 1665)
+        beq     $t0, $0, L1
+        sll     $s0, $s0, 8         # 14. c = c << 8
+        sw      $s0, 0x30($0)       # 15. [0x30] = c
