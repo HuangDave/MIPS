@@ -2,11 +2,11 @@
 # Webtalk v2017.3 (64-bit)
 # SW Build 2018833 on Wed Oct  4 19:58:22 MDT 2017
 # IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
-# Start of session at: Wed Mar 28 20:29:04 2018
-# Process ID: 12856
+# Start of session at: Sat Mar 31 08:11:28 2018
+# Process ID: 15860
 # Current directory: C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.sim/sim_1/behav/xsim
-# Command line: wbtcv.exe -mode batch -source C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.sim/sim_1/behav/xsim/xsim.dir/MIPS_behav/webtalk/xsim_webtalk.tcl -notrace
+# Command line: wbtcv.exe -mode batch -source C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.sim/sim_1/behav/xsim/xsim.dir/tb_MIPS_behav/webtalk/xsim_webtalk.tcl -notrace
 # Log file: C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.sim/sim_1/behav/xsim/webtalk.log
 # Journal file: C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.sim/sim_1/behav/xsim\webtalk.jou
 #-----------------------------------------------------------
-source C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.sim/sim_1/behav/xsim/xsim.dir/MIPS_behav/webtalk/xsim_webtalk.tcl -notrace
+source C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.sim/sim_1/behav/xsim/xsim.dir/tb_MIPS_behav/webtalk/xsim_webtalk.tcl -notrace

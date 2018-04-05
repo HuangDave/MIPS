@@ -1,6 +1,3 @@
-.data
-.globl main
-.text
 main:       addi    $a0, $0, 4      # set arg
             jal     factorial       # compute the factorial
             add     $s0, $v0, $0    # move result into $s0

@@ -2,13 +2,13 @@
 
 // Instruction Memory
 module imem (
-    input [5:0] addr,
-    output [31:0] out );
+    input [5:0] a,
+    output [31:0] y );
 
     reg [31:0] rom [0:63];
-    
+
     initial $readmemh("memfile.dat", rom);
-    assign out = rom[addr];
+    assign y = rom[a];
 
 endmodule
 

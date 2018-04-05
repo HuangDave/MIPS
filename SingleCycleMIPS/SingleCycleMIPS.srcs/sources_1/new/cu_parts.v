@@ -2,39 +2,37 @@
 
 module maindec (
     input [5:0] opcode, funct,
-    output branch, [1:0] jump,
-    output we_reg, alu_src, we_dm, we_hi_lo,
-    output [1:0] reg_dst, dm2reg, res2reg, alu_op );
+    output branch, jump, jal, jr, alu_src,  we_reg, we_hi_lo, we_dm, reg_dst, dm2reg,
+    output [1:0] res2reg, alu_op );
 
-    reg [14:0] ctrl;
+    reg [13:0] ctrl;
 
-    assign { branch, jump, we_reg, alu_src, we_dm, we_hi_lo, reg_dst, dm2reg, res2reg, alu_op } = ctrl;
+    assign { branch,
+             jump, jal, jr,
+             alu_src,
+             reg_dst, dm2reg,
+             we_reg, we_hi_lo, we_dm,
+             res2reg, alu_op } = ctrl;
 
     always @ (opcode, funct) begin
         case (opcode)
             6'b00_0000: begin
                 case (funct)
-                    6'b01_1001: ctrl = 15'b0_00_0001_00_00_11_xx; // MULTU
-
-                    6'b01_0000: ctrl = 15'b0_00_1000_01_00_01_xx; // MFHI
-                    6'b01_0010: ctrl = 15'b0_00_1000_01_00_10_xx; // MFLO
-
-                    6'b00_1000: ctrl = 15'b0_10_0000_00_10_00_00; // JR
-
-                    default:    ctrl = 15'b0_00_1000_01_00_00_10; // other R-type
+                    6'b01_1001: ctrl = 14'b0_000_0_00_010_00_xx; // multu
+                    6'b01_0000: ctrl = 14'b0_000_0_10_110_01_xx; // mfhi
+                    6'b01_0010: ctrl = 14'b0_000_0_10_110_10_xx; // mflo
+                    6'b00_1000: ctrl = 14'b0_101_0_xx_000_00_00; // jr
+                    default:    ctrl = 14'b0_000_0_10_100_00_10; // R-type
                 endcase
             end
 
-            6'b00_1000: ctrl = 15'b0_00_1100_00_00_00_00; // ADDI
-
-            6'b00_0100: ctrl = 15'b1_00_0000_00_00_00_01; // BEQ
-
-            6'b00_0010: ctrl = 15'b1_01_0000_00_00_00_00; // J
-            6'b00_0011: ctrl = 15'b0_01_1000_10_10_00_00; // JAL
-
-            6'b10_1011: ctrl = 15'b0_00_0110_00_00_00_00; // SW
-            6'b10_0011: ctrl = 15'b0_00_1100_00_01_00_00; // LW
-            default:    ctrl = 15'bx_xx_xxxx_xx_xx_xx_xx;
+            6'b00_1000:         ctrl = 14'b0_000_1_00_100_00_00; // addi
+            6'b00_0100:         ctrl = 14'b1_000_0_00_000_00_01; // beq
+            6'b00_0010:         ctrl = 14'b0_100_0_00_100_00_00; // j
+            6'b00_0011:         ctrl = 14'b0_110_0_00_100_11_00; // jal
+            6'b10_1011:         ctrl = 14'b0_000_1_00_001_00_00; // sw
+            6'b10_0011:         ctrl = 14'b0_000_1_01_100_00_00; // lw
+            default:            ctrl = 14'bx_xxx_x_xx_xxx_xx_xx;
         endcase
     end
 endmodule

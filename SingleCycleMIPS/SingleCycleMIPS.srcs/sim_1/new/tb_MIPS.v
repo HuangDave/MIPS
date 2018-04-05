@@ -9,6 +9,7 @@ module tb_MIPS;
     
     wire [31:0] rf_v0 = DUT.dp.rf.rf[2]; 
     wire [31:0] rf_a0 = DUT.dp.rf.rf[4]; 
+    wire [31:0] rf_t0 = DUT.dp.rf.rf[8]; 
     wire [31:0] rf_s0 = DUT.dp.rf.rf[16]; 
     wire [31:0] rf_ra = DUT.dp.rf.rf[31]; 
 

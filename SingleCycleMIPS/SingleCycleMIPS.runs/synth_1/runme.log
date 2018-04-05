@@ -14,71 +14,61 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 14324 
+INFO: Helper process launched with PID 11360 
 ---------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 344.215 ; gain = 100.316
+Starting Synthesize : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 344.305 ; gain = 100.293
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'MIPS' [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/MIPS.v:3]
-INFO: [Synth 8-638] synthesizing module 'imem' [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/memory.v:4]
-INFO: [Synth 8-3876] $readmem data file 'memfile.dat' is read successfully [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/memory.v:10]
-INFO: [Synth 8-256] done synthesizing module 'imem' (1#1) [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/memory.v:4]
-INFO: [Synth 8-638] synthesizing module 'dmem' [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/memory.v:16]
-INFO: [Synth 8-256] done synthesizing module 'dmem' (2#1) [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/memory.v:16]
 INFO: [Synth 8-638] synthesizing module 'datapath' [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/datapath.v:3]
 INFO: [Synth 8-638] synthesizing module 'adder' [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/dp_parts.v:34]
-INFO: [Synth 8-256] done synthesizing module 'adder' (3#1) [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/dp_parts.v:34]
+INFO: [Synth 8-256] done synthesizing module 'adder' (1#1) [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/dp_parts.v:34]
 INFO: [Synth 8-638] synthesizing module 'mux2' [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/dp_parts.v:4]
 	Parameter WIDTH bound to: 32 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'mux2' (4#1) [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/dp_parts.v:4]
-INFO: [Synth 8-638] synthesizing module 'mux4' [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/dp_parts.v:14]
-	Parameter WIDTH bound to: 32 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'mux4' (5#1) [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/dp_parts.v:14]
+INFO: [Synth 8-256] done synthesizing module 'mux2' (2#1) [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/dp_parts.v:4]
 INFO: [Synth 8-638] synthesizing module 'dreg' [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/dp_parts.v:69]
-INFO: [Synth 8-256] done synthesizing module 'dreg' (6#1) [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/dp_parts.v:69]
-INFO: [Synth 8-638] synthesizing module 'mux4__parameterized0' [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/dp_parts.v:14]
+INFO: [Synth 8-256] done synthesizing module 'dreg' (3#1) [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/dp_parts.v:69]
+INFO: [Synth 8-638] synthesizing module 'imem' [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/memory.v:4]
+INFO: [Synth 8-3876] $readmem data file 'memfile.dat' is read successfully [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/memory.v:10]
+INFO: [Synth 8-256] done synthesizing module 'imem' (4#1) [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/memory.v:4]
+INFO: [Synth 8-638] synthesizing module 'mux2__parameterized0' [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/dp_parts.v:4]
 	Parameter WIDTH bound to: 5 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'mux4__parameterized0' (6#1) [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/dp_parts.v:14]
+INFO: [Synth 8-256] done synthesizing module 'mux2__parameterized0' (4#1) [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/dp_parts.v:4]
 INFO: [Synth 8-638] synthesizing module 'regfile' [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/dp_parts.v:96]
-INFO: [Synth 8-256] done synthesizing module 'regfile' (7#1) [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/dp_parts.v:96]
+INFO: [Synth 8-256] done synthesizing module 'regfile' (5#1) [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/dp_parts.v:96]
 INFO: [Synth 8-638] synthesizing module 'signext' [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/dp_parts.v:29]
-INFO: [Synth 8-256] done synthesizing module 'signext' (8#1) [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/dp_parts.v:29]
+INFO: [Synth 8-256] done synthesizing module 'signext' (6#1) [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/dp_parts.v:29]
 INFO: [Synth 8-638] synthesizing module 'alu' [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/dp_parts.v:42]
 INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/dp_parts.v:51]
-INFO: [Synth 8-256] done synthesizing module 'alu' (9#1) [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/dp_parts.v:42]
+INFO: [Synth 8-256] done synthesizing module 'alu' (7#1) [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/dp_parts.v:42]
 INFO: [Synth 8-638] synthesizing module 'mul' [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/dp_parts.v:61]
-INFO: [Synth 8-256] done synthesizing module 'mul' (10#1) [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/dp_parts.v:61]
+INFO: [Synth 8-256] done synthesizing module 'mul' (8#1) [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/dp_parts.v:61]
 INFO: [Synth 8-638] synthesizing module 'dreg_en' [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/dp_parts.v:82]
-INFO: [Synth 8-256] done synthesizing module 'dreg_en' (11#1) [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/dp_parts.v:82]
+INFO: [Synth 8-256] done synthesizing module 'dreg_en' (9#1) [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/dp_parts.v:82]
+INFO: [Synth 8-638] synthesizing module 'mux4' [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/dp_parts.v:14]
+	Parameter WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'mux4' (10#1) [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/dp_parts.v:14]
+INFO: [Synth 8-638] synthesizing module 'dmem' [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/memory.v:16]
+INFO: [Synth 8-256] done synthesizing module 'dmem' (11#1) [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/memory.v:16]
 INFO: [Synth 8-256] done synthesizing module 'datapath' (12#1) [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/datapath.v:3]
 INFO: [Synth 8-638] synthesizing module 'control_unit' [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/control_unit.v:3]
 INFO: [Synth 8-638] synthesizing module 'maindec' [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/cu_parts.v:3]
 INFO: [Synth 8-256] done synthesizing module 'maindec' (13#1) [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/cu_parts.v:3]
-INFO: [Synth 8-638] synthesizing module 'auxdec' [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/cu_parts.v:42]
-INFO: [Synth 8-256] done synthesizing module 'auxdec' (14#1) [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/cu_parts.v:42]
+INFO: [Synth 8-638] synthesizing module 'auxdec' [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/cu_parts.v:40]
+INFO: [Synth 8-256] done synthesizing module 'auxdec' (14#1) [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/cu_parts.v:40]
 INFO: [Synth 8-256] done synthesizing module 'control_unit' (15#1) [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/control_unit.v:3]
-WARNING: [Synth 8-3848] Net we_dm in module/entity MIPS does not have driver. [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/MIPS.v:5]
-WARNING: [Synth 8-3848] Net we_reg in module/entity MIPS does not have driver. [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/MIPS.v:8]
-WARNING: [Synth 8-3848] Net alu_src in module/entity MIPS does not have driver. [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/MIPS.v:8]
-WARNING: [Synth 8-3848] Net we_hi_lo in module/entity MIPS does not have driver. [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/MIPS.v:8]
 INFO: [Synth 8-256] done synthesizing module 'MIPS' (16#1) [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/MIPS.v:3]
-WARNING: [Synth 8-3331] design datapath has unconnected port instr[31]
-WARNING: [Synth 8-3331] design datapath has unconnected port instr[30]
-WARNING: [Synth 8-3331] design datapath has unconnected port instr[29]
-WARNING: [Synth 8-3331] design datapath has unconnected port instr[28]
-WARNING: [Synth 8-3331] design datapath has unconnected port instr[27]
-WARNING: [Synth 8-3331] design datapath has unconnected port instr[26]
 ---------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 396.570 ; gain = 152.672
+Finished Synthesize : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 396.273 ; gain = 152.262
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 396.570 ; gain = 152.672
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 396.273 ; gain = 152.262
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 396.570 ; gain = 152.672
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 396.273 ; gain = 152.262
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Synth 8-5546] ROM "rom" won't be mapped to RAM because it is too sparse
@@ -86,7 +76,7 @@ INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To p
 INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/dp_parts.v:65]
 WARNING: [Synth 8-327] inferring latch for variable 'y_reg' [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/dp_parts.v:48]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 396.570 ; gain = 152.672
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 396.273 ; gain = 152.262
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -106,14 +96,14 @@ Detailed RTL Component Info :
 +---Registers : 
 	               32 Bit    Registers := 3     
 +---Muxes : 
+	   2 Input     32 Bit        Muxes := 8     
 	  22 Input     32 Bit        Muxes := 1     
-	   2 Input     32 Bit        Muxes := 5     
-	   4 Input     32 Bit        Muxes := 3     
 	   6 Input     32 Bit        Muxes := 1     
-	   8 Input     15 Bit        Muxes := 1     
-	   2 Input     14 Bit        Muxes := 1     
-	   5 Input     14 Bit        Muxes := 1     
-	   4 Input      5 Bit        Muxes := 1     
+	   4 Input     32 Bit        Muxes := 1     
+	   8 Input     14 Bit        Muxes := 1     
+	   2 Input     13 Bit        Muxes := 1     
+	   5 Input     13 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 2     
 	   8 Input      3 Bit        Muxes := 1     
 	   6 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
@@ -123,10 +113,6 @@ Finished RTL Component Statistics
 Start RTL Hierarchical Component Statistics 
 ---------------------------------------------------------------------------------
 Hierarchical RTL Component report 
-Module imem 
-Detailed RTL Component Info : 
-+---Muxes : 
-	  22 Input     32 Bit        Muxes := 1     
 Module adder 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -135,18 +121,18 @@ Module mux2
 Detailed RTL Component Info : 
 +---Muxes : 
 	   2 Input     32 Bit        Muxes := 1     
-Module mux4 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   4 Input     32 Bit        Muxes := 1     
 Module dreg 
 Detailed RTL Component Info : 
 +---Registers : 
 	               32 Bit    Registers := 1     
-Module mux4__parameterized0 
+Module imem 
 Detailed RTL Component Info : 
 +---Muxes : 
-	   4 Input      5 Bit        Muxes := 1     
+	  22 Input     32 Bit        Muxes := 1     
+Module mux2__parameterized0 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      5 Bit        Muxes := 1     
 Module regfile 
 Detailed RTL Component Info : 
 +---Muxes : 
@@ -166,12 +152,16 @@ Module dreg_en
 Detailed RTL Component Info : 
 +---Registers : 
 	               32 Bit    Registers := 1     
+Module mux4 
+Detailed RTL Component Info : 
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 1     
 Module maindec 
 Detailed RTL Component Info : 
 +---Muxes : 
-	   8 Input     15 Bit        Muxes := 1     
-	   2 Input     14 Bit        Muxes := 1     
-	   5 Input     14 Bit        Muxes := 1     
+	   8 Input     14 Bit        Muxes := 1     
+	   2 Input     13 Bit        Muxes := 1     
+	   5 Input     13 Bit        Muxes := 1     
 Module auxdec 
 Detailed RTL Component Info : 
 +---Muxes : 
@@ -192,39 +182,32 @@ No constraint files found.
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-DSP Report: Generating DSP mul/lo, operation Mode is: A*B.
-DSP Report: operator mul/lo is absorbed into DSP mul/lo.
-DSP Report: operator mul/lo is absorbed into DSP mul/lo.
-DSP Report: Generating DSP mul/lo, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator mul/lo is absorbed into DSP mul/lo.
-DSP Report: operator mul/lo is absorbed into DSP mul/lo.
-DSP Report: Generating DSP mul/lo, operation Mode is: A*B.
-DSP Report: operator mul/lo is absorbed into DSP mul/lo.
-DSP Report: operator mul/lo is absorbed into DSP mul/lo.
-DSP Report: Generating DSP mul/lo, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator mul/lo is absorbed into DSP mul/lo.
-DSP Report: operator mul/lo is absorbed into DSP mul/lo.
-WARNING: [Synth 8-3331] design datapath has unconnected port instr[31]
-WARNING: [Synth 8-3331] design datapath has unconnected port instr[30]
-WARNING: [Synth 8-3331] design datapath has unconnected port instr[29]
-WARNING: [Synth 8-3331] design datapath has unconnected port instr[28]
-WARNING: [Synth 8-3331] design datapath has unconnected port instr[27]
-WARNING: [Synth 8-3331] design datapath has unconnected port instr[26]
-WARNING: [Synth 8-3331] design imem has unconnected port addr[5]
+DSP Report: Generating DSP dp/mul/lo, operation Mode is: A*B.
+DSP Report: operator dp/mul/lo is absorbed into DSP dp/mul/lo.
+DSP Report: operator dp/mul/lo is absorbed into DSP dp/mul/lo.
+DSP Report: Generating DSP dp/mul/lo, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator dp/mul/lo is absorbed into DSP dp/mul/lo.
+DSP Report: operator dp/mul/lo is absorbed into DSP dp/mul/lo.
+DSP Report: Generating DSP dp/mul/lo, operation Mode is: A*B.
+DSP Report: operator dp/mul/lo is absorbed into DSP dp/mul/lo.
+DSP Report: operator dp/mul/lo is absorbed into DSP dp/mul/lo.
+DSP Report: Generating DSP dp/mul/lo, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator dp/mul/lo is absorbed into DSP dp/mul/lo.
+DSP Report: operator dp/mul/lo is absorbed into DSP dp/mul/lo.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 581.031 ; gain = 337.133
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 572.848 ; gain = 328.836
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 
 Distributed RAM: Preliminary Mapping  Report (see note below)
-+------------+--------------+-----------+----------------------+-----------------+
-|Module Name | RTL Object   | Inference | Size (Depth x Width) | Primitives      | 
-+------------+--------------+-----------+----------------------+-----------------+
-|MIPS        | dp/rf/rf_reg | Implied   | 32 x 32              | RAM32M x 18     | 
-|MIPS        | dmem/ram_reg | Implied   | 64 x 32              | RAM64X1S x 32   | 
-+------------+--------------+-----------+----------------------+-----------------+
++------------+-----------------+-----------+----------------------+-----------------+
+|Module Name | RTL Object      | Inference | Size (Depth x Width) | Primitives      | 
++------------+-----------------+-----------+----------------------+-----------------+
+|MIPS        | dp/dmem/ram_reg | Implied   | 64 x 32              | RAM64X1S x 32   | 
+|MIPS        | dp/rf/rf_reg    | Implied   | 32 x 32              | RAM32M x 12     | 
++------------+-----------------+-----------+----------------------+-----------------+
 
 Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
 
@@ -253,19 +236,19 @@ No constraint files found.
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 581.031 ; gain = 337.133
+Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 572.848 ; gain = 328.836
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 
 Distributed RAM: Final Mapping  Report
-+------------+--------------+-----------+----------------------+-----------------+
-|Module Name | RTL Object   | Inference | Size (Depth x Width) | Primitives      | 
-+------------+--------------+-----------+----------------------+-----------------+
-|MIPS        | dp/rf/rf_reg | Implied   | 32 x 32              | RAM32M x 18     | 
-|MIPS        | dmem/ram_reg | Implied   | 64 x 32              | RAM64X1S x 32   | 
-+------------+--------------+-----------+----------------------+-----------------+
++------------+-----------------+-----------+----------------------+-----------------+
+|Module Name | RTL Object      | Inference | Size (Depth x Width) | Primitives      | 
++------------+-----------------+-----------+----------------------+-----------------+
+|MIPS        | dp/dmem/ram_reg | Implied   | 64 x 32              | RAM64X1S x 32   | 
+|MIPS        | dp/rf/rf_reg    | Implied   | 32 x 32              | RAM32M x 12     | 
++------------+-----------------+-----------+----------------------+-----------------+
 
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP and Shift Register Reporting
@@ -280,7 +263,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 582.047 ; gain = 338.148
+Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 590.113 ; gain = 346.102
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -304,7 +287,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 582.047 ; gain = 338.148
+Finished IO Insertion : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 590.113 ; gain = 346.102
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -317,7 +300,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 582.047 ; gain = 338.148
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 590.113 ; gain = 346.102
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -329,25 +312,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 582.047 ; gain = 338.148
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 590.113 ; gain = 346.102
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 582.047 ; gain = 338.148
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 590.113 ; gain = 346.102
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 582.047 ; gain = 338.148
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 590.113 ; gain = 346.102
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 582.047 ; gain = 338.148
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 590.113 ; gain = 346.102
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -368,40 +351,40 @@ Report Cell Usage:
 |3     |DSP48E1  |     4|
 |4     |LUT1     |     1|
 |5     |LUT2     |    47|
-|6     |LUT3     |    32|
-|7     |LUT4     |    40|
-|8     |LUT5     |   105|
-|9     |LUT6     |   190|
+|6     |LUT3     |     1|
+|7     |LUT4     |    56|
+|8     |LUT5     |   109|
+|9     |LUT6     |   277|
 |10    |RAM32M   |    12|
 |11    |RAM64X1S |    32|
-|12    |FDCE     |    96|
+|12    |FDCE     |   106|
 |13    |LD       |    32|
 |14    |IBUF     |     2|
-|15    |OBUF     |   193|
+|15    |OBUF     |   161|
 +------+---------+------+
 
 Report Instance Areas: 
 +------+---------------+----------+------+
 |      |Instance       |Module    |Cells |
 +------+---------------+----------+------+
-|1     |top            |          |   828|
-|2     |  dmem         |dmem      |    32|
-|3     |  dp           |datapath  |   599|
-|4     |    alu        |alu       |    83|
+|1     |top            |          |   882|
+|2     |  dp           |datapath  |   717|
+|3     |    alu        |alu       |    82|
+|4     |    dmem       |dmem      |    32|
 |5     |    hi_reg     |dreg_en   |    32|
 |6     |    lo_reg     |dreg_en_0 |    32|
 |7     |    mul        |mul       |    63|
 |8     |    pc_plus_4  |adder     |     8|
 |9     |    pc_plus_br |adder_1   |     8|
-|10    |    pc_reg     |dreg      |   361|
+|10    |    pc_reg     |dreg      |   448|
 |11    |    rf         |regfile   |    12|
 +------+---------------+----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 582.047 ; gain = 338.148
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 590.113 ; gain = 346.102
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 18 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 582.047 ; gain = 338.148
-Synthesis Optimization Complete : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 582.047 ; gain = 338.148
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 590.113 ; gain = 346.102
+Synthesis Optimization Complete : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 590.113 ; gain = 346.102
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 122 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -414,10 +397,10 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   RAM64X1S => RAM64X1S (RAMS64E): 32 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-48 Infos, 18 Warnings, 0 Critical Warnings and 0 Errors encountered.
+48 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:26 ; elapsed = 00:00:30 . Memory (MB): peak = 674.813 ; gain = 443.359
+synth_design: Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 670.887 ; gain = 439.613
 INFO: [Common 17-1381] The checkpoint 'C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.runs/synth_1/MIPS.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file MIPS_utilization_synth.rpt -pb datapath_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.078 . Memory (MB): peak = 674.813 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Sat Mar 31 10:03:55 2018...
+report_utilization: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.083 . Memory (MB): peak = 670.887 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Wed Apr  4 18:09:04 2018...

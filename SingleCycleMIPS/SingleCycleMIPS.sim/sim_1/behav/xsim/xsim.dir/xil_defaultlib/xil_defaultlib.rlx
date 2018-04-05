@@ -3,10 +3,10 @@
 Oct  4 2017
 20:11:37
 C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.sim/sim_1/behav/xsim/glbl.v,1507081072,verilog,,,,glbl,,,,,,,,
-C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sim_1/new/tb_MIPS.v,1522518839,verilog,,,,tb_MIPS,,,,,,,,
-C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/MIPS.v,1522517431,verilog,,C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/control_unit.v,,MIPS,,,,,,,,
-C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/control_unit.v,1522515489,verilog,,C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/cu_parts.v,,control_unit,,,,,,,,
-C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/cu_parts.v,1522518748,verilog,,C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/datapath.v,,auxdec;maindec,,,,,,,,
-C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/datapath.v,1522517471,verilog,,C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/dp_parts.v,,datapath,,,,,,,,
+C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sim_1/new/tb_MIPS.v,1522887284,verilog,,,,tb_MIPS,,,,,,,,
+C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/MIPS.v,1522886303,verilog,,C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/control_unit.v,,MIPS,,,,,,,,
+C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/control_unit.v,1522886301,verilog,,C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/cu_parts.v,,control_unit,,,,,,,,
+C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/cu_parts.v,1522890415,verilog,,C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/datapath.v,,auxdec;maindec,,,,,,,,
+C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/datapath.v,1522886250,verilog,,C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/dp_parts.v,,datapath,,,,,,,,
 C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/dp_parts.v,1522329804,verilog,,C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/memory.v,,adder;alu;dreg;dreg_en;mul;mux2;mux4;regfile;signext,,,,,,,,
 C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/memory.v,1522286946,verilog,,C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sim_1/new/tb_MIPS.v,,dmem;imem,,,,,,,,
