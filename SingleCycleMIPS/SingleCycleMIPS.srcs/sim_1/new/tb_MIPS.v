@@ -5,7 +5,7 @@ module tb_MIPS;
     wire        we_dm;
     wire [31:0] pc_current, instr, result, wd_dm, rd_dm;
 
-    MIPS DUT ( clk, rst, we_dm, pc_current, instr, result, wd_dm, rd_dm);
+    MIPS DUT ( clk, rst, 5'b0, we_dm, pc_current, instr, result, wd_dm, rd_dm);
     
     wire [31:0] rf_v0 = DUT.dp.rf.rf[2]; 
     wire [31:0] rf_a0 = DUT.dp.rf.rf[4]; 

@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1522890513">
-  <File Type="PA-TCL" Name="MIPS.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="MIPS_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="MIPS_reports.tcl"/>
-  <File Type="RDS-RDS" Name="MIPS.vds"/>
-  <File Type="RDS-UTIL" Name="MIPS_utilization_synth.rpt"/>
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1523139852">
+  <File Type="PA-TCL" Name="MIPS_fpga.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="MIPS_fpga_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="MIPS_fpga_reports.tcl"/>
+  <File Type="RDS-RDS" Name="MIPS_fpga.vds"/>
+  <File Type="RDS-UTIL" Name="MIPS_fpga_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="datapath_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="MIPS.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="MIPS_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="MIPS_timing_summary_synth.pb"/>
+  <File Type="RDS-DCP" Name="MIPS_fpga.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="MIPS_fpga_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="MIPS_fpga_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/MIPS.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/control_unit.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -39,6 +46,13 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/fpga_parts.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/memory.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -46,7 +60,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/MIPS.v">
+    <File Path="$PSRCDIR/sources_1/new/MIPS_fpga.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -63,11 +77,17 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="MIPS"/>
+      <Option Name="TopModule" Val="MIPS_fpga"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
     <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/new/MIPS_fpga.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>

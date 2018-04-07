@@ -1,11 +1,10 @@
-`timescale 1ns / 1ps
 
 module datapath(
     input clk, rst,
     input pc_src, jump, jal, jr, alu_src, we_reg, we_hi_lo, we_dm, reg_dst, dm2reg, [1:0] res2reg, [2:0] alu_ctrl,
     input [4:0] ra3,
     output zero,
-    output [31:0] instr, pc_current, rd_dm, wd_dm, rd3, result );
+    output [31:0] instr, pc_current, wd_dm, rd3, result );
 
     wire [4:0]  wa, rf_wa;
     wire [31:0] pc_plus4, pc_pre, pc_jmp, pc_next,
@@ -13,7 +12,7 @@ module datapath(
                 ba, bta, jta,
                 alu_pa, alu_pb,
                 alu_out, mul_hi_out, mul_lo_out, hi_out, lo_out,
-                wd_rf;
+                wd_rf, rd_dm;
 
     assign ba  = { sext_imm[29:0], 2'b0 };
     assign jta = { pc_plus4[31:28], instr[25:0], 2'b0 };

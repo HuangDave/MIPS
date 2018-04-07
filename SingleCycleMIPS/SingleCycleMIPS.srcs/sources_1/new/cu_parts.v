@@ -1,4 +1,3 @@
-`timescale 1ns / 1ps
 
 module maindec (
     input [5:0] opcode, funct,
@@ -19,9 +18,9 @@ module maindec (
             6'b00_0000: begin
                 case (funct)
                     6'b01_1001: ctrl = 14'b0_000_0_00_010_00_xx; // multu
-                    6'b01_0000: ctrl = 14'b0_000_0_10_110_01_xx; // mfhi
-                    6'b01_0010: ctrl = 14'b0_000_0_10_110_10_xx; // mflo
-                    6'b00_1000: ctrl = 14'b0_101_0_xx_000_00_00; // jr
+                    6'b01_0000: ctrl = 14'b0_000_0_10_100_01_xx; // mfhi
+                    6'b01_0010: ctrl = 14'b0_000_0_10_100_10_xx; // mflo
+                    6'b00_1000: ctrl = 14'b0_101_0_00_000_00_00; // jr
                     default:    ctrl = 14'b0_000_0_10_100_00_10; // R-type
                 endcase
             end

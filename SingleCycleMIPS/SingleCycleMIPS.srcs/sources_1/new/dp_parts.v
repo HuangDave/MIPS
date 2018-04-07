@@ -1,4 +1,3 @@
-`timescale 1ns / 1ps
 
 // 2 to 1 MUX
 module mux2 #(parameter WIDTH=32) (
