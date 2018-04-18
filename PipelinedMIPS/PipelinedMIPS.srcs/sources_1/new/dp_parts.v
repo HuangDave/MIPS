@@ -1,4 +1,3 @@
-`timescale 1ns / 1ps
 
 module mux2 #(parameter WIDTH=32) (
     input sel,
@@ -7,6 +6,36 @@ module mux2 #(parameter WIDTH=32) (
 
     assign y = (sel) ? b : a;
 
+endmodule
+
+// 3 to 1 MUX
+module mux3 #(parameter WIDTH=32) (
+    input [1:0] sel,
+    input [WIDTH-1:0] a, b, c,
+    output [WIDTH-1:0] y );
+    
+    assign y = sel[1] ? c : ( sel[0] ? b : a );
+endmodule
+
+// 4 to 1 MUX
+module mux4 #(parameter WIDTH=32) (
+    input [1:0] sel,
+    input [WIDTH-1:0] a, b, c, d,
+    output reg [WIDTH-1:0] y );
+
+    always @ (*) begin
+        case (sel)
+            2'b00: y = a;
+            2'b01: y = b;
+            2'b10: y = c;
+            2'b11: y = d;
+        endcase
+    end
+endmodule
+
+module signext
+(input [15:0] a, output [31:0] y);
+    assign y = {{16{a[15]}}, a};
 endmodule
 
 module adder (
@@ -20,12 +49,9 @@ endmodule
 module alu (
     input [2:0] op,
     input [31:0] a, b,
-    output zero,
     output reg [31:0] y );
 
-    assign zero = (y == 0);
-
-    always @ (op) begin
+    always @ (op, a ,b) begin
         case (op)
             3'b000: y = a & b;
             3'b001: y = a | b;
@@ -36,33 +62,15 @@ module alu (
     end
 endmodule
 
-module mul (
-    input [31:0] a, b,
-    output [31:0] hi, lo );
-
-    assign { hi, lo } = a * b;
-
-endmodule
-
-module divider (
-    input [31:0] a, b,
-    output [31:0] quotient, remainder ); // lo = quotient, hi = remainder
-
-    assign quotient = a / b;
-    assign remainder = a % b;
-
-endmodule
-
-module dreg (
-    input clk, rst,
-    input [31:0] D,
-    output reg [31:0] Q );
-
+module dreg #(parameter WIDTH=32) (
+    input clk, rst, en,
+    input [WIDTH-1:0] D,
+    output reg [WIDTH-1:0] Q );
     initial Q = 0;
-
     always @ (posedge clk, posedge rst) begin
-        if (rst) Q <= 0;
-        else     Q <= D;
+        if (rst)     Q <= 0;
+        else if (en) Q <= D;
+        else         Q <= Q;
     end
 endmodule
 

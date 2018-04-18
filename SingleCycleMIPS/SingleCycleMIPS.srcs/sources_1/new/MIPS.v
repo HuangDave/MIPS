@@ -16,5 +16,4 @@ module MIPS(
 
     control_unit cu   ( zero, instr[31:26], instr[5:0],
                         pc_src, jump, jal, jr, alu_src, we_reg, we_hi_lo, we_dm, reg_dst, dm2reg, res2reg, alu_ctrl );
-
 endmodule

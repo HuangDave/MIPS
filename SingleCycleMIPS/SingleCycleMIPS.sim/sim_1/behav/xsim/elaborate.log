@@ -5,6 +5,28 @@ Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
 Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/MIPS.v" Line 2. Module MIPS doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/datapath.v" Line 2. Module datapath doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/dp_parts.v" Line 33. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/dp_parts.v" Line 33. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/dp_parts.v" Line 3. Module mux2 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/dp_parts.v" Line 3. Module mux2 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/dp_parts.v" Line 3. Module mux2 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/dp_parts.v" Line 68. Module dreg doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/dp_parts.v" Line 3. Module mux2(WIDTH=5) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/dp_parts.v" Line 3. Module mux2(WIDTH=5) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/dp_parts.v" Line 3. Module mux2 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/dp_parts.v" Line 95. Module regfile doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/dp_parts.v" Line 28. Module signext doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/dp_parts.v" Line 3. Module mux2 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/dp_parts.v" Line 41. Module alu doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/dp_parts.v" Line 60. Module mul doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/dp_parts.v" Line 81. Module dreg_en doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/dp_parts.v" Line 81. Module dreg_en doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/dp_parts.v" Line 13. Module mux4 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/control_unit.v" Line 2. Module control_unit doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/cu_parts.v" Line 2. Module maindec doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/cu_parts.v" Line 39. Module auxdec doesn't have a timescale but at least one module in design has a timescale.
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
 Compiling module xil_defaultlib.adder

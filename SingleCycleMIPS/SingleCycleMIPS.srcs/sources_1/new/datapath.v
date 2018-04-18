@@ -9,20 +9,21 @@ module datapath(
     wire [4:0]  wa, rf_wa;
     wire [31:0] pc_plus4, pc_pre, pc_jmp, pc_next,
                 sext_imm,
-                ba, bta, jta,
+                ba, bta, jta, jtra,
                 alu_pa, alu_pb,
                 alu_out, mul_hi_out, mul_lo_out, hi_out, lo_out,
                 wd_rf, rd_dm;
 
-    assign ba  = { sext_imm[29:0], 2'b0 };
-    assign jta = { pc_plus4[31:28], instr[25:0], 2'b0 };
+    assign ba   = { sext_imm[29:0], 2'b0 };
+    assign jta  = { pc_plus4[31:28], instr[25:0], 2'b0 };
+    assign jtra = alu_pa;
 
     // --- PC Logic --- //
     adder     pc_plus_4  ( pc_current, 4, pc_plus4 );
     adder     pc_plus_br ( pc_plus4, ba, bta );
 
     mux2      pc_src_mux ( pc_src, pc_plus4, bta, pc_pre);
-    mux2      pc_jr_mux  ( jr, jta, alu_pa, pc_jmp );
+    mux2      pc_jr_mux  ( jr, jta, jtra, pc_jmp );
     mux2      pc_jmp_mux ( jump, pc_pre, pc_jmp, pc_next);
 
     dreg      pc_reg     ( clk, rst, pc_next, pc_current );

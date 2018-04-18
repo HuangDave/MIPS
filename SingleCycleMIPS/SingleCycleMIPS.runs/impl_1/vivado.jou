@@ -2,8 +2,8 @@
 # Vivado v2017.3 (64-bit)
 # SW Build 2018833 on Wed Oct  4 19:58:22 MDT 2017
 # IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
-# Start of session at: Sat Apr  7 15:25:19 2018
-# Process ID: 20444
+# Start of session at: Thu Apr 12 10:59:34 2018
+# Process ID: 9708
 # Current directory: C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.runs/impl_1
 # Command line: vivado.exe -log MIPS_fpga.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source MIPS_fpga.tcl -notrace
 # Log file: C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.runs/impl_1/MIPS_fpga.vdi

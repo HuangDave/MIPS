@@ -21,4 +21,5 @@ module tb_MIPS;
         while(pc_current != 32'h54) tick;
         $finish;
     end
+    
 endmodule

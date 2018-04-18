@@ -6,7 +6,7 @@ module MIPS_fpga(
     wire clk_sec, clk_5KHz, clk_pb;
     wire [7:0] digit[0:7];
     wire [31:0] pc_current, instr, result, wd_dm, rd3;
-
+    
     clk_gen     clk_gen (clk, rst, clk_sec, clk_5KHz);
     bdebouncer  bd      (clk_5KHz, button, clk_pb);
 
@@ -15,13 +15,13 @@ module MIPS_fpga(
     led_mux     led_mux (clk_5KHz, rst, digit[7], digit[6], digit[5], digit[4], digit[3], digit[2], digit[1], digit[0], LEDSEL, LEDOUT);
 
     bcd_to_7seg bcd7    (pc_current[15:12], digit[7]);
-    bcd_to_7seg bcd6    (pc_current[11:8], digit[6]);
-    bcd_to_7seg bcd5    (pc_current[7:4], digit[5]);
-    bcd_to_7seg bcd4    (pc_current[3:0], digit[4]);
-    bcd_to_7seg bcd3    (reg_hex[15:12], digit[3]);
-    bcd_to_7seg bcd2    (reg_hex[11:8], digit[2]);
-    bcd_to_7seg bcd1    (reg_hex[7:4], digit[1]);
-    bcd_to_7seg bcd0    (reg_hex[3:0], digit[0]);
+    bcd_to_7seg bcd6    (pc_current[11:8],  digit[6]);
+    bcd_to_7seg bcd5    (pc_current[7:4],   digit[5]);
+    bcd_to_7seg bcd4    (pc_current[3:0],   digit[4]);
+    bcd_to_7seg bcd3    (reg_hex[15:12],    digit[3]);
+    bcd_to_7seg bcd2    (reg_hex[11:8],     digit[2]);
+    bcd_to_7seg bcd1    (reg_hex[7:4],      digit[1]);
+    bcd_to_7seg bcd0    (reg_hex[3:0],      digit[0]);
 
     always @ (posedge clk) begin
         case ({sw[7], sw[6], sw[5]})

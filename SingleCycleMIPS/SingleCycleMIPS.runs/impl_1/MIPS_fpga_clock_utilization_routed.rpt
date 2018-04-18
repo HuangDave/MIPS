@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.3 (win64) Build 2018833 Wed Oct  4 19:58:22 MDT 2017
-| Date         : Sat Apr  7 15:26:31 2018
+| Date         : Thu Apr 12 11:00:42 2018
 | Host         : DESKTOP-OQNQAOP running 64-bit major release  (build 9200)
 | Command      : report_clock_utilization -file MIPS_fpga_clock_utilization_routed.rpt
 | Design       : MIPS_fpga
