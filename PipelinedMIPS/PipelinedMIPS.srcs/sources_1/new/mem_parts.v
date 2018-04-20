@@ -20,7 +20,7 @@ module dmem (
     initial for (i = 0; i < 64; i = i + 1) ram[i] = 32'hFFFF_FFFF;
 
     always @ (negedge clk)      // write on falling edge
-        if (we) ram[i] <= d;
+        if (we) ram[a] <= d;
 
     assign q = ram[a];
     

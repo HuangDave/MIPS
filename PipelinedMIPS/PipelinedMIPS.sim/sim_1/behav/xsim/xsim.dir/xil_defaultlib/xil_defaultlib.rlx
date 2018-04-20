@@ -1,0 +1,15 @@
+0.6
+2017.4
+Dec 15 2017
+21:07:18
+C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.sim/sim_1/behav/xsim/glbl.v,1513215259,verilog,,,,glbl,,,,,,,,
+C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sim_1/new/tb_MIPS.v,1524215155,verilog,,,,tb_MIPS,,,,,,,,
+C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/MIPS.v,1524214893,verilog,,C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/control_unit.v,,MIPS,,,,,,,,
+C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/control_unit.v,1524214066,verilog,,C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/cu_parts.v,,control_unit,,,,,,,,
+C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/cu_parts.v,1524214127,verilog,,C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/datapath.v,,auxdec;maindec,,,,,,,,
+C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/datapath.v,1524214790,verilog,,C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v,,datapath,,,,,,,,
+C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v,1524037546,verilog,,C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/hazard_unit.v,,adder;alu;dreg;mux2;mux3;mux4;regfile;signext,,,,,,,,
+C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/hazard_unit.v,1524214498,verilog,,C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/mem_parts.v,,hazard_unit,,,,,,,,
+C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/mem_parts.v,1524209725,verilog,,C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/mul.v,,dmem;imem,,,,,,,,
+C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/mul.v,1524188086,verilog,,C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/pipeline_reg.v,,mul,,,,,,,,
+C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/pipeline_reg.v,1524188364,verilog,,C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sim_1/new/tb_MIPS.v,,DECODE;EXECUTE;FETCH;MEMORY;WRITEBACK,,,,,,,,

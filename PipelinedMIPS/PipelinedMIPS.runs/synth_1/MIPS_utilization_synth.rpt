@@ -1,13 +1,13 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-| Date         : Wed Apr 18 11:51:12 2018
+| Date         : Fri Apr 20 02:06:10 2018
 | Host         : DESKTOP-OQNQAOP running 64-bit major release  (build 9200)
-| Command      : report_utilization -file datapath_utilization_synth.rpt -pb datapath_utilization_synth.pb
-| Design       : datapath
+| Command      : report_utilization -file MIPS_utilization_synth.rpt -pb datapath_utilization_synth.pb
+| Design       : MIPS
 | Device       : 7a100tcsg324-1
 | Design State : Synthesized
------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
 
 Utilization Design Information
 
@@ -30,13 +30,13 @@ Table of Contents
 +----------------------------+------+-------+-----------+-------+
 |          Site Type         | Used | Fixed | Available | Util% |
 +----------------------------+------+-------+-----------+-------+
-| Slice LUTs*                |  135 |     0 |     63400 |  0.21 |
-|   LUT as Logic             |  111 |     0 |     63400 |  0.18 |
-|   LUT as Memory            |   24 |     0 |     19000 |  0.13 |
-|     LUT as Distributed RAM |   24 |     0 |           |       |
+| Slice LUTs*                |  510 |     0 |     63400 |  0.80 |
+|   LUT as Logic             |  438 |     0 |     63400 |  0.69 |
+|   LUT as Memory            |   72 |     0 |     19000 |  0.38 |
+|     LUT as Distributed RAM |   72 |     0 |           |       |
 |     LUT as Shift Register  |    0 |     0 |           |       |
-| Slice Registers            |  176 |     0 |    126800 |  0.14 |
-|   Register as Flip Flop    |  176 |     0 |    126800 |  0.14 |
+| Slice Registers            |  579 |     0 |    126800 |  0.46 |
+|   Register as Flip Flop    |  579 |     0 |    126800 |  0.46 |
 |   Register as Latch        |    0 |     0 |    126800 |  0.00 |
 | F7 Muxes                   |    0 |     0 |     31700 |  0.00 |
 | F8 Muxes                   |    0 |     0 |     15850 |  0.00 |
@@ -57,33 +57,35 @@ Table of Contents
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
-| 69    |          Yes |           - |        Reset |
+| 254   |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
-| 107   |          Yes |       Reset |            - |
+| 325   |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
 2. Memory
 ---------
 
-+----------------+------+-------+-----------+-------+
-|    Site Type   | Used | Fixed | Available | Util% |
-+----------------+------+-------+-----------+-------+
-| Block RAM Tile |    0 |     0 |       135 |  0.00 |
-|   RAMB36/FIFO* |    0 |     0 |       135 |  0.00 |
-|   RAMB18       |    0 |     0 |       270 |  0.00 |
-+----------------+------+-------+-----------+-------+
++-------------------+------+-------+-----------+-------+
+|     Site Type     | Used | Fixed | Available | Util% |
++-------------------+------+-------+-----------+-------+
+| Block RAM Tile    |  0.5 |     0 |       135 |  0.37 |
+|   RAMB36/FIFO*    |    0 |     0 |       135 |  0.00 |
+|   RAMB18          |    1 |     0 |       270 |  0.37 |
+|     RAMB18E1 only |    1 |       |           |       |
++-------------------+------+-------+-----------+-------+
 * Note: Each Block RAM Tile only has one FIFO logic available and therefore can accommodate only one FIFO36E1 or one FIFO18E1. However, if a FIFO18E1 occupies a Block RAM Tile, that tile can still accommodate a RAMB18E1
 
 
 3. DSP
 ------
 
-+-----------+------+-------+-----------+-------+
-| Site Type | Used | Fixed | Available | Util% |
-+-----------+------+-------+-----------+-------+
-| DSPs      |    0 |     0 |       240 |  0.00 |
-+-----------+------+-------+-----------+-------+
++----------------+------+-------+-----------+-------+
+|    Site Type   | Used | Fixed | Available | Util% |
++----------------+------+-------+-----------+-------+
+| DSPs           |    4 |     0 |       240 |  1.67 |
+|   DSP48E1 only |    4 |       |           |       |
++----------------+------+-------+-----------+-------+
 
 
 4. IO and GT Specific
@@ -92,7 +94,7 @@ Table of Contents
 +-----------------------------+------+-------+-----------+-------+
 |          Site Type          | Used | Fixed | Available | Util% |
 +-----------------------------+------+-------+-----------+-------+
-| Bonded IOB                  |   82 |     0 |       210 | 39.05 |
+| Bonded IOB                  |  102 |     0 |       210 | 48.57 |
 | Bonded IPADs                |    0 |     0 |         2 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |         6 |  0.00 |
 | PHASER_REF                  |    0 |     0 |         6 |  0.00 |
@@ -148,18 +150,21 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDRE     |  107 |        Flop & Latch |
-| FDCE     |   69 |        Flop & Latch |
-| OBUF     |   64 |                  IO |
-| LUT4     |   62 |                 LUT |
-| RAMD32   |   36 |  Distributed Memory |
-| LUT6     |   32 |                 LUT |
-| CARRY4   |   20 |          CarryLogic |
-| IBUF     |   17 |                  IO |
-| LUT2     |   14 |                 LUT |
-| RAMS32   |   12 |  Distributed Memory |
-| LUT1     |    3 |                 LUT |
-| OBUFT    |    1 |                  IO |
+| FDRE     |  325 |        Flop & Latch |
+| FDCE     |  254 |        Flop & Latch |
+| LUT6     |  150 |                 LUT |
+| LUT5     |  141 |                 LUT |
+| RAMD32   |  108 |  Distributed Memory |
+| OBUF     |   96 |                  IO |
+| LUT2     |   77 |                 LUT |
+| LUT4     |   66 |                 LUT |
+| LUT3     |   64 |                 LUT |
+| CARRY4   |   47 |          CarryLogic |
+| RAMS32   |   36 |  Distributed Memory |
+| IBUF     |    6 |                  IO |
+| DSP48E1  |    4 |    Block Arithmetic |
+| LUT1     |    2 |                 LUT |
+| RAMB18E1 |    1 |        Block Memory |
 | BUFG     |    1 |               Clock |
 +----------+------+---------------------+
 
