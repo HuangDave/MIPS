@@ -84,7 +84,7 @@ module tb_MIPS;
 
     initial begin
         RESET;
-        while(pc_current_F != 32'h60) TICK;
+        while(pc_current_F != 32'h5c) TICK;
         $finish;
     end
 

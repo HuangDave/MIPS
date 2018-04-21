@@ -71,7 +71,7 @@ module datapath (
 
 // debugs
     wire [31:0] instr1, instr2;
-    dreg    INE       ( .clk(clk), .rst(rst), .en(1), .D(instr_D), .Q(instr1) );
+    dreg    INE       ( .clk(clk), .rst(flush_E), .en(1), .D(instr_D), .Q(instr1) );
     dreg    INM       ( .clk(clk), .rst(rst), .en(1), .D(instr1), .Q(instr2) );
     dreg    INW       ( .clk(clk), .rst(rst), .en(1), .D(instr2), .Q(instruction) );
 
@@ -124,6 +124,9 @@ module datapath (
     wire [1:0]  res2reg_W;
     wire [31:0] rd_dm_W, alu_out_W, hi_out_W, lo_out_W, pc_plus8_W, res_W;
 
+    wire [31:0] pcp8;
+    assign pcp8 = pc_plus8_W - 4;
+
     WRITEBACK   WRITEBACK  ( .clk(clk),
                              .i_jal(jal_M), .i_rf_we(rf_we_M), .i_dm2reg(dm2reg_M), .i_res2reg(res2reg_M),
                              .o_jal(jal_W), .o_rf_we(rf_we_W), .o_dm2reg(dm2reg_W), .o_res2reg(res2reg_W),
@@ -133,6 +136,6 @@ module datapath (
     dreg        hi_reg     ( .clk(clk), .rst(1'b0), .en(we_hi_lo_M), .D(mul_hi_out_M), .Q(hi_out_W) );
     dreg        lo_reg     ( .clk(clk), .rst(1'b0), .en(we_hi_lo_M), .D(mul_lo_out_M), .Q(lo_out_W) );
 
-    mux4        rf_res_mux ( .sel(res2reg_W), .a(alu_out_W), .b(hi_out_W), .c(lo_out_W), .d(pc_plus8_W), .y(res_W) );
+    mux4        rf_res_mux ( .sel(res2reg_W), .a(alu_out_W), .b(hi_out_W), .c(lo_out_W), .d(pcp8), .y(res_W) );
     mux2        rf_wd_mux  ( .sel(dm2reg_W),  .a(res_W),     .b(rd_dm_W), .y(rf_wd_W) );
 endmodule

@@ -8,9 +8,9 @@ module hazard_unit(
 
     wire j_stall, b_stall, sw_stall;
 
-    assign j_stall  = (pc_src_E === 2'b10 )? 1'b1 : 1'b0;  //pc_src_E[1]; // stall if jumped in DECODE
-    assign b_stall  = (pc_src_E === 2'b01) ? 1'b1 : 1'b0; // stall if branched in DECODE
-    assign sw_stall = (rs_D & rf_wa_E) & rf_we_E;
+    assign j_stall  = (pc_src_E === 2'b10) ? 1'b1 : 1'b0;   // stall if jumped in DECODE
+    assign b_stall  = (pc_src_E === 2'b01) ? 1'b1 : 1'b0;   // stall if branched in DECODE
+    assign sw_stall = (rs_D & rf_wa_E) & rf_we_E;           // stall a cycle if prev instruction is writing to addr of data to store
     assign lw_stall = ( (rs_D & rs_E) | (rt_D & rt_E) & dm2reg_E );
     assign fwd_br   = branch_D & ( (rt_D != 5'b0) & (rt_D == rf_wa_E) & rf_we_E ); // forward from alu_out_M to branch
 
@@ -18,6 +18,9 @@ module hazard_unit(
 
     assign stall_D = sw_stall;
     assign flush_D = (b_stall | j_stall) & stall_F;
+
+    wire sw_stall_D;
+    dreg flush_E_reg ( .clk(clk), .rst(0), .en(1), .D(i_sw_stall), .Q(sw_stall_D) );
 
     assign flush_E = 1'b0 | ((pc_src_E === 2'b11) ? 1'b1 : 1'b0);
 
@@ -43,6 +46,7 @@ module hazard_unit(
     //assign flush_E = stall;
     assign flush_E = 1'b0;
 */
+
     always @ ( rs_E, rt_E, rf_wa_M, rf_wa_W, rf_we_M, rf_we_W ) begin
         if      ( (rs_E != 5'b0) & (rs_E == rf_wa_M) & rf_we_M ) fwdA_E = 2'b10;
         else if ( (rs_E != 5'b0) & (rs_E == rf_wa_W) & rf_we_W ) fwdA_E = 2'b01;
