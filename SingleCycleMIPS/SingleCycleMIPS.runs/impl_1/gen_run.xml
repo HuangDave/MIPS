@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1523555915">
-  <File Type="PWROPT-DCP" Name="MIPS_fpga_pwropt.dcp"/>
   <File Type="ROUTE-PWR" Name="MIPS_fpga_power_routed.rpt"/>
   <File Type="PA-TCL" Name="MIPS_fpga.tcl"/>
+  <File Type="PWROPT-DCP" Name="MIPS_fpga_pwropt.dcp"/>
   <File Type="ROUTE-PWR-SUM" Name="MIPS_fpga_power_summary_routed.pb"/>
   <File Type="REPORTS-TCL" Name="MIPS_fpga_reports.tcl"/>
   <File Type="BG-DRC" Name="MIPS_fpga.drc"/>
-  <File Type="OPT-DCP" Name="MIPS_fpga_opt.dcp"/>
   <File Type="OPT-HWDEF" Name="MIPS_fpga.hwdef"/>
+  <File Type="OPT-DCP" Name="MIPS_fpga_opt.dcp"/>
   <File Type="OPT-DRC" Name="MIPS_fpga_drc_opted.rpt"/>
   <File Type="PLACE-DCP" Name="MIPS_fpga_placed.dcp"/>
   <File Type="PLACE-IO" Name="MIPS_fpga_io_placed.rpt"/>
@@ -23,22 +23,22 @@
   <File Type="ROUTE-BLACKBOX-DCP" Name="MIPS_fpga_routed_bb.dcp"/>
   <File Type="ROUTE-DRC" Name="MIPS_fpga_drc_routed.rpt"/>
   <File Type="ROUTE-DRC-PB" Name="MIPS_fpga_drc_routed.pb"/>
-  <File Type="BITSTR-MSK" Name="MIPS_fpga.msk"/>
   <File Type="ROUTE-DRC-RPX" Name="MIPS_fpga_drc_routed.rpx"/>
-  <File Type="BG-BGN" Name="MIPS_fpga.bgn"/>
+  <File Type="BITSTR-MSK" Name="MIPS_fpga.msk"/>
   <File Type="ROUTE-METHODOLOGY-DRC" Name="MIPS_fpga_methodology_drc_routed.rpt"/>
-  <File Type="BITSTR-RBT" Name="MIPS_fpga.rbt"/>
+  <File Type="BG-BGN" Name="MIPS_fpga.bgn"/>
   <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="MIPS_fpga_methodology_drc_routed.rpx"/>
-  <File Type="BG-BIN" Name="MIPS_fpga.bin"/>
+  <File Type="BITSTR-RBT" Name="MIPS_fpga.rbt"/>
   <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="MIPS_fpga_methodology_drc_routed.pb"/>
+  <File Type="BG-BIN" Name="MIPS_fpga.bin"/>
   <File Type="ROUTE-PWR-RPX" Name="MIPS_fpga_power_routed.rpx"/>
   <File Type="ROUTE-STATUS" Name="MIPS_fpga_route_status.rpt"/>
   <File Type="ROUTE-STATUS-PB" Name="MIPS_fpga_route_status.pb"/>
   <File Type="ROUTE-TIMINGSUMMARY" Name="MIPS_fpga_timing_summary_routed.rpt"/>
   <File Type="ROUTE-TIMING-PB" Name="MIPS_fpga_timing_summary_routed.pb"/>
   <File Type="ROUTE-TIMING-RPX" Name="MIPS_fpga_timing_summary_routed.rpx"/>
-  <File Type="RDI-RDI" Name="MIPS_fpga.vdi"/>
   <File Type="ROUTE-CLK" Name="MIPS_fpga_clock_utilization_routed.rpt"/>
+  <File Type="RDI-RDI" Name="MIPS_fpga.vdi"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="MIPS_fpga_postroute_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="MIPS_fpga_postroute_physopt_bb.dcp"/>
   <File Type="BITSTR-NKY" Name="MIPS_fpga.nky"/>

@@ -39,10 +39,10 @@ module datapath (
     wire [4:0]  rf_wa_D;
     wire [31:0] sext_imm_D, ba_D, pc_plus4_D, pc_plus8_D, shamt_D, rf_rd1_D, rf_rd2_D;
 
-    wire [31:0] jmp_cmp, alu_out_E;
-    mux2    fwd_jmp_mux ( .sel(fwd_br), .a(rf_rd1_D), .b(alu_out_E), .y(jmp_cmp) );
+    wire [31:0] br_cmp, alu_out_E;
+    mux2    fwd_brB_mux ( .sel(fwd_br), .a(rf_rd2_D), .b(alu_out_E), .y(br_cmp) );
 
-    assign eq_D     = (jmp_cmp == rf_rd2_D) ? 1'b1 : 1'b0;
+    assign eq_D     = (br_cmp == rf_rd1_D) ? 1'b1 : 1'b0;
     assign pc_src_D = { jump_D, jr_D ^ (branch_D & eq_D) };
 
     assign rs_D     = instr_D[25:21];
@@ -66,6 +66,8 @@ module datapath (
     signext se          ( .a(instr_D[15:0]), .y(sext_imm_D) );
     adder   pc_plus_br  ( .a(ba_D), .b(pc_plus4_D), .y(bta_D) );
     adder   pc_plus_8   ( .a(pc_plus4_D), .b(4), .y(pc_plus8_D) );
+
+    //mux2    rf_jr_mux   ( .sel(jr_D), .a(jta), .b(rf_rd2_D), .y(jta) );
 
 // debugs
     wire [31:0] instr1, instr2;
