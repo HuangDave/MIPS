@@ -3,7 +3,7 @@ main:       addi    $a0, $0, 4      # set arg
             add     $s0, $v0, $0    # move result into $s0
             j       end
 factorial:  addi    $sp, $sp, -8    # make room on stack
-            sw      $a0, 4($sp)     # store $a0
+	       sw      $a0, 4($sp)     # store $a0
             sw      $ra, 0($sp)     # store $ra
             addi    $t0, $0, 2      # $t0 = 2
             slt     $t0, $a0, $t0   # a <= 1 ?

@@ -14,24 +14,25 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 2336 
+INFO: Helper process launched with PID 13080 
 ---------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 344.090 ; gain = 100.066
+Starting Synthesize : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 345.238 ; gain = 100.855
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'MIPS' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/MIPS.v:2]
 INFO: [Synth 8-638] synthesizing module 'datapath' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/datapath.v:2]
 INFO: [Synth 8-638] synthesizing module 'mux4' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:21]
 	Parameter WIDTH bound to: 32 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'mux4' (1#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:21]
-INFO: [Synth 8-638] synthesizing module 'FETCH' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/pipeline_reg.v:2]
-INFO: [Synth 8-256] done synthesizing module 'FETCH' (2#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/pipeline_reg.v:2]
+INFO: [Synth 8-638] synthesizing module 'dreg' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:65]
+	Parameter WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'dreg' (2#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:65]
 INFO: [Synth 8-638] synthesizing module 'imem' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/mem_parts.v:4]
 INFO: [Synth 8-3876] $readmem data file 'memfile.dat' is read successfully [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/mem_parts.v:7]
 INFO: [Synth 8-256] done synthesizing module 'imem' (3#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/mem_parts.v:4]
 INFO: [Synth 8-638] synthesizing module 'adder' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:41]
 INFO: [Synth 8-256] done synthesizing module 'adder' (4#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:41]
-INFO: [Synth 8-638] synthesizing module 'DECODE' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/pipeline_reg.v:12]
-INFO: [Synth 8-256] done synthesizing module 'DECODE' (5#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/pipeline_reg.v:12]
+INFO: [Synth 8-638] synthesizing module 'DECODE' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/pipeline_reg.v:2]
+INFO: [Synth 8-256] done synthesizing module 'DECODE' (5#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/pipeline_reg.v:2]
 INFO: [Synth 8-638] synthesizing module 'regfile' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:77]
 INFO: [Synth 8-256] done synthesizing module 'regfile' (6#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:77]
 INFO: [Synth 8-638] synthesizing module 'mux3' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:12]
@@ -39,61 +40,106 @@ INFO: [Synth 8-638] synthesizing module 'mux3' [C:/Users/huang/Documents/School/
 INFO: [Synth 8-256] done synthesizing module 'mux3' (7#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:12]
 INFO: [Synth 8-638] synthesizing module 'signext' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:36]
 INFO: [Synth 8-256] done synthesizing module 'signext' (8#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:36]
-INFO: [Synth 8-638] synthesizing module 'EXECUTE' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/pipeline_reg.v:23]
-INFO: [Synth 8-256] done synthesizing module 'EXECUTE' (9#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/pipeline_reg.v:23]
-INFO: [Synth 8-638] synthesizing module 'mul' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/mul.v:3]
-INFO: [Synth 8-638] synthesizing module 'dreg' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:65]
+INFO: [Synth 8-638] synthesizing module 'mux2' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:2]
 	Parameter WIDTH bound to: 32 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'dreg' (10#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:65]
+INFO: [Synth 8-256] done synthesizing module 'mux2' (9#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:2]
+INFO: [Synth 8-638] synthesizing module 'EXECUTE' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/pipeline_reg.v:16]
+INFO: [Synth 8-256] done synthesizing module 'EXECUTE' (10#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/pipeline_reg.v:16]
+INFO: [Synth 8-638] synthesizing module 'mul' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/mul.v:3]
 INFO: [Synth 8-256] done synthesizing module 'mul' (11#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/mul.v:3]
 INFO: [Synth 8-638] synthesizing module 'mux3__parameterized0' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:12]
 	Parameter WIDTH bound to: 32 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'mux3__parameterized0' (11#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:12]
-INFO: [Synth 8-638] synthesizing module 'mux2' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:2]
-	Parameter WIDTH bound to: 32 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'mux2' (12#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:2]
 INFO: [Synth 8-638] synthesizing module 'alu' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:49]
 INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:55]
-INFO: [Synth 8-256] done synthesizing module 'alu' (13#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:49]
-INFO: [Synth 8-638] synthesizing module 'MEMORY' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/pipeline_reg.v:52]
-INFO: [Synth 8-256] done synthesizing module 'MEMORY' (14#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/pipeline_reg.v:52]
+INFO: [Synth 8-256] done synthesizing module 'alu' (12#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:49]
+INFO: [Synth 8-638] synthesizing module 'MEMORY' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/pipeline_reg.v:48]
+INFO: [Synth 8-256] done synthesizing module 'MEMORY' (13#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/pipeline_reg.v:48]
 INFO: [Synth 8-638] synthesizing module 'dmem' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/mem_parts.v:12]
-INFO: [Synth 8-256] done synthesizing module 'dmem' (15#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/mem_parts.v:12]
-INFO: [Synth 8-638] synthesizing module 'WRITEBACK' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/pipeline_reg.v:74]
-INFO: [Synth 8-256] done synthesizing module 'WRITEBACK' (16#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/pipeline_reg.v:74]
-INFO: [Synth 8-256] done synthesizing module 'datapath' (17#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/datapath.v:2]
+INFO: [Synth 8-256] done synthesizing module 'dmem' (14#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/mem_parts.v:12]
+INFO: [Synth 8-638] synthesizing module 'WRITEBACK' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/pipeline_reg.v:70]
+INFO: [Synth 8-256] done synthesizing module 'WRITEBACK' (15#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/pipeline_reg.v:70]
+INFO: [Synth 8-256] done synthesizing module 'datapath' (16#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/datapath.v:2]
+WARNING: [Synth 8-350] instance 'dp' of module 'datapath' requires 40 connections, but only 39 given [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/MIPS.v:19]
 INFO: [Synth 8-638] synthesizing module 'control_unit' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/control_unit.v:2]
 INFO: [Synth 8-638] synthesizing module 'maindec' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/cu_parts.v:2]
-INFO: [Synth 8-256] done synthesizing module 'maindec' (18#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/cu_parts.v:2]
+INFO: [Synth 8-256] done synthesizing module 'maindec' (17#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/cu_parts.v:2]
 INFO: [Synth 8-638] synthesizing module 'auxdec' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/cu_parts.v:32]
-INFO: [Synth 8-256] done synthesizing module 'auxdec' (19#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/cu_parts.v:32]
-INFO: [Synth 8-256] done synthesizing module 'control_unit' (20#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/control_unit.v:2]
+INFO: [Synth 8-256] done synthesizing module 'auxdec' (18#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/cu_parts.v:32]
+INFO: [Synth 8-256] done synthesizing module 'control_unit' (19#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/control_unit.v:2]
 INFO: [Synth 8-638] synthesizing module 'hazard_unit' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/hazard_unit.v:2]
-WARNING: [Synth 8-3848] Net flush_D in module/entity hazard_unit does not have driver. [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/hazard_unit.v:5]
-INFO: [Synth 8-256] done synthesizing module 'hazard_unit' (21#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/hazard_unit.v:2]
-INFO: [Synth 8-256] done synthesizing module 'MIPS' (22#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/MIPS.v:2]
-WARNING: [Synth 8-3331] design hazard_unit has unconnected port flush_D
-WARNING: [Synth 8-3331] design hazard_unit has unconnected port rs_D[4]
-WARNING: [Synth 8-3331] design hazard_unit has unconnected port rs_D[3]
-WARNING: [Synth 8-3331] design hazard_unit has unconnected port rs_D[2]
-WARNING: [Synth 8-3331] design hazard_unit has unconnected port rs_D[1]
+INFO: [Synth 8-256] done synthesizing module 'hazard_unit' (20#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/hazard_unit.v:2]
+INFO: [Synth 8-256] done synthesizing module 'MIPS' (21#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/MIPS.v:2]
 WARNING: [Synth 8-3331] design hazard_unit has unconnected port rt_D[4]
 WARNING: [Synth 8-3331] design hazard_unit has unconnected port rt_D[3]
 WARNING: [Synth 8-3331] design hazard_unit has unconnected port rt_D[2]
 WARNING: [Synth 8-3331] design hazard_unit has unconnected port rt_D[1]
-WARNING: [Synth 8-3331] design datapath has unconnected port rst
+WARNING: [Synth 8-3331] design regfile has unconnected port clk
+WARNING: [Synth 8-3331] design regfile has unconnected port we
+WARNING: [Synth 8-3331] design regfile has unconnected port ra1[4]
+WARNING: [Synth 8-3331] design regfile has unconnected port ra1[3]
+WARNING: [Synth 8-3331] design regfile has unconnected port ra1[2]
+WARNING: [Synth 8-3331] design regfile has unconnected port ra1[1]
+WARNING: [Synth 8-3331] design regfile has unconnected port ra1[0]
+WARNING: [Synth 8-3331] design regfile has unconnected port ra2[4]
+WARNING: [Synth 8-3331] design regfile has unconnected port ra2[3]
+WARNING: [Synth 8-3331] design regfile has unconnected port ra2[2]
+WARNING: [Synth 8-3331] design regfile has unconnected port ra2[1]
+WARNING: [Synth 8-3331] design regfile has unconnected port ra2[0]
+WARNING: [Synth 8-3331] design regfile has unconnected port ra3[4]
+WARNING: [Synth 8-3331] design regfile has unconnected port ra3[3]
+WARNING: [Synth 8-3331] design regfile has unconnected port ra3[2]
+WARNING: [Synth 8-3331] design regfile has unconnected port ra3[1]
+WARNING: [Synth 8-3331] design regfile has unconnected port ra3[0]
+WARNING: [Synth 8-3331] design regfile has unconnected port wa[4]
+WARNING: [Synth 8-3331] design regfile has unconnected port wa[3]
+WARNING: [Synth 8-3331] design regfile has unconnected port wa[2]
+WARNING: [Synth 8-3331] design regfile has unconnected port wa[1]
+WARNING: [Synth 8-3331] design regfile has unconnected port wa[0]
+WARNING: [Synth 8-3331] design regfile has unconnected port wd[31]
+WARNING: [Synth 8-3331] design regfile has unconnected port wd[30]
+WARNING: [Synth 8-3331] design regfile has unconnected port wd[29]
+WARNING: [Synth 8-3331] design regfile has unconnected port wd[28]
+WARNING: [Synth 8-3331] design regfile has unconnected port wd[27]
+WARNING: [Synth 8-3331] design regfile has unconnected port wd[26]
+WARNING: [Synth 8-3331] design regfile has unconnected port wd[25]
+WARNING: [Synth 8-3331] design regfile has unconnected port wd[24]
+WARNING: [Synth 8-3331] design regfile has unconnected port wd[23]
+WARNING: [Synth 8-3331] design regfile has unconnected port wd[22]
+WARNING: [Synth 8-3331] design regfile has unconnected port wd[21]
+WARNING: [Synth 8-3331] design regfile has unconnected port wd[20]
+WARNING: [Synth 8-3331] design regfile has unconnected port wd[19]
+WARNING: [Synth 8-3331] design regfile has unconnected port wd[18]
+WARNING: [Synth 8-3331] design regfile has unconnected port wd[17]
+WARNING: [Synth 8-3331] design regfile has unconnected port wd[16]
+WARNING: [Synth 8-3331] design regfile has unconnected port wd[15]
+WARNING: [Synth 8-3331] design regfile has unconnected port wd[14]
+WARNING: [Synth 8-3331] design regfile has unconnected port wd[13]
+WARNING: [Synth 8-3331] design regfile has unconnected port wd[12]
+WARNING: [Synth 8-3331] design regfile has unconnected port wd[11]
+WARNING: [Synth 8-3331] design regfile has unconnected port wd[10]
+WARNING: [Synth 8-3331] design regfile has unconnected port wd[9]
+WARNING: [Synth 8-3331] design regfile has unconnected port wd[8]
+WARNING: [Synth 8-3331] design regfile has unconnected port wd[7]
+WARNING: [Synth 8-3331] design regfile has unconnected port wd[6]
+WARNING: [Synth 8-3331] design regfile has unconnected port wd[5]
+WARNING: [Synth 8-3331] design regfile has unconnected port wd[4]
+WARNING: [Synth 8-3331] design regfile has unconnected port wd[3]
+WARNING: [Synth 8-3331] design regfile has unconnected port wd[2]
+WARNING: [Synth 8-3331] design regfile has unconnected port wd[1]
+WARNING: [Synth 8-3331] design regfile has unconnected port wd[0]
 ---------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 396.516 ; gain = 152.492
+Finished Synthesize : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 398.164 ; gain = 153.781
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 396.516 ; gain = 152.492
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 398.164 ; gain = 153.781
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 396.516 ; gain = 152.492
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 398.164 ; gain = 153.781
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Synth 8-5546] ROM "rom" won't be mapped to RAM because it is too sparse
@@ -102,7 +148,7 @@ INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To p
 INFO: [Synth 8-5546] ROM "r_type" won't be mapped to RAM because it is too sparse
 WARNING: [Synth 8-327] inferring latch for variable 'y_reg' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:56]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 396.516 ; gain = 152.492
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 398.164 ; gain = 153.781
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -117,7 +163,7 @@ Start RTL Component Statistics
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     64 Bit       Adders := 1     
-	   2 Input     32 Bit       Adders := 3     
+	   2 Input     32 Bit       Adders := 4     
 	   3 Input     32 Bit       Adders := 1     
 +---XORs : 
 	   2 Input      1 Bit         XORs := 1     
@@ -125,16 +171,16 @@ Detailed RTL Component Info :
 	               32 Bit    Registers := 20    
 	                5 Bit    Registers := 5     
 	                3 Bit    Registers := 1     
-	                2 Bit    Registers := 3     
+	                2 Bit    Registers := 4     
 	                1 Bit    Registers := 15    
 +---Muxes : 
 	   4 Input     32 Bit        Muxes := 2     
-	  26 Input     32 Bit        Muxes := 1     
-	   2 Input     32 Bit        Muxes := 10    
+	  28 Input     32 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 8     
 	   6 Input     32 Bit        Muxes := 1     
-	   8 Input     15 Bit        Muxes := 1     
-	   2 Input     14 Bit        Muxes := 1     
-	   5 Input     14 Bit        Muxes := 1     
+	   8 Input     14 Bit        Muxes := 1     
+	   2 Input     13 Bit        Muxes := 1     
+	   5 Input     13 Bit        Muxes := 1     
 	   2 Input      5 Bit        Muxes := 2     
 	   8 Input      3 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 2     
@@ -151,14 +197,14 @@ Module mux4
 Detailed RTL Component Info : 
 +---Muxes : 
 	   4 Input     32 Bit        Muxes := 1     
-Module FETCH 
+Module dreg 
 Detailed RTL Component Info : 
 +---Registers : 
 	               32 Bit    Registers := 1     
 Module imem 
 Detailed RTL Component Info : 
 +---Muxes : 
-	  26 Input     32 Bit        Muxes := 1     
+	  28 Input     32 Bit        Muxes := 1     
 Module adder 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -167,26 +213,22 @@ Module DECODE
 Detailed RTL Component Info : 
 +---Registers : 
 	               32 Bit    Registers := 2     
-Module regfile 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input     32 Bit        Muxes := 3     
 Module mux3 
 Detailed RTL Component Info : 
 +---Muxes : 
 	   2 Input      5 Bit        Muxes := 2     
+Module mux2 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
 Module EXECUTE 
 Detailed RTL Component Info : 
 +---Registers : 
 	               32 Bit    Registers := 5     
 	                5 Bit    Registers := 3     
 	                3 Bit    Registers := 1     
-	                2 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
 	                1 Bit    Registers := 7     
-Module dreg 
-Detailed RTL Component Info : 
-+---Registers : 
-	               32 Bit    Registers := 1     
 Module mul 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -195,10 +237,6 @@ Module mux3__parameterized0
 Detailed RTL Component Info : 
 +---Muxes : 
 	   2 Input     32 Bit        Muxes := 2     
-Module mux2 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input     32 Bit        Muxes := 1     
 Module alu 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -222,14 +260,16 @@ Detailed RTL Component Info :
 	                1 Bit    Registers := 3     
 Module datapath 
 Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
 +---XORs : 
 	   2 Input      1 Bit         XORs := 1     
 Module maindec 
 Detailed RTL Component Info : 
 +---Muxes : 
-	   8 Input     15 Bit        Muxes := 1     
-	   2 Input     14 Bit        Muxes := 1     
-	   5 Input     14 Bit        Muxes := 1     
+	   8 Input     14 Bit        Muxes := 1     
+	   2 Input     13 Bit        Muxes := 1     
+	   5 Input     13 Bit        Muxes := 1     
 Module auxdec 
 Detailed RTL Component Info : 
 +---Muxes : 
@@ -258,92 +298,169 @@ No constraint files found.
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-DSP Report: Generating DSP lo, operation Mode is: A*B.
-DSP Report: operator lo is absorbed into DSP lo.
-DSP Report: operator lo is absorbed into DSP lo.
-DSP Report: Generating DSP lo, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator lo is absorbed into DSP lo.
-DSP Report: operator lo is absorbed into DSP lo.
-DSP Report: Generating DSP lo, operation Mode is: A*B.
-DSP Report: operator lo is absorbed into DSP lo.
-DSP Report: operator lo is absorbed into DSP lo.
-DSP Report: Generating DSP lo, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator lo is absorbed into DSP lo.
-DSP Report: operator lo is absorbed into DSP lo.
-WARNING: [Synth 8-6014] Unused sequential element EXECUTE/o_jal_reg was removed.  [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/pipeline_reg.v:31]
-WARNING: [Synth 8-6014] Unused sequential element MEMORY/o_jal_reg was removed.  [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/pipeline_reg.v:60]
-WARNING: [Synth 8-6014] Unused sequential element WRITEBACK/o_jal_reg was removed.  [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/pipeline_reg.v:82]
-WARNING: [Synth 8-3331] design imem has unconnected port a[5]
-WARNING: [Synth 8-3331] design datapath has unconnected port rst
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_shamt_reg[0]' (FDC) to 'dp/EXECUTE/o_sext_imm_reg[6]'
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_shamt_reg[1]' (FDC) to 'dp/EXECUTE/o_sext_imm_reg[7]'
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_shamt_reg[2]' (FDC) to 'dp/EXECUTE/o_sext_imm_reg[8]'
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_shamt_reg[3]' (FDC) to 'dp/EXECUTE/o_sext_imm_reg[9]'
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_shamt_reg[4]' (FDC) to 'dp/EXECUTE/o_sext_imm_reg[10]'
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_shamt_reg[5]' (FDC) to 'dp/EXECUTE/o_shamt_reg[31]'
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_shamt_reg[6]' (FDC) to 'dp/EXECUTE/o_shamt_reg[31]'
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_shamt_reg[7]' (FDC) to 'dp/EXECUTE/o_shamt_reg[31]'
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_shamt_reg[8]' (FDC) to 'dp/EXECUTE/o_shamt_reg[31]'
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_shamt_reg[9]' (FDC) to 'dp/EXECUTE/o_shamt_reg[31]'
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_shamt_reg[10]' (FDC) to 'dp/EXECUTE/o_shamt_reg[31]'
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_shamt_reg[11]' (FDC) to 'dp/EXECUTE/o_shamt_reg[31]'
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_shamt_reg[12]' (FDC) to 'dp/EXECUTE/o_shamt_reg[31]'
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_shamt_reg[13]' (FDC) to 'dp/EXECUTE/o_shamt_reg[31]'
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_shamt_reg[14]' (FDC) to 'dp/EXECUTE/o_shamt_reg[31]'
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_shamt_reg[15]' (FDC) to 'dp/EXECUTE/o_shamt_reg[31]'
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_sext_imm_reg[15]' (FDC) to 'dp/EXECUTE/o_sext_imm_reg[16]'
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_shamt_reg[16]' (FDC) to 'dp/EXECUTE/o_shamt_reg[31]'
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_sext_imm_reg[16]' (FDC) to 'dp/EXECUTE/o_sext_imm_reg[17]'
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_shamt_reg[17]' (FDC) to 'dp/EXECUTE/o_shamt_reg[31]'
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_sext_imm_reg[17]' (FDC) to 'dp/EXECUTE/o_sext_imm_reg[18]'
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_shamt_reg[18]' (FDC) to 'dp/EXECUTE/o_shamt_reg[31]'
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_sext_imm_reg[18]' (FDC) to 'dp/EXECUTE/o_sext_imm_reg[19]'
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_shamt_reg[19]' (FDC) to 'dp/EXECUTE/o_shamt_reg[31]'
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_sext_imm_reg[19]' (FDC) to 'dp/EXECUTE/o_sext_imm_reg[20]'
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_shamt_reg[20]' (FDC) to 'dp/EXECUTE/o_shamt_reg[31]'
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_sext_imm_reg[20]' (FDC) to 'dp/EXECUTE/o_sext_imm_reg[21]'
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_shamt_reg[21]' (FDC) to 'dp/EXECUTE/o_shamt_reg[31]'
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_sext_imm_reg[21]' (FDC) to 'dp/EXECUTE/o_sext_imm_reg[22]'
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_shamt_reg[22]' (FDC) to 'dp/EXECUTE/o_shamt_reg[31]'
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_sext_imm_reg[22]' (FDC) to 'dp/EXECUTE/o_sext_imm_reg[23]'
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_shamt_reg[23]' (FDC) to 'dp/EXECUTE/o_shamt_reg[31]'
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_sext_imm_reg[23]' (FDC) to 'dp/EXECUTE/o_sext_imm_reg[24]'
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_shamt_reg[24]' (FDC) to 'dp/EXECUTE/o_shamt_reg[31]'
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_sext_imm_reg[24]' (FDC) to 'dp/EXECUTE/o_sext_imm_reg[25]'
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_shamt_reg[25]' (FDC) to 'dp/EXECUTE/o_shamt_reg[31]'
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_sext_imm_reg[25]' (FDC) to 'dp/EXECUTE/o_sext_imm_reg[26]'
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_shamt_reg[26]' (FDC) to 'dp/EXECUTE/o_shamt_reg[31]'
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_sext_imm_reg[26]' (FDC) to 'dp/EXECUTE/o_sext_imm_reg[27]'
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_shamt_reg[27]' (FDC) to 'dp/EXECUTE/o_shamt_reg[31]'
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_sext_imm_reg[27]' (FDC) to 'dp/EXECUTE/o_sext_imm_reg[28]'
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_shamt_reg[28]' (FDC) to 'dp/EXECUTE/o_shamt_reg[31]'
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_sext_imm_reg[28]' (FDC) to 'dp/EXECUTE/o_sext_imm_reg[29]'
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_shamt_reg[29]' (FDC) to 'dp/EXECUTE/o_shamt_reg[31]'
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_sext_imm_reg[29]' (FDC) to 'dp/EXECUTE/o_sext_imm_reg[30]'
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_shamt_reg[30]' (FDC) to 'dp/EXECUTE/o_shamt_reg[31]'
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_sext_imm_reg[30]' (FDC) to 'dp/EXECUTE/o_sext_imm_reg[31]'
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_shamt_reg[31]' (FDC) to 'dp/EXECUTE/o_shift_reg'
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_shift_reg' (FDC) to 'dp/EXECUTE/o_alu_ctrl_reg[0]'
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_alu_ctrl_reg[0]' (FDC) to 'dp/EXECUTE/o_alu_ctrl_reg[2]'
+INFO: [Synth 8-4471] merging register 'dp/EXECUTE/o_rf_rd2_reg[31:0]' into 'dp/EXECUTE/o_rf_rd1_reg[31:0]' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/pipeline_reg.v:41]
+INFO: [Synth 8-4471] merging register 'dp/mul/u1/Q_reg[31:0]' into 'dp/mul/u0/Q_reg[31:0]' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:71]
+INFO: [Synth 8-4471] merging register 'dp/mul/u3/Q_reg[31:0]' into 'dp/mul/u2/Q_reg[31:0]' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:71]
+WARNING: [Synth 8-6014] Unused sequential element dp/EXECUTE/o_jal_reg was removed.  [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/pipeline_reg.v:26]
+WARNING: [Synth 8-6014] Unused sequential element dp/EXECUTE/o_rf_rd2_reg was removed.  [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/pipeline_reg.v:41]
+WARNING: [Synth 8-6014] Unused sequential element dp/mul/u1/Q_reg was removed.  [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:71]
+WARNING: [Synth 8-6014] Unused sequential element dp/mul/u3/Q_reg was removed.  [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:71]
+WARNING: [Synth 8-6014] Unused sequential element dp/MEMORY/o_jal_reg was removed.  [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/pipeline_reg.v:56]
+WARNING: [Synth 8-6014] Unused sequential element dp/WRITEBACK/o_jal_reg was removed.  [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/pipeline_reg.v:78]
+DSP Report: Generating DSP dp/mul/lo, operation Mode is: A*B.
+DSP Report: operator dp/mul/lo is absorbed into DSP dp/mul/lo.
+DSP Report: operator dp/mul/lo is absorbed into DSP dp/mul/lo.
+DSP Report: Generating DSP dp/mul/lo, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator dp/mul/lo is absorbed into DSP dp/mul/lo.
+DSP Report: operator dp/mul/lo is absorbed into DSP dp/mul/lo.
+DSP Report: Generating DSP dp/mul/lo, operation Mode is: A*B.
+DSP Report: operator dp/mul/lo is absorbed into DSP dp/mul/lo.
+DSP Report: operator dp/mul/lo is absorbed into DSP dp/mul/lo.
+DSP Report: Generating DSP dp/mul/lo, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator dp/mul/lo is absorbed into DSP dp/mul/lo.
+DSP Report: operator dp/mul/lo is absorbed into DSP dp/mul/lo.
+WARNING: [Synth 8-3917] design MIPS has port rf_rd3[31] driven by constant 0
+WARNING: [Synth 8-3917] design MIPS has port rf_rd3[30] driven by constant 0
+WARNING: [Synth 8-3917] design MIPS has port rf_rd3[29] driven by constant 0
+WARNING: [Synth 8-3917] design MIPS has port rf_rd3[28] driven by constant 0
+WARNING: [Synth 8-3917] design MIPS has port rf_rd3[27] driven by constant 0
+WARNING: [Synth 8-3917] design MIPS has port rf_rd3[26] driven by constant 0
+WARNING: [Synth 8-3917] design MIPS has port rf_rd3[25] driven by constant 0
+WARNING: [Synth 8-3917] design MIPS has port rf_rd3[24] driven by constant 0
+WARNING: [Synth 8-3917] design MIPS has port rf_rd3[23] driven by constant 0
+WARNING: [Synth 8-3917] design MIPS has port rf_rd3[22] driven by constant 0
+WARNING: [Synth 8-3917] design MIPS has port rf_rd3[21] driven by constant 0
+WARNING: [Synth 8-3917] design MIPS has port rf_rd3[20] driven by constant 0
+WARNING: [Synth 8-3917] design MIPS has port rf_rd3[19] driven by constant 0
+WARNING: [Synth 8-3917] design MIPS has port rf_rd3[18] driven by constant 0
+WARNING: [Synth 8-3917] design MIPS has port rf_rd3[17] driven by constant 0
+WARNING: [Synth 8-3917] design MIPS has port rf_rd3[16] driven by constant 0
+WARNING: [Synth 8-3917] design MIPS has port rf_rd3[15] driven by constant 0
+WARNING: [Synth 8-3917] design MIPS has port rf_rd3[14] driven by constant 0
+WARNING: [Synth 8-3917] design MIPS has port rf_rd3[13] driven by constant 0
+WARNING: [Synth 8-3917] design MIPS has port rf_rd3[12] driven by constant 0
+WARNING: [Synth 8-3917] design MIPS has port rf_rd3[11] driven by constant 0
+WARNING: [Synth 8-3917] design MIPS has port rf_rd3[10] driven by constant 0
+WARNING: [Synth 8-3917] design MIPS has port rf_rd3[9] driven by constant 0
+WARNING: [Synth 8-3917] design MIPS has port rf_rd3[8] driven by constant 0
+WARNING: [Synth 8-3917] design MIPS has port rf_rd3[7] driven by constant 0
+WARNING: [Synth 8-3917] design MIPS has port rf_rd3[6] driven by constant 0
+WARNING: [Synth 8-3917] design MIPS has port rf_rd3[5] driven by constant 0
+WARNING: [Synth 8-3917] design MIPS has port rf_rd3[4] driven by constant 0
+WARNING: [Synth 8-3917] design MIPS has port rf_rd3[3] driven by constant 0
+WARNING: [Synth 8-3917] design MIPS has port rf_rd3[2] driven by constant 0
+WARNING: [Synth 8-3917] design MIPS has port rf_rd3[1] driven by constant 0
+WARNING: [Synth 8-3917] design MIPS has port rf_rd3[0] driven by constant 0
+WARNING: [Synth 8-3331] design MIPS has unconnected port rf_ra3[4]
+WARNING: [Synth 8-3331] design MIPS has unconnected port rf_ra3[3]
+WARNING: [Synth 8-3331] design MIPS has unconnected port rf_ra3[2]
+WARNING: [Synth 8-3331] design MIPS has unconnected port rf_ra3[1]
+WARNING: [Synth 8-3331] design MIPS has unconnected port rf_ra3[0]
+INFO: [Synth 8-3886] merging instance 'dp/mul/u0/Q_reg[17]' (FDC) to 'dp/mul/u0/Q_reg[31]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u0/Q_reg[18]' (FDC) to 'dp/mul/u0/Q_reg[31]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u0/Q_reg[19]' (FDC) to 'dp/mul/u0/Q_reg[31]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u0/Q_reg[20]' (FDC) to 'dp/mul/u0/Q_reg[31]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u0/Q_reg[21]' (FDC) to 'dp/mul/u0/Q_reg[31]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u0/Q_reg[22]' (FDC) to 'dp/mul/u0/Q_reg[31]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u0/Q_reg[23]' (FDC) to 'dp/mul/u0/Q_reg[31]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u0/Q_reg[24]' (FDC) to 'dp/mul/u0/Q_reg[31]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u0/Q_reg[25]' (FDC) to 'dp/mul/u0/Q_reg[31]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u0/Q_reg[26]' (FDC) to 'dp/mul/u0/Q_reg[31]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u0/Q_reg[27]' (FDC) to 'dp/mul/u0/Q_reg[31]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u0/Q_reg[28]' (FDC) to 'dp/mul/u0/Q_reg[31]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u0/Q_reg[29]' (FDC) to 'dp/mul/u0/Q_reg[31]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u0/Q_reg[30]' (FDC) to 'dp/mul/u0/Q_reg[31]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u0/Q_reg[31]' (FDC) to 'dp/mul/u0/Q_reg[16]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u0/Q_reg[0]' (FDC) to 'dp/mul/u0/Q_reg[16]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u0/Q_reg[1]' (FDC) to 'dp/mul/u0/Q_reg[16]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u0/Q_reg[2]' (FDC) to 'dp/mul/u0/Q_reg[16]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u0/Q_reg[3]' (FDC) to 'dp/mul/u0/Q_reg[16]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u0/Q_reg[4]' (FDC) to 'dp/mul/u0/Q_reg[16]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u0/Q_reg[5]' (FDC) to 'dp/mul/u0/Q_reg[16]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u0/Q_reg[6]' (FDC) to 'dp/mul/u0/Q_reg[16]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u0/Q_reg[7]' (FDC) to 'dp/mul/u0/Q_reg[16]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u0/Q_reg[8]' (FDC) to 'dp/mul/u0/Q_reg[16]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u0/Q_reg[9]' (FDC) to 'dp/mul/u0/Q_reg[16]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u0/Q_reg[10]' (FDC) to 'dp/mul/u0/Q_reg[16]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u0/Q_reg[11]' (FDC) to 'dp/mul/u0/Q_reg[16]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u0/Q_reg[12]' (FDC) to 'dp/mul/u0/Q_reg[16]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u0/Q_reg[13]' (FDC) to 'dp/mul/u0/Q_reg[16]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u0/Q_reg[14]' (FDC) to 'dp/mul/u0/Q_reg[16]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u0/Q_reg[15]' (FDC) to 'dp/mul/u0/Q_reg[16]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\dp/mul/u0/Q_reg[16] )
+INFO: [Synth 8-3886] merging instance 'dp/mul/u2/Q_reg[17]' (FDC) to 'dp/mul/u0/Q_reg[16]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u2/Q_reg[18]' (FDC) to 'dp/mul/u0/Q_reg[16]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u2/Q_reg[19]' (FDC) to 'dp/mul/u0/Q_reg[16]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u2/Q_reg[20]' (FDC) to 'dp/mul/u0/Q_reg[16]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u2/Q_reg[21]' (FDC) to 'dp/mul/u0/Q_reg[16]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u2/Q_reg[22]' (FDC) to 'dp/mul/u0/Q_reg[16]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u2/Q_reg[23]' (FDC) to 'dp/mul/u0/Q_reg[16]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u2/Q_reg[24]' (FDC) to 'dp/mul/u0/Q_reg[16]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u2/Q_reg[25]' (FDC) to 'dp/mul/u0/Q_reg[16]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u2/Q_reg[26]' (FDC) to 'dp/mul/u0/Q_reg[16]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u2/Q_reg[27]' (FDC) to 'dp/mul/u0/Q_reg[16]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u2/Q_reg[28]' (FDC) to 'dp/mul/u0/Q_reg[16]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u2/Q_reg[29]' (FDC) to 'dp/mul/u0/Q_reg[16]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u2/Q_reg[30]' (FDC) to 'dp/mul/u0/Q_reg[16]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u2/Q_reg[31]' (FDC) to 'dp/mul/u0/Q_reg[16]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u2/Q_reg[0]' (FDC) to 'dp/mul/u0/Q_reg[16]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u2/Q_reg[1]' (FDC) to 'dp/mul/u0/Q_reg[16]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u2/Q_reg[2]' (FDC) to 'dp/mul/u0/Q_reg[16]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u2/Q_reg[3]' (FDC) to 'dp/mul/u0/Q_reg[16]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u2/Q_reg[4]' (FDC) to 'dp/mul/u0/Q_reg[16]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u2/Q_reg[5]' (FDC) to 'dp/mul/u0/Q_reg[16]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u2/Q_reg[6]' (FDC) to 'dp/mul/u0/Q_reg[16]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u2/Q_reg[7]' (FDC) to 'dp/mul/u0/Q_reg[16]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u2/Q_reg[8]' (FDC) to 'dp/mul/u0/Q_reg[16]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u2/Q_reg[9]' (FDC) to 'dp/mul/u0/Q_reg[16]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u2/Q_reg[10]' (FDC) to 'dp/mul/u0/Q_reg[16]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u2/Q_reg[11]' (FDC) to 'dp/mul/u0/Q_reg[16]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u2/Q_reg[12]' (FDC) to 'dp/mul/u0/Q_reg[16]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u2/Q_reg[13]' (FDC) to 'dp/mul/u0/Q_reg[16]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u2/Q_reg[14]' (FDC) to 'dp/mul/u0/Q_reg[16]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u2/Q_reg[15]' (FDC) to 'dp/mul/u0/Q_reg[16]'
+INFO: [Synth 8-3886] merging instance 'dp/mul/u2/Q_reg[16]' (FDC) to 'dp/mul/u0/Q_reg[16]'
+INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_shamt_reg[16]' (FDC) to 'dp/EXECUTE/o_alu_ctrl_reg[2]'
+INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_sext_imm_reg[16]' (FDC) to 'dp/EXECUTE/o_sext_imm_reg[15]'
+INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_rf_rd1_reg[16]' (FDC) to 'dp/EXECUTE/o_alu_ctrl_reg[2]'
+INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_shamt_reg[17]' (FDC) to 'dp/EXECUTE/o_alu_ctrl_reg[2]'
+INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_sext_imm_reg[17]' (FDC) to 'dp/EXECUTE/o_sext_imm_reg[15]'
+INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_rf_rd1_reg[17]' (FDC) to 'dp/EXECUTE/o_alu_ctrl_reg[2]'
+INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_shamt_reg[18]' (FDC) to 'dp/EXECUTE/o_alu_ctrl_reg[2]'
+INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_sext_imm_reg[18]' (FDC) to 'dp/EXECUTE/o_sext_imm_reg[15]'
+INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_rf_rd1_reg[18]' (FDC) to 'dp/EXECUTE/o_alu_ctrl_reg[2]'
+INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_shamt_reg[19]' (FDC) to 'dp/EXECUTE/o_alu_ctrl_reg[2]'
+INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_sext_imm_reg[19]' (FDC) to 'dp/EXECUTE/o_sext_imm_reg[15]'
+INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_rf_rd1_reg[19]' (FDC) to 'dp/EXECUTE/o_alu_ctrl_reg[2]'
+INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_shamt_reg[20]' (FDC) to 'dp/EXECUTE/o_alu_ctrl_reg[2]'
+INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_sext_imm_reg[20]' (FDC) to 'dp/EXECUTE/o_sext_imm_reg[15]'
+INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_rf_rd1_reg[20]' (FDC) to 'dp/EXECUTE/o_alu_ctrl_reg[2]'
+INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_shamt_reg[21]' (FDC) to 'dp/EXECUTE/o_alu_ctrl_reg[2]'
+INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_sext_imm_reg[21]' (FDC) to 'dp/EXECUTE/o_sext_imm_reg[15]'
+INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_rf_rd1_reg[21]' (FDC) to 'dp/EXECUTE/o_alu_ctrl_reg[2]'
+INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_shamt_reg[22]' (FDC) to 'dp/EXECUTE/o_alu_ctrl_reg[2]'
+INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_sext_imm_reg[22]' (FDC) to 'dp/EXECUTE/o_sext_imm_reg[15]'
+INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_rf_rd1_reg[22]' (FDC) to 'dp/EXECUTE/o_alu_ctrl_reg[2]'
+INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_shamt_reg[23]' (FDC) to 'dp/EXECUTE/o_alu_ctrl_reg[2]'
+INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_sext_imm_reg[23]' (FDC) to 'dp/EXECUTE/o_sext_imm_reg[15]'
+INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_rf_rd1_reg[23]' (FDC) to 'dp/EXECUTE/o_alu_ctrl_reg[2]'
+INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_shamt_reg[24]' (FDC) to 'dp/EXECUTE/o_alu_ctrl_reg[2]'
+INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_sext_imm_reg[24]' (FDC) to 'dp/EXECUTE/o_sext_imm_reg[15]'
+INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_rf_rd1_reg[24]' (FDC) to 'dp/EXECUTE/o_alu_ctrl_reg[2]'
+INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_shamt_reg[25]' (FDC) to 'dp/EXECUTE/o_alu_ctrl_reg[2]'
+INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_sext_imm_reg[25]' (FDC) to 'dp/EXECUTE/o_sext_imm_reg[15]'
+INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_rf_rd1_reg[25]' (FDC) to 'dp/EXECUTE/o_alu_ctrl_reg[2]'
+INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_shamt_reg[26]' (FDC) to 'dp/EXECUTE/o_alu_ctrl_reg[2]'
+INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_sext_imm_reg[26]' (FDC) to 'dp/EXECUTE/o_sext_imm_reg[15]'
+INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_rf_rd1_reg[26]' (FDC) to 'dp/EXECUTE/o_alu_ctrl_reg[2]'
+INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_shamt_reg[27]' (FDC) to 'dp/EXECUTE/o_alu_ctrl_reg[2]'
+INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_sext_imm_reg[27]' (FDC) to 'dp/EXECUTE/o_sext_imm_reg[15]'
+INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_rf_rd1_reg[27]' (FDC) to 'dp/EXECUTE/o_alu_ctrl_reg[2]'
+INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_shamt_reg[28]' (FDC) to 'dp/EXECUTE/o_alu_ctrl_reg[2]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\dp/DECODE/o_instr_reg[30] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\dp/EXECUTE/o_alu_ctrl_reg[2] )
-INFO: [Synth 8-3886] merging instance 'dp/DECODE/o_instr_reg[25]' (FDCE) to 'dp/DECODE/o_instr_reg[21]'
-INFO: [Synth 8-3886] merging instance 'dp/DECODE/o_instr_reg[24]' (FDCE) to 'dp/DECODE/o_instr_reg[21]'
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_rs_reg[0]' (FDC) to 'dp/EXECUTE/o_rs_reg[3]'
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_rs_reg[4]' (FDC) to 'dp/EXECUTE/o_rs_reg[3]'
-INFO: [Synth 8-3886] merging instance 'dp/DECODE/o_instr_reg[6]' (FDCE) to 'dp/DECODE/o_instr_reg[7]'
-INFO: [Synth 8-3886] merging instance 'dp/DECODE/o_instr_reg[7]' (FDCE) to 'dp/DECODE/o_instr_reg[8]'
-INFO: [Synth 8-3886] merging instance 'dp/DECODE/o_instr_reg[8]' (FDCE) to 'dp/DECODE/o_instr_reg[9]'
-INFO: [Synth 8-3886] merging instance 'dp/DECODE/o_instr_reg[9]' (FDCE) to 'dp/DECODE/o_instr_reg[10]'
-INFO: [Synth 8-3886] merging instance 'dp/DECODE/o_instr_reg[10]' (FDCE) to 'dp/DECODE/o_instr_reg[11]'
-INFO: [Synth 8-3886] merging instance 'dp/DECODE/o_instr_reg[11]' (FDCE) to 'dp/DECODE/o_instr_reg[13]'
-INFO: [Synth 8-3886] merging instance 'dp/DECODE/o_instr_reg[20]' (FDCE) to 'dp/DECODE/o_instr_reg[16]'
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_rt_reg[0]' (FDC) to 'dp/EXECUTE/o_rt_reg[4]'
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_sext_imm_reg[6]' (FDC) to 'dp/EXECUTE/o_sext_imm_reg[11]'
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_sext_imm_reg[7]' (FDC) to 'dp/EXECUTE/o_sext_imm_reg[11]'
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_sext_imm_reg[8]' (FDC) to 'dp/EXECUTE/o_sext_imm_reg[11]'
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_sext_imm_reg[9]' (FDC) to 'dp/EXECUTE/o_sext_imm_reg[11]'
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_sext_imm_reg[10]' (FDC) to 'dp/EXECUTE/o_sext_imm_reg[11]'
-INFO: [Synth 8-3886] merging instance 'dp/EXECUTE/o_sext_imm_reg[11]' (FDC) to 'dp/EXECUTE/o_sext_imm_reg[13]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\dp/mul/u0/Q_reg[16] )
 WARNING: [Synth 8-3332] Sequential element (dp/alu/y_reg[31]) is unused and will be removed from module MIPS.
 WARNING: [Synth 8-3332] Sequential element (dp/alu/y_reg[30]) is unused and will be removed from module MIPS.
 WARNING: [Synth 8-3332] Sequential element (dp/alu/y_reg[29]) is unused and will be removed from module MIPS.
@@ -376,37 +493,24 @@ WARNING: [Synth 8-3332] Sequential element (dp/alu/y_reg[3]) is unused and will 
 WARNING: [Synth 8-3332] Sequential element (dp/alu/y_reg[2]) is unused and will be removed from module MIPS.
 WARNING: [Synth 8-3332] Sequential element (dp/alu/y_reg[1]) is unused and will be removed from module MIPS.
 WARNING: [Synth 8-3332] Sequential element (dp/alu/y_reg[0]) is unused and will be removed from module MIPS.
-WARNING: [Synth 8-3332] Sequential element (dp/DECODE/o_instr_reg[31]) is unused and will be removed from module MIPS.
 WARNING: [Synth 8-3332] Sequential element (dp/DECODE/o_instr_reg[30]) is unused and will be removed from module MIPS.
-WARNING: [Synth 8-3332] Sequential element (dp/DECODE/o_instr_reg[29]) is unused and will be removed from module MIPS.
-WARNING: [Synth 8-3332] Sequential element (dp/DECODE/o_instr_reg[28]) is unused and will be removed from module MIPS.
-WARNING: [Synth 8-3332] Sequential element (dp/DECODE/o_instr_reg[27]) is unused and will be removed from module MIPS.
-WARNING: [Synth 8-3332] Sequential element (dp/DECODE/o_instr_reg[26]) is unused and will be removed from module MIPS.
+WARNING: [Synth 8-3332] Sequential element (dp/mul/u0/Q_reg[16]) is unused and will be removed from module MIPS.
 WARNING: [Synth 8-3332] Sequential element (dp/EXECUTE/o_alu_ctrl_reg[2]) is unused and will be removed from module MIPS.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 655.770 ; gain = 411.746
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 614.660 ; gain = 370.277
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 
 Block RAM: Preliminary Mapping  Report (see note below)
-+------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
-|Module Name | RTL Object | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
-+------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
-|dp          | dm/ram_reg | 64 x 32(READ_FIRST)    | W |   | 64 x 32(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
-+------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
++------------+---------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name | RTL Object    | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------+---------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|MIPS        | dp/dm/ram_reg | 64 x 32(READ_FIRST)    | W |   | 64 x 32(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
++------------+---------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
 
 Note: The tale above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
-
-Distributed RAM: Preliminary Mapping  Report (see note below)
-+------------+--------------+-----------+----------------------+---------------+
-|Module Name | RTL Object   | Inference | Size (Depth x Width) | Primitives    | 
-+------------+--------------+-----------+----------------------+---------------+
-|MIPS        | dp/rf/rf_reg | Implied   | 32 x 32              | RAM32M x 18   | 
-+------------+--------------+-----------+----------------------+---------------+
-
-Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
 
 DSP: Preliminary Mapping  Report (see note below)
 +------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
@@ -433,26 +537,18 @@ No constraint files found.
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 655.770 ; gain = 411.746
+Finished Timing Optimization : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 614.660 ; gain = 370.277
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 
 Block RAM: Final Mapping  Report
-+------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
-|Module Name | RTL Object | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
-+------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
-|dp          | dm/ram_reg | 64 x 32(READ_FIRST)    | W |   | 64 x 32(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
-+------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
-
-
-Distributed RAM: Final Mapping  Report
-+------------+--------------+-----------+----------------------+---------------+
-|Module Name | RTL Object   | Inference | Size (Depth x Width) | Primitives    | 
-+------------+--------------+-----------+----------------------+---------------+
-|MIPS        | dp/rf/rf_reg | Implied   | 32 x 32              | RAM32M x 18   | 
-+------------+--------------+-----------+----------------------+---------------+
++------------+---------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name | RTL Object    | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------+---------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|MIPS        | dp/dm/ram_reg | 64 x 32(READ_FIRST)    | W |   | 64 x 32(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
++------------+---------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
 
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP and Shift Register Reporting
@@ -466,17 +562,17 @@ Report RTL Partitions:
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:71]
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:71]
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:71]
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:71]
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:71]
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:71]
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:71]
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:71]
+WARNING: [Synth 8-3332] Sequential element (dp/DECODE/o_pc_plus4_reg[0]) is unused and will be removed from module MIPS.
+WARNING: [Synth 8-3332] Sequential element (dp/FETCH/Q_reg[0]) is unused and will be removed from module MIPS.
+WARNING: [Synth 8-3332] Sequential element (dp/EXECUTE/o_pc_plus8_reg[0]) is unused and will be removed from module MIPS.
+WARNING: [Synth 8-3332] Sequential element (dp/MEMORY/o_pc_plus8_reg[0]) is unused and will be removed from module MIPS.
+WARNING: [Synth 8-3332] Sequential element (dp/WRITEBACK/o_pc_plus8_reg[0]) is unused and will be removed from module MIPS.
+WARNING: [Synth 8-3332] Sequential element (dp/EXECUTE/o_we_hi_lo_reg) is unused and will be removed from module MIPS.
+WARNING: [Synth 8-3332] Sequential element (dp/MEMORY/o_we_hi_lo_reg) is unused and will be removed from module MIPS.
+WARNING: [Synth 8-3332] Sequential element (dp/lo_reg/Q_reg[11]) is unused and will be removed from module MIPS.
 INFO: [Synth 8-4480] The timing for the instance dp/dm/ram_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 656.777 ; gain = 412.754
+Finished Technology Mapping : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 614.660 ; gain = 370.277
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -500,7 +596,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 656.777 ; gain = 412.754
+Finished IO Insertion : Time (s): cpu = 00:00:42 ; elapsed = 00:00:44 . Memory (MB): peak = 614.660 ; gain = 370.277
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -513,7 +609,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 656.777 ; gain = 412.754
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:42 ; elapsed = 00:00:44 . Memory (MB): peak = 614.660 ; gain = 370.277
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -525,25 +621,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 656.777 ; gain = 412.754
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:42 ; elapsed = 00:00:44 . Memory (MB): peak = 614.660 ; gain = 370.277
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 656.777 ; gain = 412.754
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:42 ; elapsed = 00:00:44 . Memory (MB): peak = 614.660 ; gain = 370.277
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 656.777 ; gain = 412.754
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:43 ; elapsed = 00:00:44 . Memory (MB): peak = 614.660 ; gain = 370.277
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 656.777 ; gain = 412.754
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:43 ; elapsed = 00:00:44 . Memory (MB): peak = 614.660 ; gain = 370.277
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -560,67 +656,56 @@ Report Cell Usage:
 |      |Cell     |Count |
 +------+---------+------+
 |1     |BUFG     |     1|
-|2     |CARRY4   |    47|
-|3     |DSP48E1  |     4|
-|4     |LUT1     |     2|
-|5     |LUT2     |    77|
-|6     |LUT3     |    64|
-|7     |LUT4     |    66|
-|8     |LUT5     |   141|
-|9     |LUT6     |   150|
-|10    |RAM32M   |    18|
-|11    |RAMB18E1 |     1|
-|12    |FDCE     |   254|
-|13    |FDRE     |   325|
-|14    |IBUF     |     6|
-|15    |OBUF     |    96|
+|2     |CARRY4   |    40|
+|3     |LUT1     |    33|
+|4     |LUT2     |    34|
+|5     |LUT3     |     4|
+|6     |LUT4     |    69|
+|7     |LUT5     |    99|
+|8     |LUT6     |   116|
+|9     |RAMB18E1 |     1|
+|10    |FDCE     |   146|
+|11    |FDRE     |   177|
+|12    |IBUF     |     2|
+|13    |OBUF     |    96|
 +------+---------+------+
 
 Report Instance Areas: 
 +------+---------------+----------+------+
 |      |Instance       |Module    |Cells |
 +------+---------------+----------+------+
-|1     |top            |          |  1252|
-|2     |  dp           |datapath  |  1149|
-|3     |    DECODE     |DECODE    |   161|
-|4     |    EXECUTE    |EXECUTE   |   192|
-|5     |    FETCH      |FETCH     |    86|
-|6     |    MEMORY     |MEMORY    |   207|
-|7     |    WRITEBACK  |WRITEBACK |   141|
+|1     |top            |          |   818|
+|2     |  dp           |datapath  |   719|
+|3     |    DECODE     |DECODE    |   136|
+|4     |    EXECUTE    |EXECUTE   |   182|
+|5     |    FETCH      |dreg      |    54|
+|6     |    MEMORY     |MEMORY    |   140|
+|7     |    WRITEBACK  |WRITEBACK |   166|
 |8     |    alu        |alu       |     8|
 |9     |    dm         |dmem      |     1|
-|10    |    hi_reg     |dreg      |    32|
-|11    |    lo_reg     |dreg_0    |    32|
-|12    |    mul        |mul       |   191|
-|13    |      u0       |dreg_3    |    32|
-|14    |      u1       |dreg_4    |    32|
-|15    |      u2       |dreg_5    |    32|
-|16    |      u3       |dreg_6    |    32|
-|17    |    pc_plus_4  |adder     |     8|
-|18    |    pc_plus_8  |adder_1   |     8|
-|19    |    pc_plus_br |adder_2   |     8|
-|20    |    rf         |regfile   |    71|
+|10    |    pc_plus_4  |adder     |     8|
+|11    |    pc_plus_8  |adder_0   |     8|
+|12    |    pc_plus_br |adder_1   |     8|
 +------+---------------+----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 656.777 ; gain = 412.754
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:43 ; elapsed = 00:00:44 . Memory (MB): peak = 614.660 ; gain = 370.277
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 56 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 656.777 ; gain = 412.754
-Synthesis Optimization Complete : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 656.777 ; gain = 412.754
+Synthesis finished with 0 errors, 0 critical warnings and 146 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:43 ; elapsed = 00:00:44 . Memory (MB): peak = 614.660 ; gain = 370.277
+Synthesis Optimization Complete : Time (s): cpu = 00:00:43 ; elapsed = 00:00:44 . Memory (MB): peak = 614.660 ; gain = 370.277
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 76 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 43 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 18 instances were transformed.
-  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 18 instances
+No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-139 Infos, 56 Warnings, 0 Critical Warnings and 0 Errors encountered.
+168 Infos, 146 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 735.543 ; gain = 504.465
+synth_design: Time (s): cpu = 00:00:51 ; elapsed = 00:00:54 . Memory (MB): peak = 690.730 ; gain = 459.293
 INFO: [Common 17-1381] The checkpoint 'C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.runs/synth_1/MIPS.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file MIPS_utilization_synth.rpt -pb datapath_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.063 . Memory (MB): peak = 735.543 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Fri Apr 20 02:06:10 2018...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.066 . Memory (MB): peak = 690.730 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Fri Apr 20 14:08:11 2018...

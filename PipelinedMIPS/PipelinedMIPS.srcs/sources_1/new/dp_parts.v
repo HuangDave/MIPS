@@ -13,7 +13,7 @@ module mux3 #(parameter WIDTH=32) (
     input [1:0] sel,
     input [WIDTH-1:0] a, b, c,
     output [WIDTH-1:0] y );
-    
+
     assign y = sel[1] ? c : ( sel[0] ? b : a );
 endmodule
 
@@ -56,6 +56,7 @@ module alu (
             3'b000: y = a & b;
             3'b001: y = a | b;
             3'b010: y = a + b;
+            3'b100: y = a << b;
             3'b110: y = a - b;
             3'b111: y = (a < b) ? 1 : 0;
         endcase
@@ -83,11 +84,15 @@ module regfile (
     reg [31:0] rf [0:31];
     integer i;
 
-    initial
-        for (i = 0; i < 32; i = i + 1) rf[i] = 32'h0;
+    initial for (i = 0; i < 32; i = i + 1) rf[i] = 32'h0;
 
-    always @ (posedge clk)
+    always @ (negedge clk)
         if (we) rf[wa] <= wd;
+        //if (we && wa != 0) rf[wa] <= wd;
+
+    //assign rd1 = ra1 != 5'bx ? rf[ra1] : 0;
+    //assign rd2 = ra2 != 5'bx ? rf[ra2] : 0;
+    //assign rd3 = ra3 != 5'bx ? rf[ra3] : 0;
 
     assign rd1 = (ra1 == 0) ? 0 : rf[ra1];
     assign rd2 = (ra2 == 0) ? 0 : rf[ra2];

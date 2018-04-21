@@ -1,24 +1,29 @@
 
 module datapath (
-    input clk, rst,
+    input       clk, rst,
     input [4:0] rf_ra3,
-    input branch_D, jump_D, jal_D, jr_D, r_type_D, alu_src_D, shift_D, we_hi_lo_D, we_dm_D, rf_we_D, dm2reg_D, [1:0] res2reg_D, [2:0] alu_ctrl_D,
-    input stall_F, stall_D, flush_D, flush_E, [1:0] fwdA_E, fwdB_E,
-    output dm2reg_E, rf_we_M, rf_we_W,
-    output [4:0] rs_D, rt_D, rs_E, rt_E, rf_wa_M, rf_wa_W,
-    output [31:0] pc_current, instr, rf_rd3);
+    input       branch_D, jump_D, jal_D, jr_D, r_type_D, alu_src_D, shift_D, we_hi_lo_D, we_dm_D, rf_we_D, dm2reg_D, [1:0] res2reg_D, [2:0] alu_ctrl_D,
+    input       stall_F, stall_D, flush_D, flush_E, fwd_br, [1:0] fwdA_E, fwdB_E,
+    output        dm2reg_E, rf_we_E, rf_we_M, rf_we_W,
+    output [1:0]  pc_src_E,
+    output [4:0]  rs_D, rt_D, rs_E, rt_E, rf_wa_E, rf_wa_M, rf_wa_W,
+    output [31:0] instr_D,
+    output [31:0] pc_current, instr, rf_rd3,
+
+    output [1:0] pc_src_D);
 
     wire [31:0] rf_wd_W;
+
     // -------------------------------------------------------------------------------------------------------- //
     //                                                  FETCH                                                   //                                                                                                //
     // -------------------------------------------------------------------------------------------------------- //
 
-    wire [1:0] pc_src_D;
+    //wire [1:0] pc_src_D;
     wire [31:0] pc_plus4_F, bta_D, jta_D, jtr_D, pc_next, pc_current_F, instr_F;
 
     mux4    pc_src_mux  ( .sel(pc_src_D), .a(pc_plus4_F), .b(bta_D), .c(jta_D), .d(jtr_D), .y(pc_next) );
 
-    FETCH   FETCH       ( .clk(clk), .en(stall_F), .i_pc(pc_next), .o_pc(pc_current_F) );
+    dreg    FETCH       ( .clk(clk), .rst(rst), .en(~stall_F), .D(pc_next), .Q(pc_current_F) );
 
     imem    im          ( .a(pc_current_F[7:2]), .y(instr_F) );
     adder   pc_plus_4   ( .a(pc_current_F), .b(4), .y(pc_plus4_F));
@@ -32,14 +37,18 @@ module datapath (
 
     wire        eq_D;
     wire [4:0]  rf_wa_D;
-    wire [31:0] instr_D, sext_imm_D, ba_D, pc_plus4_D, pc_plus8_D, shamt_D, rf_rd1_D, rf_rd2_D;
+    wire [31:0] sext_imm_D, ba_D, pc_plus4_D, pc_plus8_D, shamt_D, rf_rd1_D, rf_rd2_D;
 
-    assign eq_D     = (rf_rd1_D == rf_rd2_D) ? 1'b1 : 1'b0;
+    wire [31:0] jmp_cmp, alu_out_E;
+    mux2    fwd_jmp_mux ( .sel(fwd_br), .a(rf_rd1_D), .b(alu_out_E), .y(jmp_cmp) );
+
+    assign eq_D     = (jmp_cmp == rf_rd2_D) ? 1'b1 : 1'b0;
     assign pc_src_D = { jump_D, jr_D ^ (branch_D & eq_D) };
+
     assign rs_D     = instr_D[25:21];
     assign rt_D     = instr_D[20:16];
     assign ba_D     = { sext_imm_D[29:0], 2'b00 };
-    assign jta_D    = pc_plus4_D;
+    assign jta_D    = { pc_plus4_D[31:28], instr_D[25:0], 2'b00 };
     assign jtr_D    = rf_rd1_D;
     assign shamt_D  = { 27'b0, instr_D[10:6] };
 
@@ -52,26 +61,31 @@ module datapath (
                           .ra1(instr_D[25:21]), .ra2(instr_D[20:16]), .ra3(rf_ra3),
                           .rd1(rf_rd1_D),       .rd2(rf_rd2_D),       .rd3(rf_rd3) );
 
-    mux3 #(5) rf_wa_mux ( .sel({ jal_D, r_type_D }), .a(instr_D[20:16]), .b(instr_F[15:11]), .c(5'b11111), .y(rf_wa_D) );
+    mux3 #(5) rf_wa_mux ( .sel({ jal_D, r_type_D }), .a(instr_D[20:16]), .b(instr_D[15:11]), .c(5'b11111), .y(rf_wa_D) );
 
     signext se          ( .a(instr_D[15:0]), .y(sext_imm_D) );
     adder   pc_plus_br  ( .a(ba_D), .b(pc_plus4_D), .y(bta_D) );
     adder   pc_plus_8   ( .a(pc_plus4_D), .b(4), .y(pc_plus8_D) );
 
+// debugs
+    wire [31:0] instr1, instr2;
+    dreg    INE       ( .clk(clk), .rst(rst), .en(1), .D(instr_D), .Q(instr1) );
+    dreg    INM       ( .clk(clk), .rst(rst), .en(1), .D(instr1), .Q(instr2) );
+    dreg    INW       ( .clk(clk), .rst(rst), .en(1), .D(instr2), .Q(instruction) );
+
     // -------------------------------------------------------------------------------------------------------- //
     //                                                EXECUTE                                                   //                                                                                                //
     // -------------------------------------------------------------------------------------------------------- //
 
-    wire        jump_E, jal_E, jr_E, we_hi_lo_E, we_dm_E, rf_we_E, alu_src_E, shift_E;
+    wire        jal_E, we_hi_lo_E, we_dm_E, alu_src_E, shift_E;
     wire [1:0]  res2reg_E;
     wire [2:0]  alu_ctrl_E;
-    wire [4:0]  rf_wa_E;
-    wire [31:0] rf_rd1_E, rf_rd2_E, shamt_E, sext_imm_E, srcB_pre, srcA_E, srcB_E, alu_out_E, dm_wd_E, pc_plus8_E;
+    wire [31:0] rf_rd1_E, rf_rd2_E, shamt_E, sext_imm_E, srcB_pre, srcA_E, srcB_E, dm_wd_E, pc_plus8_E;
     wire [31:0] alu_out_M, mul_hi_out_M, mul_lo_out_M;
 
     EXECUTE EXECUTE     ( .clk(clk), .rst(flush_E),
-                          .i_jal(jal_D), .i_alu_src(alu_src_D), .i_shift(shift_D), .i_we_hi_lo(we_hi_lo_D), .i_we_dm(we_dm_D), .i_rf_we(rf_we_D), .i_dm2reg(dm2reg_D), .i_res2reg(res2reg_D), .i_alu_ctrl(alu_ctrl_D),
-                          .o_jal(jal_E), .o_alu_src(alu_src_E), .o_shift(shift_E), .o_we_hi_lo(we_hi_lo_E), .o_we_dm(we_dm_E), .o_rf_we(rf_we_E), .o_dm2reg(dm2reg_E), .o_res2reg(res2reg_E), .o_alu_ctrl(alu_ctrl_E),
+                          .i_jal(jal_D), .i_alu_src(alu_src_D), .i_shift(shift_D), .i_we_hi_lo(we_hi_lo_D), .i_we_dm(we_dm_D), .i_rf_we(rf_we_D), .i_dm2reg(dm2reg_D), .i_res2reg(res2reg_D), .i_alu_ctrl(alu_ctrl_D), .i_pc_src(pc_src_D),
+                          .o_jal(jal_E), .o_alu_src(alu_src_E), .o_shift(shift_E), .o_we_hi_lo(we_hi_lo_E), .o_we_dm(we_dm_E), .o_rf_we(rf_we_E), .o_dm2reg(dm2reg_E), .o_res2reg(res2reg_E), .o_alu_ctrl(alu_ctrl_E), .o_pc_src(pc_src_E),
                           .i_rs(rs_D), .i_rt(rt_D), .i_rf_wa(rf_wa_D), .i_rf_rd1(rf_rd1_D), .i_rf_rd2(rf_rd2_D), .i_shamt(shamt_D), .i_sext_imm(sext_imm_D), .i_pc_plus8(pc_plus8_D),
                           .o_rs(rs_E), .o_rt(rt_E), .o_rf_wa(rf_wa_E), .o_rf_rd1(rf_rd1_E), .o_rf_rd2(rf_rd2_E), .o_shamt(shamt_E), .o_sext_imm(sext_imm_E), .o_pc_plus8(pc_plus8_E) );
 
@@ -92,7 +106,7 @@ module datapath (
     wire [1:0]  res2reg_M;
     wire [31:0] rf_rd1_M, rf_rd2_M, dm_wd_M, rd_dm_M, pc_plus8_M;
 
-    MEMORY  MEMORY      ( .clk(clk),
+    MEMORY  MEMORY      ( .clk(clk), .rst(rst),
                           .i_jal(jal_E), .i_we_hi_lo(we_hi_lo_E), .i_we_dm(we_dm_E), .i_rf_we(rf_we_E), .i_dm2reg(dm2reg_E), .i_res2reg(res2reg_E),
                           .o_jal(jal_M), .o_we_hi_lo(we_hi_lo_M), .o_we_dm(we_dm_M), .o_rf_we(rf_we_M), .o_dm2reg(dm2reg_M), .o_res2reg(res2reg_M),
                           .i_rf_wa(rf_wa_E), .i_alu_out(alu_out_E), .i_dm_wd(dm_wd_E), .i_pc_plus8(pc_plus8_E),

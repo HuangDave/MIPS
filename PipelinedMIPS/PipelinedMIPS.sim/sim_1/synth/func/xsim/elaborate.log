@@ -1,0 +1,26 @@
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto 0c1f0db720af4cc1b43e204ef9c0830c --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L secureip --snapshot tb_MIPS_func_synth xil_defaultlib.tb_MIPS xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-426] cannot find port pc_src_D__0 on this module [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.sim/sim_1/synth/func/xsim/tb_MIPS_func_synth.v:7221]
+ERROR: [VRFC 10-426] cannot find port o_rf_we_reg on this module [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.sim/sim_1/synth/func/xsim/tb_MIPS_func_synth.v:7220]
+ERROR: [VRFC 10-426] cannot find port o_rf_wa_reg[4] on this module [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.sim/sim_1/synth/func/xsim/tb_MIPS_func_synth.v:7219]
+ERROR: [VRFC 10-426] cannot find port o_rf_wa_reg[2] on this module [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.sim/sim_1/synth/func/xsim/tb_MIPS_func_synth.v:7218]
+ERROR: [VRFC 10-426] cannot find port o_res2reg_reg[1] on this module [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.sim/sim_1/synth/func/xsim/tb_MIPS_func_synth.v:7217]
+ERROR: [VRFC 10-426] cannot find port o_pc_plus8_reg[4] on this module [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.sim/sim_1/synth/func/xsim/tb_MIPS_func_synth.v:7216]
+ERROR: [VRFC 10-426] cannot find port o_pc_plus8_reg[1] on this module [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.sim/sim_1/synth/func/xsim/tb_MIPS_func_synth.v:7215]
+ERROR: [VRFC 10-426] cannot find port o_pc_plus4_reg[29]_0 on this module [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.sim/sim_1/synth/func/xsim/tb_MIPS_func_synth.v:7214]
+ERROR: [VRFC 10-426] cannot find port o_pc_plus4_reg[27]_0 on this module [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.sim/sim_1/synth/func/xsim/tb_MIPS_func_synth.v:7213]
+ERROR: [VRFC 10-426] cannot find port o_pc_plus4_reg[23]_0 on this module [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.sim/sim_1/synth/func/xsim/tb_MIPS_func_synth.v:7212]
+ERROR: [VRFC 10-426] cannot find port o_pc_plus4_reg[19]_0 on this module [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.sim/sim_1/synth/func/xsim/tb_MIPS_func_synth.v:7211]
+ERROR: [VRFC 10-426] cannot find port o_instr_reg[31]_1 on this module [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.sim/sim_1/synth/func/xsim/tb_MIPS_func_synth.v:7210]
+ERROR: [VRFC 10-426] cannot find port o_instr_reg[31]_0 on this module [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.sim/sim_1/synth/func/xsim/tb_MIPS_func_synth.v:7209]
+ERROR: [VRFC 10-426] cannot find port o_instr_reg[14]_0 on this module [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.sim/sim_1/synth/func/xsim/tb_MIPS_func_synth.v:7208]
+ERROR: [VRFC 10-426] cannot find port o_instr_reg[13]_1 on this module [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.sim/sim_1/synth/func/xsim/tb_MIPS_func_synth.v:7207]
+ERROR: [VRFC 10-426] cannot find port o_instr_reg[13]_0 on this module [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.sim/sim_1/synth/func/xsim/tb_MIPS_func_synth.v:7206]
+ERROR: [VRFC 10-426] cannot find port o_dm2reg_reg on this module [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.sim/sim_1/synth/func/xsim/tb_MIPS_func_synth.v:7205]
+ERROR: [VRFC 10-426] cannot find port o_alu_src_reg on this module [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.sim/sim_1/synth/func/xsim/tb_MIPS_func_synth.v:7204]
+ERROR: [VRFC 10-426] cannot find port jr on this module [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.sim/sim_1/synth/func/xsim/tb_MIPS_func_synth.v:7203]
+INFO: [#UNDEF] Sorry, too many errors..
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
