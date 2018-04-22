@@ -28,7 +28,8 @@ module MIPS(
                          .branch(branch), .jump(jump), .jal(jal), .jr(jr), .r_type(r_type), .shift(shift), .alu_src(alu_src), .we_hi_lo(we_hi_lo), .we_dm(we_dm), .rf_we(rf_we), .dm2reg(dm2reg),
                          .res2reg(res2reg), .alu_ctrl(alu_ctrl) );
 
-    hazard_unit     hu ( .branch_D(branch), .dm2reg_E(dm2reg_E), .rf_we_E(rf_we_E), .rf_we_M(rf_we_M), .rf_we_W(rf_we_W), .pc_src_E(pc_src_E),
+    hazard_unit     hu ( 
+                         .branch_D(branch), .dm2reg_E(dm2reg_E), .rf_we_E(rf_we_E), .rf_we_M(rf_we_M), .rf_we_W(rf_we_W), .pc_src_E(pc_src_E),
                          .rs_D(rs_D), .rt_D(rt_D), .rs_E(rs_E), .rt_E(rt_E), .rf_wa_E(rf_wa_E), .rf_wa_M(rf_wa_M), .rf_wa_W(rf_wa_W),
                          .stall_F(stall_F), .stall_D(stall_D), .flush_D(flush_D), .flush_E(flush_E),
                          .fwd_br(fwd_br), .fwdA_E(fwdA_E), .fwdB_E(fwdB_E) );

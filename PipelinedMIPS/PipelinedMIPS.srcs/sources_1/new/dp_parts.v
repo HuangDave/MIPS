@@ -1,10 +1,10 @@
 
 module mux2 #(parameter WIDTH=32) (
-    input sel,
-    input [WIDTH-1:0] a, b,
+    input              sel,
+    input  [WIDTH-1:0] a, b,
     output [WIDTH-1:0] y );
 
-    assign y = (sel) ? b : a;
+    assign y = sel ? b : a;
 
 endmodule
 
@@ -88,11 +88,6 @@ module regfile (
 
     always @ (negedge clk)
         if (we) rf[wa] <= wd;
-        //if (we && wa != 0) rf[wa] <= wd;
-
-    //assign rd1 = ra1 != 5'bx ? rf[ra1] : 0;
-    //assign rd2 = ra2 != 5'bx ? rf[ra2] : 0;
-    //assign rd3 = ra3 != 5'bx ? rf[ra3] : 0;
 
     assign rd1 = (ra1 == 0) ? 0 : rf[ra1];
     assign rd2 = (ra2 == 0) ? 0 : rf[ra2];

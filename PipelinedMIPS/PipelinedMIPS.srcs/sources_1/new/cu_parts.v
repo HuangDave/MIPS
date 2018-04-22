@@ -11,6 +11,7 @@ module maindec (
         case (opcode)
             6'b000000: begin
                 case (funct)
+                    6'b000000: ctrl = 14'b0_000_10_0010_00_xx;  // sll, nop
                     6'b011001: ctrl = 14'b0_000_00_1000_00_xx;  // multu
                     6'b010000: ctrl = 14'b0_000_00_0010_01_xx;  // mfhi
                     6'b010010: ctrl = 14'b0_000_00_0010_10_xx;  // mflo

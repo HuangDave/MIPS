@@ -1,6 +1,6 @@
 
 // 32-bit 2-stage pipelined multiplier
-module mul(
+module pipelined_mul(
     input clk, rst,
     input [31:0] a, b,
     output [31:0] hi, lo );
