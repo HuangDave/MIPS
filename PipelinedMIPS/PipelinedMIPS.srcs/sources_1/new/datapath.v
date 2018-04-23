@@ -1,9 +1,9 @@
 
 module datapath (
-    input       clk, rst,
-    input [4:0] rf_ra3,
-    input       branch_D, jump_D, jal_D, jr_D, r_type_D, alu_src_D, shift_D, we_hi_lo_D, we_dm_D, rf_we_D, dm2reg_D, [1:0] res2reg_D, [2:0] alu_ctrl_D,
-    input       stall_F, stall_D, flush_D, flush_E, fwd_br, [1:0] fwdA_E, fwdB_E,
+    input         clk, rst,
+    input [4:0]   rf_ra3,
+    input         branch_D, jump_D, jal_D, jr_D, r_type_D, alu_src_D, shift_D, we_hi_lo_D, we_dm_D, rf_we_D, dm2reg_D, [1:0] res2reg_D, [2:0] alu_ctrl_D,
+    input         stall_F, stall_D, flush_D, flush_E, [1:0] br_fwdA_D, br_fwdB_D, fwdA_E, fwdB_E,
     output        dm2reg_E, rf_we_E, rf_we_M, rf_we_W,
     output [1:0]  pc_src_E,
     output [4:0]  rs_D, rt_D, rs_E, rt_E, rf_wa_E, rf_wa_M, rf_wa_W,
@@ -37,11 +37,14 @@ module datapath (
     wire [4:0]  rf_wa_D;
     wire [31:0] sext_imm_D, ba_D, pc_plus4_D, pc_plus8_D, shamt_D, rf_rd1_D, rf_rd2_D;
 
-    wire [31:0] br_cmp, alu_out_E;
-    mux2    fwd_brB_mux ( .sel(fwd_br), .a(rf_rd2_D), .b(alu_out_E), .y(br_cmp) );
+    // branch logic
+    wire [31:0] br_cmpA_D, br_cmpB_D, alu_out_E, alu_out_M;
+    mux3    br_fwdA_mux ( .sel(br_fwdA_D), .a(rf_rd1_D), .b(alu_out_E), .c(alu_out_M), .y(br_cmpA_D) );
+    mux3    br_fwdB_mux ( .sel(br_fwdB_D), .a(rf_rd2_D), .b(alu_out_E), .c(alu_out_M), .y(br_cmpB_D) );
 
-    assign eq_D     = (br_cmp == rf_rd1_D) ? 1'b1 : 1'b0;
+    assign eq_D     = (br_cmpA_D == br_cmpB_D) ? 1'b1 : 1'b0;
     assign pc_src_D = { jump_D, jr_D ^ (branch_D & eq_D) };
+
 
     assign rs_D     = instr_D[25:21];
     assign rt_D     = instr_D[20:16];
@@ -73,7 +76,7 @@ module datapath (
     wire [1:0]  res2reg_E;
     wire [2:0]  alu_ctrl_E;
     wire [31:0] rf_rd1_E, rf_rd2_E, shamt_E, sext_imm_E, srcB_pre, srcA_E, srcB_E, dm_wd_E, pc_plus8_E;
-    wire [31:0] alu_out_M, mul_hi_out_M, mul_lo_out_M;
+    wire [31:0] mul_hi_out_M, mul_lo_out_M;
 
     EXECUTE EXECUTE     ( .clk(clk), .rst(flush_E),
                           .i_alu_src(alu_src_D), .i_shift(shift_D), .i_we_hi_lo(we_hi_lo_D), .i_we_dm(we_dm_D), .i_rf_we(rf_we_D), .i_dm2reg(dm2reg_D), .i_res2reg(res2reg_D), .i_alu_ctrl(alu_ctrl_D), .i_pc_src(pc_src_D),

@@ -58,13 +58,13 @@ module tb_FA;
 
             TICK;               // clock err and done into reg
 
-            if (rd[0] != !(n == 13)) begin
+            if (rd[0] != !(n == 13)) begin // check done flag
                 $display("done - expected: %1b, result: %1b", 1'b1, rd[0]);
                 failures = failures + 1;
             end
 
-            if (rd[1] != (n == 13)) begin
-                $display("err - expected: %1b, result: %1b", 1'b1, rd[0]);
+            if (rd[1] != (n == 13)) begin // check err flag
+                $display("err - expected: %1b, result: %1b", 1'b1, rd[1]);
                 failures = failures + 1;
             end
 

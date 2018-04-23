@@ -21,7 +21,7 @@ module tb_MIPS;
     wire [31:0] instr_F    = DUT.dp.im.y;
 
     wire [31:0] instr_D    = DUT.dp.DECODE.o_instr;
-    
+
     wire        rf_we  = DUT.dp.rf.we;
     wire [4:0]  rf_wa  = DUT.dp.rf.wa;
     wire [31:0] rf_wd  = DUT.dp.rf.wd;
