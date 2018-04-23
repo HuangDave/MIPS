@@ -39,7 +39,7 @@ module fact_CU (
     reg ns;
     reg [5:0] ctrl;
 
-    assign { load_cnt, en_cnt, load_reg, sel, OE, err } = ctrl;
+    assign { load_cnt, en_cnt, load_reg, sel, OE, error } = ctrl;
 
     always @(posedge clk, posedge rst) begin
         if (rst) cs <= S0;

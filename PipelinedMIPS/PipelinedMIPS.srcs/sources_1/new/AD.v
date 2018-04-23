@@ -6,14 +6,13 @@ module AD (
 
     assign sel = a;
 
-    always @ ( * ) begin
+    always @ ( we, a ) begin
         case (a)
-            2'b00:   begin we1 = we;   we2 = 1'b0; end
-            2'b01:   begin we1 = 1'b0; we2 = we;   end
-            2'b10:   begin we1 = 1'b0; we2 = 1'b0; end
-            2'b11:   begin we1 = 1'b0; we2 = 1'b0; end
-            default: begin we1 = 1'bx; we2 = 1'bx; end
+            2'b00:   { we1, we2 } <= { we,   1'b0 };
+            2'b01:   { we1, we2 } <= { 1'b0, we   };
+            2'b10:   { we1, we2 } <= { 1'b0, 1'b0 };
+            2'b11:   { we1, we2 } <= { 1'b0, 1'b0 };
+            default: { we1, we2 } <= { 1'bx, 1'bx };
         endcase
     end
 endmodule
-
