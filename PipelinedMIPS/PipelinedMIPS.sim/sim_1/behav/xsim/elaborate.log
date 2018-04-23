@@ -31,7 +31,7 @@ WARNING: [XSIM 43-4099] "C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/P
 WARNING: [XSIM 43-4099] "C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v" Line 2. Module mux2 doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/control_unit.v" Line 2. Module control_unit doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/cu_parts.v" Line 2. Module maindec doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/cu_parts.v" Line 32. Module auxdec doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/cu_parts.v" Line 33. Module auxdec doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/hazard_unit.v" Line 2. Module hazard_unit doesn't have a timescale but at least one module in design has a timescale.
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps

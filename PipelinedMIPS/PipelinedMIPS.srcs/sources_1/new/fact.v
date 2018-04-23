@@ -46,7 +46,7 @@ module fact_CU (
         else     cs <= ns;
     end
 
-    always @(go, cs, gt) begin
+    always @(go, err, cs, gt) begin
         case (cs)
             S0: begin
                 if (err)     begin ctrl = ERR;  ns = S0; end

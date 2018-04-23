@@ -1,13 +1,14 @@
 
 module MIPS(
-    input clk, rst,
-    input [4:0] rf_ra3,
-    output [31:0] pc_current, instr, rf_rd3 );
+    input         clk, rst,
+    input  [4:0]  rf_ra3,
+    input  [31:0] rd,
+    output        we_dm_M,
+    output [31:0] pc_current, instr, address, rf_rd3 );
 
     wire       branch, jump, jal, jr, r_type, alu_src, shift, we_hi_lo, we_dm, rf_we, dm2reg;
     wire [1:0] res2reg;
     wire [2:0] alu_ctrl;
-
 
     wire       stall_F, stall_D, flush_D, flush_E, fwd_br,
                dm2reg_E, rf_we_E, rf_we_M, rf_we_W;
@@ -28,10 +29,13 @@ module MIPS(
                          .branch(branch), .jump(jump), .jal(jal), .jr(jr), .r_type(r_type), .shift(shift), .alu_src(alu_src), .we_hi_lo(we_hi_lo), .we_dm(we_dm), .rf_we(rf_we), .dm2reg(dm2reg),
                          .res2reg(res2reg), .alu_ctrl(alu_ctrl) );
 
-    hazard_unit     hu ( 
+    hazard_unit     hu (
                          .branch_D(branch), .dm2reg_E(dm2reg_E), .rf_we_E(rf_we_E), .rf_we_M(rf_we_M), .rf_we_W(rf_we_W), .pc_src_E(pc_src_E),
                          .rs_D(rs_D), .rt_D(rt_D), .rs_E(rs_E), .rt_E(rt_E), .rf_wa_E(rf_wa_E), .rf_wa_M(rf_wa_M), .rf_wa_W(rf_wa_W),
                          .stall_F(stall_F), .stall_D(stall_D), .flush_D(flush_D), .flush_E(flush_E),
                          .fwd_br(fwd_br), .fwdA_E(fwdA_E), .fwdB_E(fwdB_E) );
+
+    assign address = dp.MEMORY.o_alu_out;
+    assign we_dm_M = dp.MEMORY.o_we_dm;
 
 endmodule

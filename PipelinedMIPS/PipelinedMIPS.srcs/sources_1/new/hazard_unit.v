@@ -6,7 +6,7 @@ module hazard_unit(
     output           stall_F, stall_D, flush_D, flush_E, fwd_br,
     output reg [1:0] fwdA_E, fwdB_E );
 
-    wire j_stall, b_stall, sw_stall, jtr_flush;
+    wire j_stall, b_stall, lw_stall, sw_stall, jtr_flush;
 
     assign j_stall  = (pc_src_E == 2'b10) ? 1'b1 : 1'b0;   // stall if jumped in DECODE
     assign b_stall  = (pc_src_E == 2'b01) ? 1'b1 : 1'b0;   // stall if branched in DECODE

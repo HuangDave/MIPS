@@ -1,25 +1,28 @@
 
 module SoC(
-    input clk, rst,
-    );
+    input         clk, rst,
+    input  [4:0]  rf_ra3,
+    input  [31:0] gpi1, gpi2,
+    output [31:0] rf_rd3, gpo1, gpo2 );
 
     wire        we, we1, we2;
     wire [1:0]  sel;
     wire [31:0] address, wd, rd_dm_W, fact_rd, gpio_rd;
+    reg  [31:0] rd;
 
-    AD   ad   ( .we(we), .a(a), .we1(we1), .we2(we2), .sel(sel) );
+    AD   ad   ( .we(we), .a(address[3:2]), .we1(we1), .we2(we2), .sel(sel) );
 
     MIPS mips ( .clk(clk), .rst(rst),
-                .rf_ra3(),
-                .pc_current(), .instr(), .rf_rd3() );
+                .rf_ra3(rf_ra3), .rd(rd),
+                .address(address), .rf_rd3(rf_rd3) );
 
     FA   fa   ( .clk(clk), .rst(rst),
                 .we(we1), .a(address[3:2]), .wd(wd[3:0]),
-                .rd() );
+                .rd(fact_rd) );
 
     GPIO gpio ( .clk(clk), .rst(rst),
-                .we(we2), .a(address[3:2]), .wd(wd), .gpi1(), .gpi2(),
-                .gpo1(g[op]), .gpo2(), .rd() );
+                .we(we2), .a(address[3:2]), .wd(wd), .gpi1(gpi1), .gpi2(gpi2),
+                .gpo1(gpo1), .gpo2(gpo2), .rd(gpio_rd) );
 
     always @ ( * ) begin
         case (sel)

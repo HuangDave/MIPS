@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log GPIO.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source GPIO.tcl
+EAStep vivado -log SoC.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source SoC.tcl

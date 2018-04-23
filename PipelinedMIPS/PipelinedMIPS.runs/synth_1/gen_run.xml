@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1524391981">
-  <File Type="PA-TCL" Name="GPIO.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="GPIO_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="GPIO_reports.tcl"/>
-  <File Type="RDS-RDS" Name="GPIO.vds"/>
-  <File Type="RDS-UTIL" Name="GPIO_utilization_synth.rpt"/>
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1524453860">
+  <File Type="PA-TCL" Name="SoC.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="SoC_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="SoC_reports.tcl"/>
+  <File Type="RDS-RDS" Name="SoC.vds"/>
+  <File Type="RDS-UTIL" Name="SoC_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="datapath_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="GPIO.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="GPIO_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="GPIO_timing_summary_synth.pb"/>
+  <File Type="RDS-DCP" Name="SoC.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="SoC_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="SoC_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/AD.v">
@@ -18,7 +18,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/dp_parts.v">
+    <File Path="$PSRCDIR/sources_1/new/FA.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -32,25 +32,8 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/fact.v">
+    <File Path="$PSRCDIR/sources_1/new/MIPS.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/fact_parts.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/FA.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -58,7 +41,6 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/control_unit.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -66,7 +48,6 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/cu_parts.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -74,7 +55,27 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/datapath.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/dp_parts.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/fact.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/fact_parts.v">
+      <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -82,7 +83,6 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/hazard_unit.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -90,7 +90,6 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/mem_parts.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -98,7 +97,6 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/mul.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -106,15 +104,13 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/pipeline_reg.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/MIPS.v">
+    <File Path="$PSRCDIR/sources_1/new/SoC.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -128,7 +124,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/SoC.v">
+    <File Path="$PSRCDIR/sources_1/new/fpga_top.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -138,7 +134,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="GPIO"/>
+      <Option Name="TopModule" Val="SoC"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
