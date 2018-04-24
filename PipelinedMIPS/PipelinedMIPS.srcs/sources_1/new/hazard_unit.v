@@ -1,26 +1,34 @@
 
 module hazard_unit(
-    input            branch_D, dm2reg_E, rf_we_E, rf_we_M, rf_we_W,
+    input            clk, rst,
+    input            branch_D, we_dm_D, dm2reg_E, dm2reg_M, rf_we_E, rf_we_M, rf_we_W,
     input [1:0]      pc_src_E,
     input [4:0]      rs_D, rt_D, rs_E, rt_E, rf_wa_E, rf_wa_M, rf_wa_W,
     output           stall_F, stall_D, flush_D, flush_E,
-    output reg [1:0] br_fwdA_D, br_fwdB_D, fwdA_E, fwdB_E );
+    output reg [1:0] br_fwdA_D, br_fwdB_D, mul_fwdA, mul_fwdB, fwdA_E, fwdB_E );
 
+    // stall / flush logic
     wire j_stall, b_stall, lw_stall, sw_stall, jtr_flush;
 
-    assign j_stall  = (pc_src_E == 2'b10) ? 1'b1 : 1'b0;   // stall if jumped in DECODE
-    assign b_stall  = (pc_src_E == 2'b01) ? 1'b1 : 1'b0;   // stall if branched in DECODE
-    assign sw_stall = (rs_D & rf_wa_E) & rf_we_E;           // stall a cycle if prev instruction is writing to addr of data to store
-    assign lw_stall = ( (rs_D & rs_E) | (rt_D & rt_E) & dm2reg_E );
+    assign j_stall   = (pc_src_E == 2'b10) ? 1'b1 : 1'b0;   // stall if jumped in DECODE
+    assign b_stall   = (pc_src_E == 2'b01) ? 1'b1 : 1'b0;   // stall if branched in DECODE
+
+    assign sw_stall  = ( (rs_D & rf_wa_E) | (rt_D & rf_wa_E) ) & rf_we_E & we_dm_D;           // stall a cycle if prev instruction is writing to addr of data to store
+    // assign lw_stall  = ( (rs_D & rs_E) | (rt_D & rt_E) ) & dm2reg_E;
+
+    // assign mul_stall = ( ( (rs_D | rt_D) & rf_wa_E ) & rf_we_E & dm2reg_E); // stall if lw instruction before multu, dm_rd won't be ready until M stage
 
     assign jtr_flush = (pc_src_E == 2'b11) ? 1'b1 : 1'b0;  // flush the jtr instruction in EXECUTE so F and D doesnt get to be stalled
 
-    assign stall_F = sw_stall | b_stall | j_stall;
+    assign stall_F = sw_stall | b_stall | j_stall | jtr_flush; // | mul_stall;
 
-    assign stall_D = sw_stall;
-    assign flush_D = (b_stall | j_stall) & stall_F;
+    assign stall_D = sw_stall; // | mul_stall;
+    assign flush_D = (b_stall | j_stall | jtr_flush) & stall_F;
 
-    assign flush_E = jtr_flush;
+
+    //dreg #(1) stall_D_reg ( .clk(clk), .rst(rst), .en(1'b1), .D(stall_D & stall_F), .Q(flush_E) );
+
+    assign flush_E = 1'b0;
 
     // branch froward unit
     always @ ( branch_D, rs_D, rt_D, rf_wa_E, rf_wa_M, rf_we_E, rf_we_M ) begin
@@ -32,6 +40,17 @@ module hazard_unit(
         if      ( branch_D & (rt_D != 5'b0) & (rt_D == rf_wa_E) & rf_we_E ) br_fwdB_D = 2'b01;
         else if ( branch_D & (rt_D != 5'b0) & (rt_D == rf_wa_M) & rf_we_M ) br_fwdB_D = 2'b10;
         else                                                                br_fwdB_D = 2'b00;
+    end
+
+    // pipelined multu forward unit
+    always @ ( rs_D, rt_D, rf_wa_M, rf_wa_W, rf_we_M, rf_we_W, dm2reg_M ) begin
+        if      ( (rs_D != 5'b0) & (rs_D == rf_wa_M) & rf_we_M ) mul_fwdA = { 1'b1, dm2reg_M };
+        else if ( (rs_D != 5'b0) & (rs_D == rf_wa_W) & rf_we_W ) mul_fwdA = 2'b01;
+        else                                                     mul_fwdA = 2'b00;
+
+        if      ( (rt_D != 5'b0) & (rt_D == rf_wa_M) & rf_we_M ) mul_fwdB = { 1'b1, dm2reg_M };
+        else if ( (rt_D != 5'b0) & (rt_D == rf_wa_W) & rf_we_W ) mul_fwdB = 2'b01;
+        else                                                     mul_fwdB = 2'b00;
     end
 
     // alu forward unit

@@ -20,10 +20,10 @@ module tb_FA;
 
     wire [31:0] res     = DUT.res_reg.Q;
 
-    reg [31:0] factorial; // expected fact output
+    reg [31:0] factorial;                   // expected fact output
 
-    integer n;     // factorial input
-    integer i = 0; // used to track factorial
+    integer n;                              // factorial input
+    integer i = 0;                          // used to track factorial
     integer failures = 0;
 
     task TICK;  begin #5 clk = 1; #5 clk = 0; end endtask
@@ -36,16 +36,16 @@ module tb_FA;
             wd = n;
             we = 1'b1;
             a = 2'b00;
-            TICK;               // load n into in_reg
+            TICK;                           // load n into in_reg
 
             a = 2'b01;
             wd = 4'b0001;
-            TICK;               // load go and go_pulse
+            TICK;                           // load go and go_pulse
 
-            a = 2'b10;          // read err and done flag
+            a = 2'b10;                      // read err and done flag
             i = n;
 
-            we = 1'b0; TICK;    // disable we on go
+            we = 1'b0; TICK;                // disable we on go
 
             if (n != 13) begin
                 factorial = 1;
@@ -56,14 +56,14 @@ module tb_FA;
                 end
             end
 
-            TICK;               // clock err and done into reg
+            TICK;                           // clock err and done into reg
 
-            if (rd[0] != !(n == 13)) begin // check done flag
+            if (rd[0] != !(n == 13)) begin  // check done flag
                 $display("done - expected: %1b, result: %1b", 1'b1, rd[0]);
                 failures = failures + 1;
             end
 
-            if (rd[1] != (n == 13)) begin // check err flag
+            if (rd[1] != (n == 13)) begin   // check err flag
                 $display("err - expected: %1b, result: %1b", 1'b1, rd[1]);
                 failures = failures + 1;
             end

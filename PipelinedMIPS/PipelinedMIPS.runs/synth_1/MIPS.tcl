@@ -56,4 +56,4 @@ synth_design -top MIPS -part xc7a100tcsg324-1
 # disable binary constraint mode for synth run checkpoints
 set_param constraints.enableBinaryConstraints false
 write_checkpoint -force -noxdef MIPS.dcp
-create_report "synth_1_synth_report_utilization_0" "report_utilization -file MIPS_utilization_synth.rpt -pb datapath_utilization_synth.pb"
+create_report "synth_1_synth_report_utilization_0" "report_utilization -file MIPS_utilization_synth.rpt -pb MIPS_utilization_synth.pb"
