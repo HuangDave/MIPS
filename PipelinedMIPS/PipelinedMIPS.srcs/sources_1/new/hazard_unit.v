@@ -5,7 +5,7 @@ module hazard_unit(
     input [1:0]      pc_src_E,
     input [4:0]      rs_D, rt_D, rs_E, rt_E, rf_wa_E, rf_wa_M, rf_wa_W,
     output           stall_F, stall_D, flush_D, flush_E,
-    output reg [1:0] br_fwdA_D, br_fwdB_D, mul_fwdA, mul_fwdB, fwdA_E, fwdB_E );
+    output reg [1:0] br_fwdA_D, br_fwdB_D, mul_fwdA_D, mul_fwdB_D, fwdA_E, fwdB_E );
 
     // stall / flush logic
     wire j_stall, b_stall, lw_stall, sw_stall, jtr_flush;
@@ -44,13 +44,13 @@ module hazard_unit(
 
     // pipelined multu forward unit
     always @ ( rs_D, rt_D, rf_wa_M, rf_wa_W, rf_we_M, rf_we_W, dm2reg_M ) begin
-        if      ( (rs_D != 5'b0) & (rs_D == rf_wa_M) & rf_we_M ) mul_fwdA = { 1'b1, dm2reg_M };
-        else if ( (rs_D != 5'b0) & (rs_D == rf_wa_W) & rf_we_W ) mul_fwdA = 2'b01;
-        else                                                     mul_fwdA = 2'b00;
+        if      ( (rs_D != 5'b0) & (rs_D == rf_wa_M) & rf_we_M ) mul_fwdA_D = { 1'b1, dm2reg_M };
+        else if ( (rs_D != 5'b0) & (rs_D == rf_wa_W) & rf_we_W ) mul_fwdA_D = 2'b01;
+        else                                                     mul_fwdA_D = 2'b00;
 
-        if      ( (rt_D != 5'b0) & (rt_D == rf_wa_M) & rf_we_M ) mul_fwdB = { 1'b1, dm2reg_M };
-        else if ( (rt_D != 5'b0) & (rt_D == rf_wa_W) & rf_we_W ) mul_fwdB = 2'b01;
-        else                                                     mul_fwdB = 2'b00;
+        if      ( (rt_D != 5'b0) & (rt_D == rf_wa_M) & rf_we_M ) mul_fwdB_D = { 1'b1, dm2reg_M };
+        else if ( (rt_D != 5'b0) & (rt_D == rf_wa_W) & rf_we_W ) mul_fwdB_D = 2'b01;
+        else                                                     mul_fwdB_D = 2'b00;
     end
 
     // alu forward unit

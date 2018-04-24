@@ -3,7 +3,7 @@ module datapath (
     input         clk, rst,
     input [4:0]   rf_ra3,
     input         branch_D, jump_D, jal_D, jr_D, r_type_D, alu_src_D, shift_D, we_hi_lo_D, we_dm_D, rf_we_D, dm2reg_D, [1:0] res2reg_D, [2:0] alu_ctrl_D,
-    input         stall_F, stall_D, flush_D, flush_E, [1:0] br_fwdA_D, br_fwdB_D, mul_fwdA, mul_fwdB, fwdA_E, fwdB_E,
+    input         stall_F, stall_D, flush_D, flush_E, [1:0] br_fwdA_D, br_fwdB_D, mul_fwdA_D, mul_fwdB_D, fwdA_E, fwdB_E,
     output        dm2reg_E, dm2reg_M, rf_we_E, rf_we_M, rf_we_W,
     output [1:0]  pc_src_E,
     output [4:0]  rs_D, rt_D, rs_E, rt_E, rf_wa_E, rf_wa_M, rf_wa_W,
@@ -84,8 +84,8 @@ module datapath (
                           .i_rs(rs_D), .i_rt(rt_D), .i_rf_wa(rf_wa_D), .i_rf_rd1(rf_rd1_D), .i_rf_rd2(rf_rd2_D), .i_shamt(shamt_D), .i_sext_imm(sext_imm_D), .i_pc_plus8(pc_plus8_D),
                           .o_rs(rs_E), .o_rt(rt_E), .o_rf_wa(rf_wa_E), .o_rf_rd1(rf_rd1_E), .o_rf_rd2(rf_rd2_E), .o_shamt(shamt_E), .o_sext_imm(sext_imm_E), .o_pc_plus8(pc_plus8_E) );
 
-    mux4 mul_fwdB_mux   ( .sel(mul_fwdA), .a(rf_rd1_D), .b(rf_wd_W), .c(alu_out_M), .d(rd_dm_M), .y(mul_srcA_D) );
-    mux4 mul_fwdA_mux   ( .sel(mul_fwdB), .a(rf_rd2_D), .b(rf_wd_W), .c(alu_out_M), .d(rd_dm_M), .y(mul_srcB_D) );
+    mux4 mul_fwdB_mux   ( .sel(mul_fwdA_D), .a(rf_rd1_D), .b(rf_wd_W), .c(alu_out_M), .d(rd_dm_M), .y(mul_srcA_D) );
+    mux4 mul_fwdA_mux   ( .sel(mul_fwdB_D), .a(rf_rd2_D), .b(rf_wd_W), .c(alu_out_M), .d(rd_dm_M), .y(mul_srcB_D) );
     pipelined_mul mul   ( .clk(clk), .rst(flush_E), .a(mul_srcA_D), .b(mul_srcB_D), .hi(mul_hi_out_M), .lo(mul_lo_out_M) ); // 2-stage pipelined mul, hi and lo ready at WRITEBACK
 
     mux3    fwdA_mux    ( .sel(fwdA_E),  .a(rf_rd1_E), .b(rf_wd_W), .c(alu_out_M), .y(srcA_E) );
