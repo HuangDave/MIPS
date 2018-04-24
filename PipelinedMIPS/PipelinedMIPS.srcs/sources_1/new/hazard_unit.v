@@ -1,11 +1,11 @@
 
 module hazard_unit(
-    input            clk, rst,
+    //input            clk, rst,
     input            branch_D, we_dm_D, dm2reg_E, dm2reg_M, rf_we_E, rf_we_M, rf_we_W,
     input [1:0]      pc_src_E,
     input [4:0]      rs_D, rt_D, rs_E, rt_E, rf_wa_E, rf_wa_M, rf_wa_W,
     output           stall_F, stall_D, flush_D, flush_E,
-    output reg [1:0] br_fwdA_D, br_fwdB_D, mul_fwdA_D, mul_fwdB_D, fwdA_E, fwdB_E );
+    output reg [1:0] br_fwdA_D, br_fwdB_D, mul_fwdA_D, mul_fwdB_D, alu_fwdA_E, alu_fwdB_E );
 
     // stall / flush logic
     wire j_stall, b_stall, lw_stall, sw_stall, jtr_flush;
@@ -55,12 +55,12 @@ module hazard_unit(
 
     // alu forward unit
     always @ ( rs_E, rt_E, rf_wa_M, rf_wa_W, rf_we_M, rf_we_W ) begin
-        if      ( (rs_E != 5'b0) & (rs_E == rf_wa_M) & rf_we_M ) fwdA_E = 2'b10;
-        else if ( (rs_E != 5'b0) & (rs_E == rf_wa_W) & rf_we_W ) fwdA_E = 2'b01;
-        else                                                     fwdA_E = 2'b00;
+        if      ( (rs_E != 5'b0) & (rs_E == rf_wa_M) & rf_we_M ) alu_fwdA_E = 2'b10;
+        else if ( (rs_E != 5'b0) & (rs_E == rf_wa_W) & rf_we_W ) alu_fwdA_E = 2'b01;
+        else                                                     alu_fwdA_E = 2'b00;
 
-        if      ( (rt_E != 5'b0) & (rt_E == rf_wa_M) & rf_we_M ) fwdB_E = 2'b10;
-        else if ( (rt_E != 5'b0) & (rt_E == rf_wa_W) & rf_we_W ) fwdB_E = 2'b01;
-        else                                                     fwdB_E = 2'b00;
+        if      ( (rt_E != 5'b0) & (rt_E == rf_wa_M) & rf_we_M ) alu_fwdB_E = 2'b10;
+        else if ( (rt_E != 5'b0) & (rt_E == rf_wa_W) & rf_we_W ) alu_fwdB_E = 2'b01;
+        else                                                     alu_fwdB_E = 2'b00;
     end
 endmodule

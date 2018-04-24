@@ -3,7 +3,7 @@ module datapath (
     input         clk, rst,
     input [4:0]   rf_ra3,
     input         branch_D, jump_D, jal_D, jr_D, r_type_D, alu_src_D, shift_D, we_hi_lo_D, we_dm_D, rf_we_D, dm2reg_D, [1:0] res2reg_D, [2:0] alu_ctrl_D,
-    input         stall_F, stall_D, flush_D, flush_E, [1:0] br_fwdA_D, br_fwdB_D, mul_fwdA_D, mul_fwdB_D, fwdA_E, fwdB_E,
+    input         stall_F, stall_D, flush_D, flush_E, [1:0] br_fwdA_D, br_fwdB_D, mul_fwdA_D, mul_fwdB_D, alu_fwdA_E, alu_fwdB_E,
     output        dm2reg_E, dm2reg_M, rf_we_E, rf_we_M, rf_we_W,
     output [1:0]  pc_src_E,
     output [4:0]  rs_D, rt_D, rs_E, rt_E, rf_wa_E, rf_wa_M, rf_wa_W,
@@ -75,7 +75,7 @@ module datapath (
     wire        we_hi_lo_E, we_dm_E, alu_src_E, shift_E;
     wire [1:0]  res2reg_E;
     wire [2:0]  alu_ctrl_E;
-    wire [31:0] rf_rd1_E, rf_rd2_E, shamt_E, sext_imm_E, srcB_pre, srcA_E, srcB_E, dm_wd_E, pc_plus8_E;
+    wire [31:0] rf_rd1_E, rf_rd2_E, shamt_E, sext_imm_E, alu_srcB_pre, alu_srcA_E, alu_srcB_E, dm_wd_E, pc_plus8_E;
     wire [31:0] rd_dm_M, mul_srcA_D, mul_srcB_D, mul_hi_out_M, mul_lo_out_M;
 
     EXECUTE EXECUTE     ( .clk(clk), .rst(flush_E),
@@ -88,12 +88,12 @@ module datapath (
     mux4 mul_fwdA_mux   ( .sel(mul_fwdB_D), .a(rf_rd2_D), .b(rf_wd_W), .c(alu_out_M), .d(rd_dm_M), .y(mul_srcB_D) );
     pipelined_mul mul   ( .clk(clk), .rst(flush_E), .a(mul_srcA_D), .b(mul_srcB_D), .hi(mul_hi_out_M), .lo(mul_lo_out_M) ); // 2-stage pipelined mul, hi and lo ready at WRITEBACK
 
-    mux3    fwdA_mux    ( .sel(fwdA_E),  .a(rf_rd1_E), .b(rf_wd_W), .c(alu_out_M), .y(srcA_E) );
-    mux3    fwdB_mux    ( .sel(fwdB_E),  .a(rf_rd2_E), .b(rf_wd_W), .c(alu_out_M), .y(dm_wd_E) );
-    mux2    imm_mux     ( .sel(alu_src_E), .a(dm_wd_E), .b(sext_imm_E), .y(srcB_pre) );
-    mux2  alu_shift_mux ( .sel(shift_E), .a(srcB_pre), .b(shamt_E), .y(srcB_E) );
+    mux3    alu_fwdA_mux    ( .sel(alu_fwdA_E),  .a(rf_rd1_E), .b(rf_wd_W), .c(alu_out_M), .y(alu_srcA_E) );
+    mux3    alu_fwdB_mux    ( .sel(alu_fwdB_E),  .a(rf_rd2_E), .b(rf_wd_W), .c(alu_out_M), .y(dm_wd_E) );
+    mux2    imm_mux     ( .sel(alu_src_E), .a(dm_wd_E), .b(sext_imm_E), .y(alu_srcB_pre) );
+    mux2  alu_shift_mux ( .sel(shift_E), .a(alu_srcB_pre), .b(shamt_E), .y(alu_srcB_E) );
 
-    alu     alu         ( .op(alu_ctrl_E), .a(srcA_E), .b(srcB_E), .y(alu_out_E) );
+    alu     alu         ( .op(alu_ctrl_E), .a(alu_srcA_E), .b(alu_srcB_E), .y(alu_out_E) );
 
     // -------------------------------------------------------------------------------------------------------- //
     //                                                MEMORY                                                    //                                                                                                //
