@@ -3,14 +3,22 @@ module datapath (
     input         clk, rst,
     input [4:0]   rf_ra3,
     input         branch_D, jump_D, jal_D, jr_D, r_type_D, alu_src_D, shift_D, we_hi_lo_D, we_dm_D, rf_we_D, dm2reg_D, [1:0] res2reg_D, [2:0] alu_ctrl_D,
-    input         stall_F, stall_D, flush_D, flush_E, [1:0] br_fwdA_D, br_fwdB_D, mul_fwdA_D, mul_fwdB_D, alu_fwdA_E, alu_fwdB_E,
-    output        dm2reg_E, dm2reg_M, rf_we_E, rf_we_M, rf_we_W,
-    output [1:0]  pc_src_E,
-    output [4:0]  rs_D, rt_D, rs_E, rt_E, rf_wa_E, rf_wa_M, rf_wa_W,
+    //input         stall_F, stall_D, flush_D, flush_E, [1:0] br_fwdA_D, br_fwdB_D, mul_fwdA_D, mul_fwdB_D, alu_fwdA_E, alu_fwdB_E,
+    //output        dm2reg_E, dm2reg_M, rf_we_E, rf_we_M, rf_we_W,
+    //output [1:0]  pc_src_E,
+    //output [4:0]  rs_D, rt_D, rs_E, rt_E, rf_wa_E, rf_wa_M, rf_wa_W,
     output [31:0] instr_D,
     output [31:0] pc_current, instr, rf_rd3 );
 
     wire [31:0] rf_wd_W;
+
+    wire dm2reg_E, dm2reg_M, rf_we_E, rf_we_M, rf_we_W;
+
+    // forwarding
+    wire       stall_F, stall_D, flush_D, flush_E;
+    wire [1:0] br_fwdA_D, br_fwdB_D, mul_fwdA_D, mul_fwdB_D, alu_fwdA_E, alu_fwdB_E;
+    wire [1:0] pc_src_E;
+    wire [4:0] rs_D, rt_D, rs_E, rt_E, rf_wa_E, rf_wa_M, rf_wa_W;
 
     // -------------------------------------------------------------------------------------------------------- //
     //                                                  FETCH                                                   //                                                                                                //
@@ -133,5 +141,28 @@ module datapath (
 
     mux4        rf_res_mux ( .sel(res2reg_W), .a(alu_out_W), .b(hi_out_W), .c(lo_out_W), .d(pcp8), .y(res_W) );
     mux2        rf_wd_mux  ( .sel(dm2reg_W),  .a(res_W),     .b(rd_dm_W), .y(rf_wd_W) );
+
+    // -------------------------------------------------------------------------------------------------------- //
+    //                                             HAZARD UNIT                                                  //                                                                                                //
+    // -------------------------------------------------------------------------------------------------------- //
+
+    hazard_unit     hu ( .clk(clk), .rst(rst),
+                             //.multu_D(multu_D),
+                         .branch_D(branch_D), .we_dm_D(we_dm_D), .dm2reg_E(dm2reg_E), .dm2reg_M(dm2reg_M), .rf_we_E(rf_we_E), .rf_we_M(rf_we_M), .rf_we_W(rf_we_W), .pc_src_E(pc_src_E),
+                         .rs_D(rs_D), .rt_D(rt_D), .rs_E(rs_E), .rt_E(rt_E), .rf_wa_E(rf_wa_E), .rf_wa_M(rf_wa_M), .rf_wa_W(rf_wa_W),
+                         .stall_F(stall_F), .stall_D(stall_D), .flush_D(flush_D), .flush_E(flush_E),
+                         .br_fwdA_D(br_fwdA_D), .br_fwdB_D(br_fwdB_D), .mul_fwdA_D(mul_fwdA_D), .mul_fwdB_D(mul_fwdB_D), .alu_fwdA_E(alu_fwdA_E), .alu_fwdB_E(alu_fwdB_E) );
+
+    //debug
+    reg  [31:0] instr1;
+    wire [31:0] instr2, instr_W;
+
+    always @ ( posedge clk ) begin
+        instr1 <= flush_E ? 0 : instr_D;
+    end
+
+    //dreg        instE_reg     ( .clk(clk), .rst(flush_E), .en(1'b1), .D(instr_D), .Q(instr1) );
+    dreg        instM_reg     ( .clk(clk), .rst(1'b0),    .en(1'b1), .D(instr1), .Q(instr2) );
+    dreg        instW_reg     ( .clk(clk), .rst(1'b0),    .en(1'b1), .D(instr2), .Q(instr_W) );
 
 endmodule

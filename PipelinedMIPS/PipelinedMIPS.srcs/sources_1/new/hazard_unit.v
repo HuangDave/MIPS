@@ -1,6 +1,6 @@
 
 module hazard_unit(
-    //input            clk, rst,
+    input            clk, rst,
     input            branch_D, we_dm_D, dm2reg_E, dm2reg_M, rf_we_E, rf_we_M, rf_we_W,
     input [1:0]      pc_src_E,
     input [4:0]      rs_D, rt_D, rs_E, rt_E, rf_wa_E, rf_wa_M, rf_wa_W,
@@ -10,25 +10,20 @@ module hazard_unit(
     // stall / flush logic
     wire j_stall, b_stall, lw_stall, sw_stall, jtr_flush;
 
-    assign j_stall   = (pc_src_E == 2'b10) ? 1'b1 : 1'b0;   // stall if jumped in DECODE
-    assign b_stall   = (pc_src_E == 2'b01) ? 1'b1 : 1'b0;   // stall if branched in DECODE
+    assign j_stall   = (pc_src_E == 2'b10) | (pc_src_E == 2'b11);   // stall and flush next instruction if j, jal, or jtr in DECODE
+    assign b_stall   = (pc_src_E == 2'b01);                       // stall if branched in DECODE
 
     assign sw_stall  = ( (rs_D & rf_wa_E) | (rt_D & rf_wa_E) ) & rf_we_E & we_dm_D;           // stall a cycle if prev instruction is writing to addr of data to store
-    // assign lw_stall  = ( (rs_D & rs_E) | (rt_D & rt_E) ) & dm2reg_E;
+    assign lw_stall  = ( (rs_D & rf_wa_M) | (rt_D & rf_wa_M) ) & rf_we_M & dm2reg_M;
 
-    // assign mul_stall = ( ( (rs_D | rt_D) & rf_wa_E ) & rf_we_E & dm2reg_E); // stall if lw instruction before multu, dm_rd won't be ready until M stage
+    assign mul_stall = ( ((rs_D & rf_wa_E) | (rt_D & rf_wa_E)) & rf_we_E & dm2reg_E); // stall if lw instruction before multu, dm_rd won't be ready until M stage
 
-    assign jtr_flush = (pc_src_E == 2'b11) ? 1'b1 : 1'b0;  // flush the jtr instruction in EXECUTE so F and D doesnt get to be stalled
+    assign stall_F = b_stall | j_stall | sw_stall | lw_stall; // | mul_stall;
 
-    assign stall_F = sw_stall | b_stall | j_stall | jtr_flush; // | mul_stall;
+    assign stall_D = sw_stall | lw_stall; // | mul_stall;
+    assign flush_D = (b_stall | j_stall ) & stall_F;
 
-    assign stall_D = sw_stall; // | mul_stall;
-    assign flush_D = (b_stall | j_stall | jtr_flush) & stall_F;
-
-
-    //dreg #(1) stall_D_reg ( .clk(clk), .rst(rst), .en(1'b1), .D(stall_D & stall_F), .Q(flush_E) );
-
-    assign flush_E = 1'b0;
+    dreg #(1) flush_E_reg ( clk, rst, 1'b1, stall_D, flush_E);
 
     // branch froward unit
     always @ ( branch_D, rs_D, rt_D, rf_wa_E, rf_wa_M, rf_we_E, rf_we_M ) begin

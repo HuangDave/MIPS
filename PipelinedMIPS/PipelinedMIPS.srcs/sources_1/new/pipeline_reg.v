@@ -2,14 +2,20 @@
 module DECODE (
     input             clk, rst, en,
     input      [31:0] i_instr, i_pc_plus4,
-    output reg [31:0] o_instr, o_pc_plus4 );
+    output     [31:0] o_instr, o_pc_plus4 );
+    //output reg [31:0] o_instr, o_pc_plus4 );
 
-    initial o_instr = 32'b0;
+    //initial o_instr = 32'b0;
 
+    dreg u0 ( clk, rst, ~en, i_instr, o_instr );
+    dreg u1 ( clk, rst, ~en, i_pc_plus4, o_pc_plus4);
+
+/*
     always @ ( posedge clk, posedge rst ) begin
         o_instr    <= rst ? 0 : ( en ? o_instr    : i_instr );
         o_pc_plus4 <= rst ? 0 : ( en ? o_pc_plus4 : i_pc_plus4 );
-    end
+    end */
+
 endmodule
 
 module EXECUTE (
@@ -21,7 +27,7 @@ module EXECUTE (
 
     initial o_pc_src = 2'b00;
 
-    always @ ( posedge clk, posedge rst ) begin
+    always @ ( posedge clk ) begin
         o_alu_src  <= rst ? 0 : i_alu_src ;
         o_shift    <= rst ? 0 : i_shift   ;
         o_we_hi_lo <= rst ? 0 : i_we_hi_lo;
@@ -30,7 +36,7 @@ module EXECUTE (
         o_dm2reg   <= rst ? 0 : i_dm2reg  ;
         o_res2reg  <= rst ? 0 : i_res2reg ;
         o_alu_ctrl <= rst ? 0 : i_alu_ctrl;
-        o_pc_src   <= i_pc_src  ;
+        o_pc_src   <= rst ? 0 : i_pc_src  ;
 
         o_rs       <= rst ? 0 : i_rs      ;
         o_rt       <= rst ? 0 : i_rt      ;
@@ -50,7 +56,7 @@ module MEMORY (
     input      [4:0] i_rf_wa,     [31:0] i_alu_out, i_dm_wd, i_pc_plus8,
     output reg [4:0] o_rf_wa, reg [31:0] o_alu_out, o_dm_wd, o_pc_plus8);
 
-    always @ ( posedge clk) begin
+    always @ ( posedge clk ) begin
         o_we_hi_lo <= rst ? 0 : i_we_hi_lo;
         o_we_dm    <= rst ? 0 : i_we_dm   ;
         o_rf_we    <= rst ? 0 : i_rf_we   ;

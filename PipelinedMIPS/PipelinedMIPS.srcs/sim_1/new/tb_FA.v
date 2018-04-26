@@ -26,13 +26,18 @@ module tb_FA;
     integer i = 0;                          // used to track factorial
     integer failures = 0;
 
-    task TICK;  begin #5 clk = 1; #5 clk = 0; end endtask
+    integer CC = 0;
+
+    task TICK;  begin #5 clk = 1; CC <= CC + 1; #5 clk = 0; end endtask
     task RESET; begin #5 rst = 1; #5 rst = 0; end endtask
 
     initial begin
         RESET; TICK;
+        
+        CC = 0;
 
         for (n = 0; n <= 13; n = n + 1) begin
+            CC = 0;
             wd = n;
             we = 1'b1;
             a = 2'b00;
@@ -57,7 +62,8 @@ module tb_FA;
             end
 
             TICK;                           // clock err and done into reg
-
+            
+            
             if (rd[0] != !(n == 13)) begin  // check done flag
                 $display("done - expected: %1b, result: %1b", 1'b1, rd[0]);
                 failures = failures + 1;
@@ -67,6 +73,8 @@ module tb_FA;
                 $display("err - expected: %1b, result: %1b", 1'b1, rd[1]);
                 failures = failures + 1;
             end
+            
+            CC = 0;
 
             TICK;
 
@@ -75,7 +83,7 @@ module tb_FA;
                 $display("rd - expected: %d, result: %d", factorial, rd);
                 failures = failures + 1;
             end
-
+            
             TICK;
         end
 
