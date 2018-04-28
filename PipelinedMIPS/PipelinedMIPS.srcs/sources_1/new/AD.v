@@ -16,3 +16,22 @@ module AD (
         endcase
     end
 endmodule
+
+module SoC_AD (
+    input         we,
+    input  [31:0] a,
+    output reg    wem, we1, we2, // we for dm, fa, gpio respectively
+    output [1:0]  sel );         // rd sel
+
+    assign sel = a[1:0];
+
+    always @ ( we, a ) begin
+        case (a)
+            32'h9xx: we2 = we; // GPIO
+            32'h8xx: we1 = we; // Factorial Accelerator
+            default: wem = we; // Data Memory
+        endcase
+    end
+
+
+endmodule

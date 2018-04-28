@@ -5,16 +5,26 @@ module SoC(
     input  [31:0] gpi1, gpi2,
     output [31:0] rf_rd3, gpo1, gpo2 );
 
-    wire        we, we1, we2;
+    wire        we1, we2;
     wire [1:0]  sel;
-    wire [31:0] address, wd, rd_dm_W, fact_rd, gpio_rd;
-    reg  [31:0] rd;
+    wire [31:0] fact_rd, gpio_rd;
+    reg  [31:0] soc_rd;
 
-    AD   ad   ( .we(we), .a(address[3:2]), .we1(we1), .we2(we2), .sel(sel) );
+    // expose data memory i/o for SoC
+    wire        we_dm;
+    wire [31:0] address, rd, wd;
+
+    assign we_dm   = mips.dp.dm.we;
+    assign address = mips.dp.dm.a;
+    assign rd      = mips.dp.dm.q;
+    assign wd      = mips.dp.dm.d;
+
+    AD   ad   ( .we(we_dm), .a(address[3:2]), .we1(we1), .we2(we2), .sel(sel) );
 
     MIPS mips ( .clk(clk), .rst(rst),
-                .rf_ra3(rf_ra3), .rd(rd),
-                .address(address), .rf_rd3(rf_rd3) );
+                .rf_ra3(rf_ra3),
+                .rd(rd), .dm_rd_M(soc_rd),
+                .rf_rd3(rf_rd3) );
 
     FA   fa   ( .clk(clk), .rst(rst),
                 .we(we1), .a(address[3:2]), .wd(wd[3:0]),
@@ -26,11 +36,11 @@ module SoC(
 
     always @ ( * ) begin
         case (sel)
-            2'b00:   rd = rd_dm_W;
-            2'b01:   rd = rd_dm_W;
-            2'b10:   rd = fact_rd;
-            2'b11:   rd = gpio_rd;
-            default: rd = 32'bx;
+            2'b00:   soc_rd = rd;
+            2'b01:   soc_rd = rd;
+            2'b10:   soc_rd = fact_rd;
+            2'b11:   soc_rd = gpio_rd;
+            default: soc_rd = 32'bx;
         endcase
     end
 

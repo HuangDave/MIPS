@@ -1,13 +1,13 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
----------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-| Date         : Wed Apr 25 22:54:16 2018
+| Date         : Fri Apr 27 12:10:46 2018
 | Host         : DESKTOP-OQNQAOP running 64-bit major release  (build 9200)
-| Command      : report_utilization -file MIPS_utilization_synth.rpt -pb MIPS_utilization_synth.pb
-| Design       : MIPS
+| Command      : report_utilization -file SoC_utilization_synth.rpt -pb MIPS_utilization_synth.pb
+| Design       : SoC
 | Device       : 7a100tcsg324-1
 | Design State : Synthesized
----------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------
 
 Utilization Design Information
 
@@ -30,13 +30,13 @@ Table of Contents
 +----------------------------+------+-------+-----------+-------+
 |          Site Type         | Used | Fixed | Available | Util% |
 +----------------------------+------+-------+-----------+-------+
-| Slice LUTs*                |  947 |     0 |     63400 |  1.49 |
-|   LUT as Logic             |  843 |     0 |     63400 |  1.33 |
+| Slice LUTs*                |  668 |     0 |     63400 |  1.05 |
+|   LUT as Logic             |  564 |     0 |     63400 |  0.89 |
 |   LUT as Memory            |  104 |     0 |     19000 |  0.55 |
 |     LUT as Distributed RAM |  104 |     0 |           |       |
 |     LUT as Shift Register  |    0 |     0 |           |       |
-| Slice Registers            |  628 |     0 |    126800 |  0.50 |
-|   Register as Flip Flop    |  628 |     0 |    126800 |  0.50 |
+| Slice Registers            |  306 |     0 |    126800 |  0.24 |
+|   Register as Flip Flop    |  306 |     0 |    126800 |  0.24 |
 |   Register as Latch        |    0 |     0 |    126800 |  0.00 |
 | F7 Muxes                   |    0 |     0 |     31700 |  0.00 |
 | F8 Muxes                   |    0 |     0 |     15850 |  0.00 |
@@ -57,9 +57,9 @@ Table of Contents
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
-| 218   |          Yes |           - |        Reset |
+| 65    |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
-| 410   |          Yes |       Reset |            - |
+| 241   |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -79,12 +79,11 @@ Table of Contents
 3. DSP
 ------
 
-+----------------+------+-------+-----------+-------+
-|    Site Type   | Used | Fixed | Available | Util% |
-+----------------+------+-------+-----------+-------+
-| DSPs           |    4 |     0 |       240 |  1.67 |
-|   DSP48E1 only |    4 |       |           |       |
-+----------------+------+-------+-----------+-------+
++-----------+------+-------+-----------+-------+
+| Site Type | Used | Fixed | Available | Util% |
++-----------+------+-------+-----------+-------+
+| DSPs      |    0 |     0 |       240 |  0.00 |
++-----------+------+-------+-----------+-------+
 
 
 4. IO and GT Specific
@@ -93,7 +92,7 @@ Table of Contents
 +-----------------------------+------+-------+-----------+-------+
 |          Site Type          | Used | Fixed | Available | Util% |
 +-----------------------------+------+-------+-----------+-------+
-| Bonded IOB                  |  136 |     0 |       210 | 64.76 |
+| Bonded IOB                  |  103 |     0 |       210 | 49.05 |
 | Bonded IPADs                |    0 |     0 |         2 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |         6 |  0.00 |
 | PHASER_REF                  |    0 |     0 |         6 |  0.00 |
@@ -149,21 +148,20 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| LUT6     |  444 |                 LUT |
-| FDRE     |  410 |        Flop & Latch |
-| FDCE     |  218 |        Flop & Latch |
-| LUT5     |  176 |                 LUT |
-| OBUF     |  129 |                  IO |
-| LUT2     |  113 |                 LUT |
+| LUT5     |  257 |                 LUT |
+| FDRE     |  241 |        Flop & Latch |
+| LUT6     |  197 |                 LUT |
 | RAMD32   |  108 |  Distributed Memory |
-| LUT4     |  107 |                 LUT |
-| LUT1     |   56 |                 LUT |
-| CARRY4   |   55 |          CarryLogic |
-| LUT3     |   43 |                 LUT |
+| OBUF     |   96 |                  IO |
+| LUT4     |   87 |                 LUT |
+| LUT3     |   72 |                 LUT |
+| FDCE     |   65 |        Flop & Latch |
 | RAMS32   |   36 |  Distributed Memory |
 | RAMS64E  |   32 |  Distributed Memory |
+| LUT2     |   21 |                 LUT |
+| CARRY4   |   14 |          CarryLogic |
 | IBUF     |    7 |                  IO |
-| DSP48E1  |    4 |    Block Arithmetic |
+| LUT1     |    6 |                 LUT |
 | BUFG     |    1 |               Clock |
 +----------+------+---------------------+
 

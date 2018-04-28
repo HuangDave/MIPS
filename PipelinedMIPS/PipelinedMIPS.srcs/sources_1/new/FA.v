@@ -1,10 +1,10 @@
 
 // 4-bit top level factorial accelerator
 module FA(
-    input             clk, rst,
-    input             we,
-    input      [1:0]  a,
-    input      [3:0]  wd,
+    input          clk, rst,
+    input          we,
+    input   [1:0]  a,
+    input   [3:0]  wd,
     output  [31:0] rd );
 
     wire        we1, we2, go, go_pulse, go_pulse_cmb, f_done, f_err, done, err, DONT_USE;

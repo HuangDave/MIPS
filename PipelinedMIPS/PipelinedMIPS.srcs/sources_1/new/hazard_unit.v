@@ -16,7 +16,7 @@ module hazard_unit(
     assign sw_stall  = ( (rs_D & rf_wa_E) | (rt_D & rf_wa_E) ) & rf_we_E & we_dm_D;           // stall a cycle if prev instruction is writing to addr of data to store
     assign lw_stall  = ( (rs_D & rf_wa_M) | (rt_D & rf_wa_M) ) & rf_we_M & dm2reg_M;
 
-    assign mul_stall = ( ((rs_D & rf_wa_E) | (rt_D & rf_wa_E)) & rf_we_E & dm2reg_E); // stall if lw instruction before multu, dm_rd won't be ready until M stage
+    // assign mul_stall = ( ((rs_D & rf_wa_E) | (rt_D & rf_wa_E)) & rf_we_E & dm2reg_E); // stall if lw instruction before multu, dm_rd won't be ready until M stage
 
     assign stall_F = b_stall | j_stall | sw_stall | lw_stall; // | mul_stall;
 

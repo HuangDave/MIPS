@@ -2,8 +2,8 @@
 
 module tb_MIPS;
     reg         clk, rst;
-
-    MIPS DUT ( .clk(clk), .rst(rst) );
+    wire [31:0] rd;
+    MIPS DUT ( .clk(clk), .rst(rst), .rd(rd), .dm_rd_M(rd) );
 
     wire [1:0] pc_src_D = DUT.dp.EXECUTE.i_pc_src;
     wire [1:0] pc_src_E = DUT.dp.EXECUTE.o_pc_src;
