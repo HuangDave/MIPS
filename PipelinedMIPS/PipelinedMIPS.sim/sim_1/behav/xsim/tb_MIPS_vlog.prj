@@ -1,10 +1,16 @@
 # compile verilog/system verilog design source files
 verilog xil_defaultlib  \
+"../../../../PipelinedMIPS.srcs/sources_1/new/AD.v" \
+"../../../../PipelinedMIPS.srcs/sources_1/new/FA.v" \
+"../../../../PipelinedMIPS.srcs/sources_1/new/GPIO.v" \
 "../../../../PipelinedMIPS.srcs/sources_1/new/MIPS.v" \
+"../../../../PipelinedMIPS.srcs/sources_1/new/SoC.v" \
 "../../../../PipelinedMIPS.srcs/sources_1/new/control_unit.v" \
 "../../../../PipelinedMIPS.srcs/sources_1/new/cu_parts.v" \
 "../../../../PipelinedMIPS.srcs/sources_1/new/datapath.v" \
 "../../../../PipelinedMIPS.srcs/sources_1/new/dp_parts.v" \
+"../../../../PipelinedMIPS.srcs/sources_1/new/fact.v" \
+"../../../../PipelinedMIPS.srcs/sources_1/new/fact_parts.v" \
 "../../../../PipelinedMIPS.srcs/sources_1/new/hazard_unit.v" \
 "../../../../PipelinedMIPS.srcs/sources_1/new/mem_parts.v" \
 "../../../../PipelinedMIPS.srcs/sources_1/new/mul.v" \

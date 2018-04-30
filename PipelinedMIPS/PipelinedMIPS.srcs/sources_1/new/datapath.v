@@ -153,7 +153,7 @@ module datapath (
 
     hazard_unit     hu ( .clk(clk), .rst(rst),
                              //.multu_D(multu_D),
-                         .branch_D(branch_D), .we_dm_D(we_dm_D), .dm2reg_E(dm2reg_E), .dm2reg_M(dm2reg_M), .rf_we_E(rf_we_E), .rf_we_M(rf_we_M), .rf_we_W(rf_we_W), .pc_src_E(pc_src_E),
+                         .branch_D(branch_D), .we_dm_D(we_dm_D), .dm2reg_E(dm2reg_E), .dm2reg_M(dm2reg_M), .rf_we_E(rf_we_E), .rf_we_M(rf_we_M), .rf_we_W(rf_we_W), .pc_src_D(pc_src_D), .pc_src_E(pc_src_E),
                          .rs_D(rs_D), .rt_D(rt_D), .rs_E(rs_E), .rt_E(rt_E), .rf_wa_E(rf_wa_E), .rf_wa_M(rf_wa_M), .rf_wa_W(rf_wa_W),
                          .stall_F(stall_F), .stall_D(stall_D), .flush_D(flush_D), .flush_E(flush_E),
                          .br_fwdA_D(br_fwdA_D), .br_fwdB_D(br_fwdB_D), .mul_fwdA_D(mul_fwdA_D), .mul_fwdB_D(mul_fwdB_D), .alu_fwdA_E(alu_fwdA_E), .alu_fwdB_E(alu_fwdB_E) );

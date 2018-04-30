@@ -16,8 +16,6 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 create_project -in_memory -part xc7a100tcsg324-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -58,6 +56,9 @@ read_verilog -library xil_defaultlib {
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
+read_xdc C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/constrs_1/new/SoC_fpga.xdc
+set_property used_in_implementation false [get_files C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/constrs_1/new/SoC_fpga.xdc]
+
 
 synth_design -top SoC -part xc7a100tcsg324-1
 

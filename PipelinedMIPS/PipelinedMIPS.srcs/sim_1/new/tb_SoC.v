@@ -29,6 +29,8 @@ module tb_SoC;
     wire [31:0] instr_M      = DUT.mips.dp.instM_reg.Q;
     wire [31:0] instr_W      = DUT.mips.dp.instW_reg.Q;
 
+    wire [31:0] wd_dm       = DUT.mips.dp.dm.d;
+
     wire [1:0]  fa_a      = DUT.fa.a;
     wire [1:0]  fa_we1    = DUT.fa.ad.we1;
     wire [1:0]  fa_we2    = DUT.fa.ad.we2;

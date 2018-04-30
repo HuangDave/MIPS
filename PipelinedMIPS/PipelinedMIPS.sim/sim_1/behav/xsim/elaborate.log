@@ -6,7 +6,7 @@ Starting static elaboration
 Completed static elaboration
 Starting simulation data flow analysis
 WARNING: [XSIM 43-4099] "C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/SoC.v" Line 2. Module SoC doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/AD.v" Line 20. Module SoC_AD doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/AD.v" Line 39. Module SoC_AD doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/MIPS.v" Line 2. Module MIPS doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/datapath.v" Line 2. Module datapath doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v" Line 21. Module mux4 doesn't have a timescale but at least one module in design has a timescale.
@@ -37,6 +37,7 @@ WARNING: [XSIM 43-4099] "C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/P
 WARNING: [XSIM 43-4099] "C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v" Line 21. Module mux4 doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v" Line 2. Module mux2 doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/hazard_unit.v" Line 2. Module hazard_unit doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v" Line 67. Module dreg(WIDTH=2) doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v" Line 67. Module dreg(WIDTH=1) doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v" Line 67. Module dreg doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v" Line 67. Module dreg doesn't have a timescale but at least one module in design has a timescale.
@@ -61,7 +62,7 @@ WARNING: [XSIM 43-4099] "C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/P
 WARNING: [XSIM 43-4099] "C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v" Line 2. Module mux2 doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/fact.v" Line 24. Module fact_CU doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/GPIO.v" Line 2. Module GPIO doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/AD.v" Line 1. Module AD doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/AD.v" Line 20. Module GPIO_AD doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v" Line 67. Module dreg doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v" Line 67. Module dreg doesn't have a timescale but at least one module in design has a timescale.
 Completed simulation data flow analysis
@@ -83,6 +84,7 @@ Compiling module xil_defaultlib.alu
 Compiling module xil_defaultlib.MEMORY
 Compiling module xil_defaultlib.dmem
 Compiling module xil_defaultlib.WRITEBACK
+Compiling module xil_defaultlib.dreg(WIDTH=2)
 Compiling module xil_defaultlib.dreg(WIDTH=1)
 Compiling module xil_defaultlib.hazard_unit
 Compiling module xil_defaultlib.datapath
@@ -100,6 +102,7 @@ Compiling module xil_defaultlib.fact_DP
 Compiling module xil_defaultlib.fact_CU
 Compiling module xil_defaultlib.fact
 Compiling module xil_defaultlib.FA
+Compiling module xil_defaultlib.GPIO_AD
 Compiling module xil_defaultlib.GPIO
 Compiling module xil_defaultlib.SoC
 Compiling module xil_defaultlib.tb_SoC
