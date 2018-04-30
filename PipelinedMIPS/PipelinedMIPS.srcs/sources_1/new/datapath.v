@@ -1,11 +1,15 @@
 
 module datapath (
     input         clk, rst,
-    input [4:0]   rf_ra3,
+    input  [4:0]  rf_ra3,
     input         branch_D, jump_D, jal_D, jr_D, r_type_D, alu_src_D, shift_D, we_hi_lo_D, we_dm_D, rf_we_D, dm2reg_D, [1:0] res2reg_D, [2:0] alu_ctrl_D,
-    input  [31:0] dm_rd_M,
     output [31:0] instr_D,
-    output [31:0] pc_current, instr, rd, rf_rd3 );
+    output [31:0] pc_current, instr, rf_rd3,
+
+    input         wem_M,                            // input and outputs for SoC
+    input  [31:0] soc_rd_M,
+    output        we_dm_M,
+    output [31:0] address_M, dm_rd_M, dm_wd_M );
 
     wire [31:0] rf_wd_W;
 
@@ -93,8 +97,10 @@ module datapath (
     mux4 mul_fwdA_mux   ( .sel(mul_fwdB_D), .a(rf_rd2_D), .b(rf_wd_W), .c(alu_out_M), .d(dm_rd_M), .y(mul_srcB_D) );
     pipelined_mul mul   ( .clk(clk), .rst(flush_E), .a(mul_srcA_D), .b(mul_srcB_D), .hi(mul_hi_out_M), .lo(mul_lo_out_M) ); // 2-stage pipelined mul, hi and lo ready at WRITEBACK
 
-    mux3 alu_fwdA_mux   ( .sel(alu_fwdA_E),  .a(rf_rd1_E), .b(rf_wd_W), .c(alu_out_M), .y(alu_srcA_pre_E) );
-    mux3 alu_fwdB_mux   ( .sel(alu_fwdB_E),  .a(rf_rd2_E), .b(rf_wd_W), .c(alu_out_M), .y(dm_wd_E) );
+    mux4 alu_fwdA_mux   ( .sel(alu_fwdA_E),  .a(rf_rd1_E), .b(rf_wd_W), .c(alu_out_M), .d(soc_rd_M), .y(alu_srcA_pre_E) );
+    mux4 alu_fwdB_mux   ( .sel(alu_fwdB_E),  .a(rf_rd2_E), .b(rf_wd_W), .c(alu_out_M), .d(soc_rd_M), .y(dm_wd_E) );
+    //mux3 alu_fwdA_mux   ( .sel(alu_fwdA_E),  .a(rf_rd1_E), .b(rf_wd_W), .c(alu_out_M), .y(alu_srcA_pre_E) );
+    //mux3 alu_fwdB_mux   ( .sel(alu_fwdB_E),  .a(rf_rd2_E), .b(rf_wd_W), .c(alu_out_M), .y(dm_wd_E) );
     mux2 alu_imm_mux    ( .sel(alu_src_E), .a(dm_wd_E), .b(sext_imm_E), .y(alu_srcB_E) );
     mux2 alu_shift_mux  ( .sel(shift_E), .a(alu_srcA_pre_E), .b(shamt_E), .y(alu_srcA_E) );
 
@@ -104,9 +110,11 @@ module datapath (
     //                                                MEMORY                                                    //                                                                                                //
     // -------------------------------------------------------------------------------------------------------- //
 
-    wire        we_hi_lo_M, we_dm_M;
+    wire        we_hi_lo_M;
     wire [1:0]  res2reg_M;
-    wire [31:0] rf_rd1_M, rf_rd2_M, dm_wd_M, pc_plus8_M;
+    wire [31:0] rf_rd1_M, rf_rd2_M, pc_plus8_M;
+
+    assign address_M = alu_out_M;
 
     MEMORY  MEMORY      ( .clk(clk), .rst(rst),
                           .i_we_hi_lo(we_hi_lo_E), .i_we_dm(we_dm_E), .i_rf_we(rf_we_E), .i_dm2reg(dm2reg_E), .i_res2reg(res2reg_E),
@@ -114,7 +122,7 @@ module datapath (
                           .i_rf_wa(rf_wa_E), .i_alu_out(alu_out_E), .i_dm_wd(dm_wd_E), .i_pc_plus8(pc_plus8_E),
                           .o_rf_wa(rf_wa_M), .o_alu_out(alu_out_M), .o_dm_wd(dm_wd_M), .o_pc_plus8(pc_plus8_M) );
 
-    dmem    dm          ( .clk(clk), .we(we_dm_M), .a(alu_out_M[7:2]), .d(dm_wd_M), .q(rd) );
+    dmem    dm          ( .clk(clk), .we(wem_M), .a(alu_out_M[7:2]), .d(dm_wd_M), .q(dm_rd_M) );
 
     // -------------------------------------------------------------------------------------------------------- //
     //                                             WRITEBACK                                                    //                                                                                                //
@@ -130,7 +138,7 @@ module datapath (
     WRITEBACK   WRITEBACK  ( .clk(clk),
                              .i_rf_we(rf_we_M), .i_dm2reg(dm2reg_M), .i_res2reg(res2reg_M),
                              .o_rf_we(rf_we_W), .o_dm2reg(dm2reg_W), .o_res2reg(res2reg_W),
-                             .i_rf_wa(rf_wa_M), .i_alu_out(alu_out_M), .i_rd_dm(dm_rd_M), .i_pc_plus8(pc_plus8_M),
+                             .i_rf_wa(rf_wa_M), .i_alu_out(alu_out_M), .i_rd_dm(soc_rd_M), .i_pc_plus8(pc_plus8_M),
                              .o_rf_wa(rf_wa_W), .o_alu_out(alu_out_W), .o_rd_dm(rd_dm_W), .o_pc_plus8(pc_plus8_W) );
 
     dreg        hi_reg     ( .clk(clk), .rst(1'b0), .en(we_hi_lo_M), .D(mul_hi_out_M), .Q(hi_out_W) );
@@ -149,6 +157,10 @@ module datapath (
                          .rs_D(rs_D), .rt_D(rt_D), .rs_E(rs_E), .rt_E(rt_E), .rf_wa_E(rf_wa_E), .rf_wa_M(rf_wa_M), .rf_wa_W(rf_wa_W),
                          .stall_F(stall_F), .stall_D(stall_D), .flush_D(flush_D), .flush_E(flush_E),
                          .br_fwdA_D(br_fwdA_D), .br_fwdB_D(br_fwdB_D), .mul_fwdA_D(mul_fwdA_D), .mul_fwdB_D(mul_fwdB_D), .alu_fwdA_E(alu_fwdA_E), .alu_fwdB_E(alu_fwdB_E) );
+
+
+
+
 
     // propagate instr for debugging
     reg  [31:0] instr1;

@@ -1,5 +1,14 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/AD.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AD
+INFO: [VRFC 10-311] analyzing module SoC_AD
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/FA.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module FA
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/GPIO.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module GPIO
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/MIPS.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module MIPS
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/SoC.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SoC
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/control_unit.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module control_unit
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/cu_parts.v" into library xil_defaultlib
@@ -17,6 +26,14 @@ INFO: [VRFC 10-311] analyzing module alu
 INFO: [VRFC 10-311] analyzing module dreg
 INFO: [VRFC 10-311] analyzing module sr_reg
 INFO: [VRFC 10-311] analyzing module regfile
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/fact.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fact
+INFO: [VRFC 10-311] analyzing module fact_CU
+INFO: [VRFC 10-311] analyzing module fact_DP
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/fact_parts.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module counter
+INFO: [VRFC 10-311] analyzing module comparator
+INFO: [VRFC 10-311] analyzing module mul
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/hazard_unit.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module hazard_unit
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/mem_parts.v" into library xil_defaultlib
@@ -34,5 +51,6 @@ INFO: [VRFC 10-311] analyzing module DECODE
 INFO: [VRFC 10-311] analyzing module EXECUTE
 INFO: [VRFC 10-311] analyzing module MEMORY
 INFO: [VRFC 10-311] analyzing module WRITEBACK
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sim_1/new/tb_MIPS.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tb_MIPS
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sim_1/new/tb_SoC.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_SoC
+WARNING: [VRFC 10-2019] loop variable declaration is not allowed in this mode of verilog [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sim_1/new/tb_SoC.v:66]

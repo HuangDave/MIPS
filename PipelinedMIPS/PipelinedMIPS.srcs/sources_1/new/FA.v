@@ -29,8 +29,6 @@ module FA(
                              .done(f_done), .error(f_err),
                              .nf(nf), .cs(DONT_USE) );
 
-    //mux4 mux ( .sel(sel), .a({ 28'b0, n }), .b({ 31'b0, go }), .c({ 30'b0, err, done }), .d(result), .y(rd) );
-
     always @ ( sel, n, go, done, err, result ) begin
         case (sel)
             2'b00:   rd = { 28'b0, n };
