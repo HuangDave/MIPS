@@ -80,7 +80,7 @@ module datapath (
     wire        we_hi_lo_E, we_dm_E, alu_src_E, shift_E;
     wire [1:0]  res2reg_E;
     wire [2:0]  alu_ctrl_E;
-    wire [31:0] rf_rd1_E, rf_rd2_E, shamt_E, sext_imm_E, alu_srcB_pre, alu_srcA_E, alu_srcB_E, dm_wd_E, pc_plus8_E;
+    wire [31:0] rf_rd1_E, rf_rd2_E, shamt_E, sext_imm_E, alu_srcA_pre_E, alu_srcA_E, alu_srcB_E, dm_wd_E, pc_plus8_E;
     wire [31:0] mul_srcA_D, mul_srcB_D, mul_hi_out_M, mul_lo_out_M;
 
     EXECUTE EXECUTE     ( .clk(clk), .rst(flush_E),
@@ -93,10 +93,10 @@ module datapath (
     mux4 mul_fwdA_mux   ( .sel(mul_fwdB_D), .a(rf_rd2_D), .b(rf_wd_W), .c(alu_out_M), .d(dm_rd_M), .y(mul_srcB_D) );
     pipelined_mul mul   ( .clk(clk), .rst(flush_E), .a(mul_srcA_D), .b(mul_srcB_D), .hi(mul_hi_out_M), .lo(mul_lo_out_M) ); // 2-stage pipelined mul, hi and lo ready at WRITEBACK
 
-    mux3    alu_fwdA_mux    ( .sel(alu_fwdA_E),  .a(rf_rd1_E), .b(rf_wd_W), .c(alu_out_M), .y(alu_srcA_E) );
-    mux3    alu_fwdB_mux    ( .sel(alu_fwdB_E),  .a(rf_rd2_E), .b(rf_wd_W), .c(alu_out_M), .y(dm_wd_E) );
-    mux2    imm_mux     ( .sel(alu_src_E), .a(dm_wd_E), .b(sext_imm_E), .y(alu_srcB_pre) );
-    mux2  alu_shift_mux ( .sel(shift_E), .a(alu_srcB_pre), .b(shamt_E), .y(alu_srcB_E) );
+    mux3 alu_fwdA_mux   ( .sel(alu_fwdA_E),  .a(rf_rd1_E), .b(rf_wd_W), .c(alu_out_M), .y(alu_srcA_pre_E) );
+    mux3 alu_fwdB_mux   ( .sel(alu_fwdB_E),  .a(rf_rd2_E), .b(rf_wd_W), .c(alu_out_M), .y(dm_wd_E) );
+    mux2 alu_imm_mux    ( .sel(alu_src_E), .a(dm_wd_E), .b(sext_imm_E), .y(alu_srcB_E) );
+    mux2 alu_shift_mux  ( .sel(shift_E), .a(alu_srcA_pre_E), .b(shamt_E), .y(alu_srcA_E) );
 
     alu     alu         ( .op(alu_ctrl_E), .a(alu_srcA_E), .b(alu_srcB_E), .y(alu_out_E) );
 
