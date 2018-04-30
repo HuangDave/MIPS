@@ -1,0 +1,78 @@
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
+| Date         : Mon Apr 30 13:21:47 2018
+| Host         : DESKTOP-OQNQAOP running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file SoC_fpga_control_sets_placed.rpt
+| Design       : SoC_fpga
+| Device       : xc7a100t
+-------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Flip-Flop Distribution
+3. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |    15 |
+| Unused register locations in slices containing registers |    47 |
++----------------------------------------------------------+-------+
+
+
+2. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              92 |           29 |
+| No           | No                    | Yes                    |               6 |            3 |
+| No           | Yes                   | No                     |             197 |           94 |
+| Yes          | No                    | No                     |              36 |            7 |
+| Yes          | No                    | Yes                    |             134 |           43 |
+| Yes          | Yes                   | No                     |               0 |            0 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+3. Detailed Control Set Information
+-----------------------------------
+
++-----------------------+----------------------------------+----------------------------------+------------------+----------------+
+|      Clock Signal     |           Enable Signal          |         Set/Reset Signal         | Slice Load Count | Bel Load Count |
++-----------------------+----------------------------------+----------------------------------+------------------+----------------+
+|  clk_pb_BUFG          |                                  | SoC/mips/dp/MEMORY/go_pulse_cmb  |                1 |              2 |
+|  clk_pb_BUFG          | SoC/mips/dp/MEMORY/Q_reg[0]_0[0] |                                  |                1 |              4 |
+|  clk_pb_BUFG          | SoC/mips/dp/hu/pc_src_reg/E[0]   | rst_IBUF                         |                2 |              5 |
+|  clk_gen/index_reg[2] |                                  |                                  |                6 |             20 |
+|  clk_pb_BUFG          | SoC/mips/dp/DECODE/u0/E[0]       | SoC/mips/dp/hu/pc_src_reg/AR[0]  |                7 |             27 |
+|  clk_pb_BUFG          | SoC/mips/dp/MEMORY/Q_reg[0][0]   | rst_IBUF                         |               13 |             32 |
+|  clk_pb_BUFG          | SoC/fa/fact/dp/CNT/f_done        |                                  |                6 |             32 |
+| ~clk_pb_BUFG          | SoC/mips/dp/MEMORY/wem           |                                  |                8 |             32 |
+|  clk_IBUF_BUFG        |                                  | rst_IBUF                         |               10 |             33 |
+|  clk_pb_BUFG          | SoC/mips/dp/MEMORY/E[0]          | rst_IBUF                         |               15 |             34 |
+|  clk_pb_BUFG          | SoC/fa/fact/dp/CNT/E[0]          | rst_IBUF                         |                6 |             36 |
+|  clk_pb_BUFG          |                                  |                                  |               23 |             72 |
+|  clk_pb_BUFG          |                                  | rst_IBUF                         |               33 |             75 |
+|  clk_pb_BUFG          |                                  | SoC/mips/dp/hu/flush_E_reg/SR[0] |               53 |             93 |
+| ~clk_pb_BUFG          | SoC/mips/dp/WRITEBACK/rf_we_W    |                                  |               12 |             96 |
++-----------------------+----------------------------------+----------------------------------+------------------+----------------+
+
+
++--------+-----------------------+
+| Fanout | Number of ControlSets |
++--------+-----------------------+
+| 2      |                     1 |
+| 4      |                     1 |
+| 5      |                     1 |
+| 16+    |                    12 |
++--------+-----------------------+
+
+

@@ -76,7 +76,7 @@ module led_mux
     reg [2:0] index;
     reg [15:0] led_ctrl;
     assign {LEDSEL, LEDOUT} = led_ctrl;
-    always@(posedge clk)
+    always @(posedge clk)
     begin
         index <= (rst) ? 3'd0 : (index + 3'd1);
     end

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1525106198">
-  <File Type="PA-TCL" Name="SoC.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="SoC_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="SoC_reports.tcl"/>
-  <File Type="RDS-RDS" Name="SoC.vds"/>
-  <File Type="RDS-UTIL" Name="SoC_utilization_synth.rpt"/>
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1525119544">
+  <File Type="PA-TCL" Name="SoC_fpga.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="SoC_fpga_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="SoC_fpga_reports.tcl"/>
+  <File Type="RDS-RDS" Name="SoC_fpga.vds"/>
+  <File Type="RDS-UTIL" Name="SoC_fpga_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="MIPS_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="SoC.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="SoC_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="SoC_timing_summary_synth.pb"/>
+  <File Type="RDS-DCP" Name="SoC_fpga.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="SoC_fpga_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="SoC_fpga_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/AD.v">
@@ -33,6 +33,13 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/MIPS.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/SoC.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -109,16 +116,15 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/SoC.v">
+    <File Path="$PSRCDIR/sources_1/new/utilities.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/fpga_top.v">
+    <File Path="$PSRCDIR/sources_1/new/SoC_fpga.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -140,25 +146,9 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/SoC_fpga.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/utilities.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="SoC"/>
+      <Option Name="TopModule" Val="SoC_fpga"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
