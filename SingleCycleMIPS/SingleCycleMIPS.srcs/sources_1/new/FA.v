@@ -19,8 +19,8 @@ module FA(
     dreg_en #(4) in_reg       ( .clk(clk), .rst(1'b0),         .en(we1),    .D(wd),           .Q(n) );
     dreg_en #(1) go_reg       ( .clk(clk), .rst(1'b0),         .en(we2),    .D(wd[0]),        .Q(go) );
     dreg_en #(1) go_pulse_reg ( .clk(clk), .rst(1'b0),         .en(1'b1),   .D(go_pulse_cmb), .Q(go_pulse) );
-    dreg_en #(1) done_reg     ( .clk(clk), .rst(go_pulse_cmb), .en(1'b1),   .D(f_done),       .Q(done) );
-    dreg_en #(1) err_reg      ( .clk(clk), .rst(go_pulse_cmb), .en(1'b1),   .D(f_err),        .Q(err) );
+    sr_reg  #(1) done_reg     ( .clk(clk), .rst(go_pulse_cmb),              .S(f_done),       .Q(done) );
+    sr_reg  #(1) err_reg      ( .clk(clk), .rst(go_pulse_cmb),              .S(f_err),        .Q(err) );
     dreg_en      res_reg      ( .clk(clk), .rst(1'b0),         .en(f_done), .D(nf),           .Q(result) );
 
     fact      fact         ( .clk(clk), .rst(rst),
@@ -28,7 +28,17 @@ module FA(
                              .n(n),
                              .done(f_done), .error(f_err),
                              .nf(nf), .cs(DONT_USE) );
+/*
+    always @ ( go_pulse_cmb, f_done, done ) begin
+        if      (go_pulse_cmb) done <= 1'b0;
+        else if (f_done)       done <= f_done;
+    end
 
+    always @ ( go_pulse_cmb, f_err, err ) begin
+        if      (go_pulse_cmb) err <= 1'b0;
+        else if (f_err)        err <= f_err;
+    end
+*/
     always @ ( sel, n, go, done, err, result ) begin
         case (sel)
             2'b00:   rd = { 28'b0, n };

@@ -18,7 +18,7 @@ module dmem (
     input [5:0] a, [31:0] d,
     output [31:0] q );
 
-    reg [31:0] ram [0:255];
+    reg [31:0] ram [0:2047];
     integer i;
 
     initial

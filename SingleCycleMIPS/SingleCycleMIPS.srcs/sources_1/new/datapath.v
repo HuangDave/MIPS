@@ -1,7 +1,7 @@
 
-module datapath(
+module datapath (
     input         clk, rst,
-    input         pc_src, jump, jal, jr, alu_src, we_reg, we_hi_lo, reg_dst, dm2reg, [1:0] res2reg, [2:0] alu_ctrl,
+    input         pc_src, jump, jal, jr, alu_src, shift, we_reg, we_hi_lo, reg_dst, dm2reg, [1:0] res2reg, [2:0] alu_ctrl,
     input  [4:0]  ra3,
     output        zero,
     output [31:0] instr, pc_current, rd3, result,
@@ -11,15 +11,16 @@ module datapath(
 
     wire [4:0]  wa, rf_wa;
     wire [31:0] pc_plus4, pc_pre, pc_jmp, pc_next,
-                sext_imm,
+                sext_imm, shamt,
                 ba, bta, jta, jtra,
-                alu_pa, alu_pb,
+                alu_pa, alu_pa_pre, alu_pb,
                 alu_out, mul_hi_out, mul_lo_out, hi_out, lo_out,
                 wd_rf;
 
     assign ba   = { sext_imm[29:0], 2'b0 };
     assign jta  = { pc_plus4[31:28], instr[25:0], 2'b0 };
     assign jtra = alu_pa;
+    assign shamt = { 27'b0, instr[10:6] };
     assign address = alu_out;
 
     // --- PC Logic --- //
@@ -38,11 +39,12 @@ module datapath(
     mux2 #(5) rf_wa_mux  ( reg_dst, instr[20:16], instr[15:11], wa );
     mux2 #(5) rf_jal_mux ( jal, wa, 5'b11111, rf_wa );
 
-    regfile   rf         ( clk, we_reg, instr[25:21], instr[20:16], ra3, rf_wa, wd_rf, alu_pa, wd_dm, rd3 );
+    regfile   rf         ( clk, we_reg, instr[25:21], instr[20:16], ra3, rf_wa, wd_rf, alu_pa_pre, wd_dm, rd3 );
     signext   se         ( instr[15:0], sext_imm );
 
     // --- ALU & MUL Logic --- //
     mux2      alu_pb_mux ( alu_src, wd_dm, sext_imm, alu_pb );
+    mux2   alu_shift_mux ( shift,   alu_pa_pre, shamt, alu_pa);
 
     alu       alu        ( alu_ctrl, alu_pa, alu_pb, zero, alu_out );
 

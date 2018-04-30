@@ -51,6 +51,8 @@ module alu (
             3'b000: y = a & b;
             3'b001: y = a | b;
             3'b010: y = a + b;
+            3'b100: y = b << a;
+            3'b101: y = b >> a;
             3'b110: y = a - b;
             3'b111: y = (a < b) ? 1 : 0;
         endcase
@@ -87,6 +89,17 @@ module dreg_en #(parameter WIDTH=32) (
         if (rst)     Q <= 0;
         else if (en) Q <= D;
         else         Q <= Q;
+    end
+endmodule
+
+module sr_reg #(parameter WIDTH=32) (
+    input clk, rst,
+    input [WIDTH-1:0] S,
+    output reg [WIDTH-1:0] Q );
+    initial Q <= 0;
+    always @ ( posedge clk, posedge rst ) begin
+        if      (rst) Q <= 0;
+        else if (S)   Q <= S;
     end
 endmodule
 
