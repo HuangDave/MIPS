@@ -66,8 +66,8 @@ endmodule
 module fact_DP #(parameter IN_WIDTH=4, OUT_WIDTH=32) (
     input  wire clk, rst,
     input  wire [IN_WIDTH-1:0] n,
-    input  wire load_cnt, en_cnt, load_reg, sel, OE, err,
-    output wire gt,
+    input  wire load_cnt, en_cnt, load_reg, sel, OE,
+    output wire gt, err,
     output wire [OUT_WIDTH-1:0] out );
 
     wire [OUT_WIDTH-1:0] gnd = 0;
