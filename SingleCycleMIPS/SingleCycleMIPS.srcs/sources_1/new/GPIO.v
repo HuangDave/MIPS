@@ -10,7 +10,7 @@ module GPIO(
     wire        we1, we2;
     wire [1:0]  sel;
 
-    AD   ad        ( .we(we), .a(a), .we1(we1), .we2(we2), .sel(sel) );
+    GPIO_AD   ad        ( .we(we), .a(a), .we1(we1), .we2(we2), .sel(sel) );
 
     dreg_en gpio1_reg ( .clk(clk), .rst(rst), .en(we1), .D(wd), .Q(gpo1) );
     dreg_en gpio2_reg ( .clk(clk), .rst(rst), .en(we2), .D(wd), .Q(gpo2) );

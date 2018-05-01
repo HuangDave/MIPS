@@ -14,7 +14,7 @@ module FA(
 
     assign go_pulse_cmb = ( wd[0] & we2 );
 
-    AD        ad           ( .we(we), .a(a), .we1(we1), .we2(we2), .sel(sel) );
+    FA_AD        ad           ( .we(we), .a(a), .we1(we1), .we2(we2), .sel(sel) );
 
     dreg_en #(4) in_reg       ( .clk(clk), .rst(1'b0),         .en(we1),    .D(wd),           .Q(n) );
     dreg_en #(1) go_reg       ( .clk(clk), .rst(1'b0),         .en(we2),    .D(wd[0]),        .Q(go) );
