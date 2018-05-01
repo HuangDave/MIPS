@@ -1,10 +1,10 @@
 
 module mux2 #(parameter WIDTH=32) (
-    input sel,
-    input [WIDTH-1:0] a, b,
+    input              sel,
+    input  [WIDTH-1:0] a, b,
     output [WIDTH-1:0] y );
 
-    assign y = (sel) ? b : a;
+    assign y = sel ? b : a;
 
 endmodule
 
@@ -13,7 +13,7 @@ module mux3 #(parameter WIDTH=32) (
     input [1:0] sel,
     input [WIDTH-1:0] a, b, c,
     output [WIDTH-1:0] y );
-    
+
     assign y = sel[1] ? c : ( sel[0] ? b : a );
 endmodule
 
@@ -56,6 +56,8 @@ module alu (
             3'b000: y = a & b;
             3'b001: y = a | b;
             3'b010: y = a + b;
+            3'b100: y = b << a;
+            3'b101: y = b >> a;
             3'b110: y = a - b;
             3'b111: y = (a < b) ? 1 : 0;
         endcase
@@ -74,6 +76,17 @@ module dreg #(parameter WIDTH=32) (
     end
 endmodule
 
+module sr_reg #(parameter WIDTH=32) (
+    input clk, rst,
+    input [WIDTH-1:0] S,
+    output reg [WIDTH-1:0] Q );
+    initial Q <= 0;
+    always @ ( posedge clk, posedge rst ) begin
+        if      (rst) Q <= 0;
+        else if (S)   Q <= S;
+    end
+endmodule
+
 module regfile (
     input clk, we,
     input [4:0] ra1, ra2, ra3, wa,
@@ -83,10 +96,9 @@ module regfile (
     reg [31:0] rf [0:31];
     integer i;
 
-    initial
-        for (i = 0; i < 32; i = i + 1) rf[i] = 32'h0;
+    initial for (i = 0; i < 32; i = i + 1) rf[i] = 32'h0;
 
-    always @ (posedge clk)
+    always @ (negedge clk)
         if (we) rf[wa] <= wd;
 
     assign rd1 = (ra1 == 0) ? 0 : rf[ra1];

@@ -7,7 +7,7 @@ module imem (
 
     reg [31:0] rom [0:63];
 
-    initial $readmemh("memfile.dat", rom);
+    initial $readmemh("soc_driver.dat", rom);
     assign y = rom[a];
 
 endmodule
@@ -18,7 +18,7 @@ module dmem (
     input [5:0] a, [31:0] d,
     output [31:0] q );
 
-    reg [31:0] ram [0:63];
+    reg [31:0] ram [0:2047];
     integer i;
 
     initial

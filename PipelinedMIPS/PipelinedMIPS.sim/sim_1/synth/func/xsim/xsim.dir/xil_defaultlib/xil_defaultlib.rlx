@@ -1,0 +1,7 @@
+0.6
+2017.4
+Dec 15 2017
+21:07:18
+C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.sim/sim_1/synth/func/xsim/tb_MIPS_func_synth.v,1524231209,verilog,,C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/pipeline_reg.v,,MIPS;adder;adder_0;adder_1;alu;datapath;dmem;dreg;glbl;hazard_unit,,,,,,,,
+C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sim_1/new/tb_MIPS.v,1524231140,verilog,,,,tb_MIPS,,,,,,,,
+C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/pipeline_reg.v,1524221106,verilog,,C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sim_1/new/tb_MIPS.v,,DECODE;EXECUTE;FETCH;MEMORY;WRITEBACK,,,,,,,,

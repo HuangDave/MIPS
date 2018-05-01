@@ -1,0 +1,14 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../PipelinedMIPS.srcs/sources_1/new/AD.v" \
+"../../../../PipelinedMIPS.srcs/sources_1/new/FA.v" \
+"../../../../PipelinedMIPS.srcs/sources_1/new/dp_parts.v" \
+"../../../../PipelinedMIPS.srcs/sources_1/new/fact.v" \
+"../../../../PipelinedMIPS.srcs/sources_1/new/fact_parts.v" \
+"../../../../PipelinedMIPS.srcs/sim_1/new/tb_FA.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
