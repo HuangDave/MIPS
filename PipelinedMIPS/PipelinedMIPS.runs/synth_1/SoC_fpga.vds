@@ -2,8 +2,8 @@
 # Vivado v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Mon Apr 30 13:19:06 2018
-# Process ID: 9588
+# Start of session at: Tue May  1 04:37:45 2018
+# Process ID: 14508
 # Current directory: C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.runs/synth_1
 # Command line: vivado.exe -log SoC_fpga.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source SoC_fpga.tcl
 # Log file: C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.runs/synth_1/SoC_fpga.vds
@@ -15,14 +15,13 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 13776 
+INFO: Helper process launched with PID 24296 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 345.148 ; gain = 101.270
+Starting RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 345.086 ; gain = 101.449
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'SoC_fpga' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/SoC_fpga.v:2]
 INFO: [Synth 8-638] synthesizing module 'clk_gen' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/utilities.v:2]
 INFO: [Synth 8-256] done synthesizing module 'clk_gen' (1#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/utilities.v:2]
-WARNING: [Synth 8-350] instance 'clk_gen' of module 'clk_gen' requires 4 connections, but only 3 given [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/SoC_fpga.v:19]
 INFO: [Synth 8-638] synthesizing module 'bdebouncer' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/utilities.v:99]
 	Parameter depth bound to: 16 - type: integer 
 	Parameter history_max bound to: 65535 - type: integer 
@@ -43,16 +42,13 @@ INFO: [Synth 8-3876] $readmem data file 'soc_driver.dat' is read successfully [C
 INFO: [Synth 8-256] done synthesizing module 'imem' (6#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/mem_parts.v:4]
 INFO: [Synth 8-638] synthesizing module 'adder' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:41]
 INFO: [Synth 8-256] done synthesizing module 'adder' (7#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:41]
-INFO: [Synth 8-638] synthesizing module 'mux3' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:12]
-	Parameter WIDTH bound to: 32 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'mux3' (8#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:12]
 INFO: [Synth 8-638] synthesizing module 'DECODE' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/pipeline_reg.v:2]
-INFO: [Synth 8-256] done synthesizing module 'DECODE' (9#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/pipeline_reg.v:2]
+INFO: [Synth 8-256] done synthesizing module 'DECODE' (8#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/pipeline_reg.v:2]
 INFO: [Synth 8-638] synthesizing module 'regfile' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:90]
-INFO: [Synth 8-256] done synthesizing module 'regfile' (10#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:90]
-INFO: [Synth 8-638] synthesizing module 'mux3__parameterized0' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:12]
+INFO: [Synth 8-256] done synthesizing module 'regfile' (9#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:90]
+INFO: [Synth 8-638] synthesizing module 'mux3' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:12]
 	Parameter WIDTH bound to: 5 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'mux3__parameterized0' (10#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:12]
+INFO: [Synth 8-256] done synthesizing module 'mux3' (10#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:12]
 INFO: [Synth 8-638] synthesizing module 'signext' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:36]
 INFO: [Synth 8-256] done synthesizing module 'signext' (11#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:36]
 INFO: [Synth 8-638] synthesizing module 'EXECUTE' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/pipeline_reg.v:21]
@@ -73,12 +69,8 @@ INFO: [Synth 8-638] synthesizing module 'WRITEBACK' [C:/Users/huang/Documents/Sc
 INFO: [Synth 8-256] done synthesizing module 'WRITEBACK' (18#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/pipeline_reg.v:73]
 INFO: [Synth 8-638] synthesizing module 'hazard_unit' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/hazard_unit.v:2]
 INFO: [Synth 8-638] synthesizing module 'dreg__parameterized0' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:67]
-	Parameter WIDTH bound to: 2 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'dreg__parameterized0' (18#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:67]
-INFO: [Synth 8-638] synthesizing module 'dreg__parameterized1' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:67]
 	Parameter WIDTH bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'dreg__parameterized1' (18#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:67]
-WARNING: [Synth 8-567] referenced signal 'dm2reg_M' should be on the sensitivity list [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/hazard_unit.v:58]
+INFO: [Synth 8-256] done synthesizing module 'dreg__parameterized0' (18#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:67]
 INFO: [Synth 8-256] done synthesizing module 'hazard_unit' (19#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/hazard_unit.v:2]
 INFO: [Synth 8-256] done synthesizing module 'datapath' (20#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/datapath.v:2]
 INFO: [Synth 8-638] synthesizing module 'control_unit' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/control_unit.v:2]
@@ -92,9 +84,9 @@ INFO: [Synth 8-638] synthesizing module 'FA' [C:/Users/huang/Documents/School/CM
 INFO: [Synth 8-638] synthesizing module 'FA_AD' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/AD.v:1]
 INFO: [Synth 8-226] default block is never used [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/AD.v:10]
 INFO: [Synth 8-256] done synthesizing module 'FA_AD' (25#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/AD.v:1]
-INFO: [Synth 8-638] synthesizing module 'dreg__parameterized2' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:67]
+INFO: [Synth 8-638] synthesizing module 'dreg__parameterized1' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:67]
 	Parameter WIDTH bound to: 4 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'dreg__parameterized2' (25#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:67]
+INFO: [Synth 8-256] done synthesizing module 'dreg__parameterized1' (25#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:67]
 INFO: [Synth 8-638] synthesizing module 'sr_reg' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:79]
 	Parameter WIDTH bound to: 1 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'sr_reg' (26#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:79]
@@ -113,9 +105,9 @@ INFO: [Synth 8-256] done synthesizing module 'counter' (27#1) [C:/Users/huang/Do
 INFO: [Synth 8-638] synthesizing module 'comparator' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/fact_parts.v:15]
 	Parameter WIDTH bound to: 4 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'comparator' (28#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/fact_parts.v:15]
-INFO: [Synth 8-638] synthesizing module 'dreg__parameterized3' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:67]
+INFO: [Synth 8-638] synthesizing module 'dreg__parameterized2' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:67]
 	Parameter WIDTH bound to: 32 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'dreg__parameterized3' (28#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:67]
+INFO: [Synth 8-256] done synthesizing module 'dreg__parameterized2' (28#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:67]
 INFO: [Synth 8-638] synthesizing module 'mul' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/fact_parts.v:25]
 	Parameter WIDTH bound to: 32 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'mul' (29#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/fact_parts.v:25]
@@ -141,7 +133,6 @@ INFO: [Synth 8-226] default block is never used [C:/Users/huang/Documents/School
 INFO: [Synth 8-256] done synthesizing module 'GPIO' (35#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/GPIO.v:2]
 INFO: [Synth 8-226] default block is never used [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/SoC.v:34]
 INFO: [Synth 8-256] done synthesizing module 'SoC' (36#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/SoC.v:2]
-WARNING: [Synth 8-350] instance 'SoC' of module 'SoC' requires 8 connections, but only 6 given [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/SoC_fpga.v:22]
 INFO: [Synth 8-638] synthesizing module 'bcd_to_7seg' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/utilities.v:48]
 INFO: [Synth 8-226] default block is never used [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/utilities.v:52]
 INFO: [Synth 8-256] done synthesizing module 'bcd_to_7seg' (37#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/utilities.v:48]
@@ -149,9 +140,6 @@ INFO: [Synth 8-638] synthesizing module 'led_mux' [C:/Users/huang/Documents/Scho
 INFO: [Synth 8-226] default block is never used [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/utilities.v:85]
 INFO: [Synth 8-256] done synthesizing module 'led_mux' (38#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/utilities.v:74]
 INFO: [Synth 8-256] done synthesizing module 'SoC_fpga' (39#1) [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/SoC_fpga.v:2]
-WARNING: [Synth 8-3331] design hazard_unit has unconnected port dm2reg_E
-WARNING: [Synth 8-3331] design hazard_unit has unconnected port pc_src_E[1]
-WARNING: [Synth 8-3331] design hazard_unit has unconnected port pc_src_E[0]
 WARNING: [Synth 8-3331] design SoC_AD has unconnected port a[31]
 WARNING: [Synth 8-3331] design SoC_AD has unconnected port a[30]
 WARNING: [Synth 8-3331] design SoC_AD has unconnected port a[29]
@@ -181,7 +169,7 @@ WARNING: [Synth 8-3331] design SoC_AD has unconnected port a[2]
 WARNING: [Synth 8-3331] design SoC_AD has unconnected port a[1]
 WARNING: [Synth 8-3331] design SoC_AD has unconnected port a[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 397.578 ; gain = 153.699
+Finished RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 397.184 ; gain = 153.547
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -190,13 +178,8 @@ Report Check Netlist:
 +------+------------------+-------+---------+-------+------------------+
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
-WARNING: [Synth 8-3295] tying undriven pin SoC:rf_ra3[4] to constant 0 [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/SoC_fpga.v:22]
-WARNING: [Synth 8-3295] tying undriven pin SoC:rf_ra3[3] to constant 0 [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/SoC_fpga.v:22]
-WARNING: [Synth 8-3295] tying undriven pin SoC:rf_ra3[2] to constant 0 [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/SoC_fpga.v:22]
-WARNING: [Synth 8-3295] tying undriven pin SoC:rf_ra3[1] to constant 0 [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/SoC_fpga.v:22]
-WARNING: [Synth 8-3295] tying undriven pin SoC:rf_ra3[0] to constant 0 [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/SoC_fpga.v:22]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 397.578 ; gain = 153.699
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:18 . Memory (MB): peak = 397.184 ; gain = 153.547
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -212,22 +195,22 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 756.828 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 755.664 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 756.828 ; gain = 512.949
+Finished Constraint Validation : Time (s): cpu = 00:00:26 ; elapsed = 00:00:32 . Memory (MB): peak = 755.664 ; gain = 512.027
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 756.828 ; gain = 512.949
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:26 ; elapsed = 00:00:32 . Memory (MB): peak = 755.664 ; gain = 512.027
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 756.828 ; gain = 512.949
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:26 ; elapsed = 00:00:32 . Memory (MB): peak = 755.664 ; gain = 512.027
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5545] ROM "count1" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "clk_sec" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
@@ -242,7 +225,7 @@ INFO: [Synth 8-5546] ROM "r_type" won't be mapped to RAM because it is too spars
 WARNING: [Synth 8-6014] Unused sequential element Q_reg was removed.  [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/fact_parts.v:8]
 WARNING: [Synth 8-327] inferring latch for variable 'y_reg' [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:56]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 756.828 ; gain = 512.949
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:27 ; elapsed = 00:00:33 . Memory (MB): peak = 755.664 ; gain = 512.027
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -268,13 +251,13 @@ Detailed RTL Component Info :
 	                5 Bit    Registers := 5     
 	                4 Bit    Registers := 2     
 	                3 Bit    Registers := 2     
-	                2 Bit    Registers := 5     
+	                2 Bit    Registers := 4     
 	                1 Bit    Registers := 21    
 +---Multipliers : 
 	                32x32  Multipliers := 1     
 +---Muxes : 
-	   2 Input     32 Bit        Muxes := 14    
-	   4 Input     32 Bit        Muxes := 9     
+	   2 Input     32 Bit        Muxes := 10    
+	   4 Input     32 Bit        Muxes := 11    
 	  18 Input     32 Bit        Muxes := 1     
 	   8 Input     32 Bit        Muxes := 1     
 	   8 Input     14 Bit        Muxes := 1     
@@ -284,8 +267,7 @@ Detailed RTL Component Info :
 	   2 Input      5 Bit        Muxes := 3     
 	   2 Input      4 Bit        Muxes := 1     
 	  10 Input      3 Bit        Muxes := 1     
-	   2 Input      2 Bit        Muxes := 6     
-	   3 Input      2 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 10    
 	   2 Input      1 Bit        Muxes := 12    
 	   8 Input      1 Bit        Muxes := 1     
 	   4 Input      1 Bit        Muxes := 4     
@@ -334,15 +316,11 @@ Module adder
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     32 Bit       Adders := 1     
-Module mux3 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input     32 Bit        Muxes := 2     
 Module regfile 
 Detailed RTL Component Info : 
 +---Muxes : 
 	   2 Input     32 Bit        Muxes := 3     
-Module mux3__parameterized0 
+Module mux3 
 Detailed RTL Component Info : 
 +---Muxes : 
 	   2 Input      5 Bit        Muxes := 2     
@@ -386,16 +364,11 @@ Detailed RTL Component Info :
 Module dreg__parameterized0 
 Detailed RTL Component Info : 
 +---Registers : 
-	                2 Bit    Registers := 1     
-Module dreg__parameterized1 
-Detailed RTL Component Info : 
-+---Registers : 
 	                1 Bit    Registers := 1     
 Module hazard_unit 
 Detailed RTL Component Info : 
 +---Muxes : 
-	   3 Input      2 Bit        Muxes := 2     
-	   2 Input      2 Bit        Muxes := 4     
+	   2 Input      2 Bit        Muxes := 8     
 Module datapath 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -422,7 +395,7 @@ Module FA_AD
 Detailed RTL Component Info : 
 +---Muxes : 
 	   4 Input      1 Bit        Muxes := 2     
-Module dreg__parameterized2 
+Module dreg__parameterized1 
 Detailed RTL Component Info : 
 +---Registers : 
 	                4 Bit    Registers := 1     
@@ -443,7 +416,7 @@ Detailed RTL Component Info :
 +---Muxes : 
 	   2 Input      4 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 1     
-Module dreg__parameterized3 
+Module dreg__parameterized2 
 Detailed RTL Component Info : 
 +---Registers : 
 	               32 Bit    Registers := 1     
@@ -524,9 +497,6 @@ DSP Report: operator SoC/fa/fact/dp/MUL/Y is absorbed into DSP SoC/fa/fact/dp/MU
 DSP Report: Generating DSP SoC/fa/fact/dp/MUL/Y, operation Mode is: (PCIN>>17)+A*B.
 DSP Report: operator SoC/fa/fact/dp/MUL/Y is absorbed into DSP SoC/fa/fact/dp/MUL/Y.
 DSP Report: operator SoC/fa/fact/dp/MUL/Y is absorbed into DSP SoC/fa/fact/dp/MUL/Y.
-WARNING: [Synth 8-3331] design hazard_unit has unconnected port dm2reg_E
-WARNING: [Synth 8-3331] design hazard_unit has unconnected port pc_src_E[1]
-WARNING: [Synth 8-3331] design hazard_unit has unconnected port pc_src_E[0]
 WARNING: [Synth 8-3331] design imem has unconnected port a[5]
 INFO: [Synth 8-3886] merging instance 'SoC/mips/dp/DECODE/u0/Q_reg[30]' (FDCE) to 'SoC/mips/dp/DECODE/u0/Q_reg[20]'
 INFO: [Synth 8-3886] merging instance 'SoC/mips/dp/DECODE/u0/Q_reg[15]' (FDCE) to 'SoC/mips/dp/DECODE/u0/Q_reg[4]'
@@ -611,8 +581,6 @@ WARNING: [Synth 8-3332] Sequential element (alu/y_reg[2]) is unused and will be 
 WARNING: [Synth 8-3332] Sequential element (alu/y_reg[1]) is unused and will be removed from module datapath.
 WARNING: [Synth 8-3332] Sequential element (alu/y_reg[0]) is unused and will be removed from module datapath.
 WARNING: [Synth 8-3332] Sequential element (DECODE/u0/Q_reg[20]) is unused and will be removed from module datapath.
-WARNING: [Synth 8-3332] Sequential element (EXECUTE/o_pc_src_reg[1]) is unused and will be removed from module datapath.
-WARNING: [Synth 8-3332] Sequential element (EXECUTE/o_pc_src_reg[0]) is unused and will be removed from module datapath.
 WARNING: [Synth 8-3332] Sequential element (EXECUTE/o_rt_reg[4]) is unused and will be removed from module datapath.
 INFO: [Synth 8-3886] merging instance 'SoC/mips/dp/EXECUTE/o_we_hi_lo_reg' (FDR) to 'SoC/mips/dp/EXECUTE/o_res2reg_reg[0]'
 INFO: [Synth 8-3886] merging instance 'SoC/mips/dp/EXECUTE/o_res2reg_reg[0]' (FDR) to 'SoC/mips/dp/EXECUTE/o_res2reg_reg[1]'
@@ -620,22 +588,22 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips
 INFO: [Synth 8-3886] merging instance 'SoC/mips/dp/MEMORY/o_we_hi_lo_reg' (FDR) to 'SoC/mips/dp/MEMORY/o_res2reg_reg[1]'
 INFO: [Synth 8-3886] merging instance 'SoC/mips/dp/MEMORY/o_res2reg_reg[0]' (FDR) to 'SoC/mips/dp/MEMORY/o_res2reg_reg[1]'
 INFO: [Synth 8-3886] merging instance 'SoC/mips/dp/WRITEBACK/o_res2reg_reg[0]' (FD) to 'SoC/mips/dp/WRITEBACK/o_res2reg_reg[1]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\hi_reg/Q_reg[20] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\lo_reg/Q_reg[20] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\hi_reg/Q_reg[21] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\lo_reg/Q_reg[21] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\hi_reg/Q_reg[22] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\lo_reg/Q_reg[22] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\hi_reg/Q_reg[23] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\lo_reg/Q_reg[23] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\hi_reg/Q_reg[19] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\lo_reg/Q_reg[19] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\hi_reg/Q_reg[16] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\lo_reg/Q_reg[16] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\hi_reg/Q_reg[17] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\lo_reg/Q_reg[17] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\hi_reg/Q_reg[18] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\lo_reg/Q_reg[18] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\hi_reg/Q_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\lo_reg/Q_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\hi_reg/Q_reg[12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\lo_reg/Q_reg[12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\hi_reg/Q_reg[13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\lo_reg/Q_reg[13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\hi_reg/Q_reg[14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\lo_reg/Q_reg[14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\hi_reg/Q_reg[31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\lo_reg/Q_reg[31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\hi_reg/Q_reg[28] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\lo_reg/Q_reg[28] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\hi_reg/Q_reg[29] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\lo_reg/Q_reg[29] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\hi_reg/Q_reg[30] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\lo_reg/Q_reg[30] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\hi_reg/Q_reg[27] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\lo_reg/Q_reg[27] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\hi_reg/Q_reg[24] )
@@ -644,22 +612,22 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\lo_reg/Q_reg[25] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\hi_reg/Q_reg[26] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\lo_reg/Q_reg[26] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\hi_reg/Q_reg[28] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\lo_reg/Q_reg[28] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\hi_reg/Q_reg[30] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\lo_reg/Q_reg[30] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\hi_reg/Q_reg[29] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\lo_reg/Q_reg[29] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\hi_reg/Q_reg[31] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\lo_reg/Q_reg[31] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\hi_reg/Q_reg[12] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\lo_reg/Q_reg[12] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\hi_reg/Q_reg[15] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\lo_reg/Q_reg[15] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\hi_reg/Q_reg[14] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\lo_reg/Q_reg[14] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\hi_reg/Q_reg[13] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\lo_reg/Q_reg[13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\hi_reg/Q_reg[20] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\lo_reg/Q_reg[20] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\hi_reg/Q_reg[21] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\lo_reg/Q_reg[21] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\hi_reg/Q_reg[22] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\lo_reg/Q_reg[22] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\hi_reg/Q_reg[23] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\lo_reg/Q_reg[23] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\hi_reg/Q_reg[16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\lo_reg/Q_reg[16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\hi_reg/Q_reg[19] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\lo_reg/Q_reg[19] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\hi_reg/Q_reg[18] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\lo_reg/Q_reg[18] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\hi_reg/Q_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\lo_reg/Q_reg[17] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\hi_reg/Q_reg[11] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\lo_reg/Q_reg[11] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SoC/mips/dp /\hi_reg/Q_reg[9] )
@@ -749,9 +717,11 @@ WARNING: [Synth 8-3332] Sequential element (mul/u2/Q_reg[3]) is unused and will 
 WARNING: [Synth 8-3332] Sequential element (mul/u2/Q_reg[2]) is unused and will be removed from module datapath.
 WARNING: [Synth 8-3332] Sequential element (mul/u2/Q_reg[1]) is unused and will be removed from module datapath.
 WARNING: [Synth 8-3332] Sequential element (mul/u2/Q_reg[0]) is unused and will be removed from module datapath.
+WARNING: [Synth 8-3332] Sequential element (mul/u1/Q_reg[31]) is unused and will be removed from module datapath.
+WARNING: [Synth 8-3332] Sequential element (mul/u1/Q_reg[30]) is unused and will be removed from module datapath.
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:28 ; elapsed = 00:01:30 . Memory (MB): peak = 756.828 ; gain = 512.949
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:38 ; elapsed = 00:00:45 . Memory (MB): peak = 755.664 ; gain = 512.027
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -793,13 +763,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:44 ; elapsed = 00:01:47 . Memory (MB): peak = 810.449 ; gain = 566.570
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:52 ; elapsed = 00:00:59 . Memory (MB): peak = 820.090 ; gain = 576.453
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:44 ; elapsed = 00:01:47 . Memory (MB): peak = 830.703 ; gain = 586.824
+Finished Timing Optimization : Time (s): cpu = 00:00:52 ; elapsed = 00:00:59 . Memory (MB): peak = 840.344 ; gain = 596.707
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -832,7 +802,7 @@ INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM bloc
 INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/dp_parts.v:73]
 INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/fact_parts.v:8]
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:44 ; elapsed = 00:01:48 . Memory (MB): peak = 852.527 ; gain = 608.648
+Finished Technology Mapping : Time (s): cpu = 00:00:53 ; elapsed = 00:01:00 . Memory (MB): peak = 878.000 ; gain = 634.363
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -856,7 +826,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:46 ; elapsed = 00:01:49 . Memory (MB): peak = 852.527 ; gain = 608.648
+Finished IO Insertion : Time (s): cpu = 00:00:54 ; elapsed = 00:01:01 . Memory (MB): peak = 878.000 ; gain = 634.363
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -869,7 +839,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:46 ; elapsed = 00:01:49 . Memory (MB): peak = 852.527 ; gain = 608.648
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:54 ; elapsed = 00:01:01 . Memory (MB): peak = 878.000 ; gain = 634.363
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -881,25 +851,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:46 ; elapsed = 00:01:49 . Memory (MB): peak = 852.527 ; gain = 608.648
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:54 ; elapsed = 00:01:01 . Memory (MB): peak = 878.000 ; gain = 634.363
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:46 ; elapsed = 00:01:49 . Memory (MB): peak = 852.527 ; gain = 608.648
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:54 ; elapsed = 00:01:01 . Memory (MB): peak = 878.000 ; gain = 634.363
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:46 ; elapsed = 00:01:49 . Memory (MB): peak = 852.527 ; gain = 608.648
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:54 ; elapsed = 00:01:01 . Memory (MB): peak = 878.000 ; gain = 634.363
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:46 ; elapsed = 00:01:49 . Memory (MB): peak = 852.527 ; gain = 608.648
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:54 ; elapsed = 00:01:01 . Memory (MB): peak = 878.000 ; gain = 634.363
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -918,16 +888,16 @@ Report Cell Usage:
 |1     |BUFG     |     2|
 |2     |CARRY4   |    22|
 |3     |DSP48E1  |     2|
-|4     |LUT1     |     5|
-|5     |LUT2     |    48|
-|6     |LUT3     |    78|
-|7     |LUT4     |   126|
-|8     |LUT5     |   127|
-|9     |LUT6     |   280|
+|4     |LUT1     |     4|
+|5     |LUT2     |    49|
+|6     |LUT3     |    83|
+|7     |LUT4     |   122|
+|8     |LUT5     |   192|
+|9     |LUT6     |   283|
 |10    |RAM32M   |    12|
 |11    |RAM64X1S |    32|
-|12    |FDCE     |   138|
-|13    |FDRE     |   325|
+|12    |FDCE     |   136|
+|13    |FDRE     |   327|
 |14    |IBUF     |     8|
 |15    |OBUF     |    18|
 +------+---------+------+
@@ -936,8 +906,8 @@ Report Instance Areas:
 +------+----------------------+-----------------------+------+
 |      |Instance              |Module                 |Cells |
 +------+----------------------+-----------------------+------+
-|1     |top                   |                       |  1223|
-|2     |  SoC                 |SoC                    |  1090|
+|1     |top                   |                       |  1292|
+|2     |  SoC                 |SoC                    |  1159|
 |3     |    fa                |FA                     |   125|
 |4     |      done_reg        |sr_reg                 |     1|
 |5     |      err_reg         |sr_reg_5               |     1|
@@ -946,41 +916,40 @@ Report Instance Areas:
 |8     |        dp            |fact_DP                |    75|
 |9     |          CNT         |counter                |     9|
 |10    |          MUL         |mul                    |    34|
-|11    |          REG         |dreg__parameterized3   |    32|
-|12    |      go_pulse_reg    |dreg__parameterized1_6 |     1|
-|13    |      go_reg          |dreg__parameterized1_7 |     1|
-|14    |      in_reg          |dreg__parameterized2   |    11|
+|11    |          REG         |dreg__parameterized2   |    32|
+|12    |      go_pulse_reg    |dreg__parameterized0_6 |     1|
+|13    |      go_reg          |dreg__parameterized0_7 |     1|
+|14    |      in_reg          |dreg__parameterized1   |    11|
 |15    |      res_reg         |dreg_8                 |    34|
 |16    |    gpio              |GPIO                   |   159|
 |17    |      gpio1_reg       |dreg_3                 |    63|
 |18    |      gpio2_reg       |dreg_4                 |    96|
-|19    |    mips              |MIPS                   |   806|
-|20    |      dp              |datapath               |   806|
-|21    |        DECODE        |DECODE                 |   209|
-|22    |          u0          |dreg_1                 |   204|
+|19    |    mips              |MIPS                   |   875|
+|20    |      dp              |datapath               |   875|
+|21    |        DECODE        |DECODE                 |   275|
+|22    |          u0          |dreg_1                 |   270|
 |23    |          u1          |dreg_2                 |     5|
-|24    |        EXECUTE       |EXECUTE                |   269|
+|24    |        EXECUTE       |EXECUTE                |   275|
 |25    |        FETCH         |dreg                   |    28|
-|26    |        MEMORY        |MEMORY                 |   144|
+|26    |        MEMORY        |MEMORY                 |   145|
 |27    |        WRITEBACK     |WRITEBACK              |   107|
 |28    |        alu           |alu                    |     8|
 |29    |        dm            |dmem                   |    32|
-|30    |        hu            |hazard_unit            |     5|
-|31    |          flush_E_reg |dreg__parameterized1   |     1|
-|32    |          pc_src_reg  |dreg__parameterized0   |     4|
-|33    |        pc_plus_4     |adder                  |     1|
-|34    |        pc_plus_br    |adder_0                |     2|
-|35    |        rf            |regfile                |     1|
-|36    |  bd                  |bdebouncer             |    20|
-|37    |  clk_gen             |clk_gen                |    56|
-|38    |  led_mux             |led_mux                |    17|
+|30    |        hu            |hazard_unit            |     1|
+|31    |          flush_E_reg |dreg__parameterized0   |     1|
+|32    |        pc_plus_4     |adder                  |     1|
+|33    |        pc_plus_br    |adder_0                |     2|
+|34    |        rf            |regfile                |     1|
+|35    |  bd                  |bdebouncer             |    20|
+|36    |  clk_gen             |clk_gen                |    56|
+|37    |  led_mux             |led_mux                |    17|
 +------+----------------------+-----------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:46 ; elapsed = 00:01:49 . Memory (MB): peak = 852.527 ; gain = 608.648
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:54 ; elapsed = 00:01:01 . Memory (MB): peak = 878.000 ; gain = 634.363
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 396 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:33 ; elapsed = 00:01:42 . Memory (MB): peak = 852.527 ; gain = 249.398
-Synthesis Optimization Complete : Time (s): cpu = 00:01:46 ; elapsed = 00:01:49 . Memory (MB): peak = 852.527 ; gain = 608.648
+Synthesis finished with 0 errors, 0 critical warnings and 391 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:35 ; elapsed = 00:00:53 . Memory (MB): peak = 878.000 ; gain = 275.883
+Synthesis Optimization Complete : Time (s): cpu = 00:00:55 ; elapsed = 00:01:01 . Memory (MB): peak = 878.000 ; gain = 634.363
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 76 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -992,10 +961,10 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   RAM64X1S => RAM64X1S (inverted pins: WCLK) (RAMS64E): 32 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-253 Infos, 151 Warnings, 0 Critical Warnings and 0 Errors encountered.
+249 Infos, 137 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:48 ; elapsed = 00:01:53 . Memory (MB): peak = 852.527 ; gain = 621.457
+synth_design: Time (s): cpu = 00:00:57 ; elapsed = 00:01:06 . Memory (MB): peak = 878.000 ; gain = 647.227
 INFO: [Common 17-1381] The checkpoint 'C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.runs/synth_1/SoC_fpga.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file SoC_fpga_utilization_synth.rpt -pb MIPS_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.098 . Memory (MB): peak = 852.527 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Mon Apr 30 13:21:05 2018...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.077 . Memory (MB): peak = 878.000 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Tue May  1 04:38:57 2018...

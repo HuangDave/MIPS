@@ -15,7 +15,7 @@ module datapath (
 
     wire dm2reg_E, dm2reg_M, rf_we_E, rf_we_M, rf_we_W;
 
-    // forwarding
+    // hazard unit signals
     wire       stall_F, stall_D, flush_D, flush_E;
     wire [1:0] br_fwdA_D, br_fwdB_D, mul_fwdA_D, mul_fwdB_D, alu_fwdA_E, alu_fwdB_E;
     wire [1:0] pc_src_E;
@@ -48,8 +48,8 @@ module datapath (
 
     // branch logic
     wire [31:0] br_cmpA_D, br_cmpB_D, alu_out_E, alu_out_M;
-    mux3    br_fwdA_mux ( .sel(br_fwdA_D), .a(rf_rd1_D), .b(alu_out_E), .c(alu_out_M), .y(br_cmpA_D) );
-    mux3    br_fwdB_mux ( .sel(br_fwdB_D), .a(rf_rd2_D), .b(alu_out_E), .c(alu_out_M), .y(br_cmpB_D) );
+    mux4    br_fwdA_mux ( .sel(br_fwdA_D), .a(rf_rd1_D), .b(alu_out_E), .c(alu_out_M), .d(soc_rd_M), .y(br_cmpA_D) );
+    mux4    br_fwdB_mux ( .sel(br_fwdB_D), .a(rf_rd2_D), .b(alu_out_E), .c(alu_out_M), .d(soc_rd_M), .y(br_cmpB_D) );
 
     assign eq_D     = (br_cmpA_D == br_cmpB_D) ? 1'b1 : 1'b0;
     assign pc_src_D = { jump_D, jr_D ^ (branch_D & eq_D) };
@@ -153,7 +153,7 @@ module datapath (
 
     hazard_unit     hu ( .clk(clk), .rst(rst),
                              //.multu_D(multu_D),
-                         .branch_D(branch_D), .we_dm_D(we_dm_D), .dm2reg_E(dm2reg_E), .dm2reg_M(dm2reg_M), .rf_we_E(rf_we_E), .rf_we_M(rf_we_M), .rf_we_W(rf_we_W), .pc_src_D(pc_src_D), .pc_src_E(pc_src_E),
+                         .branch_D(branch_D), .we_dm_D(we_dm_D), .dm2reg_E(dm2reg_E), .dm2reg_M(dm2reg_M), .rf_we_E(rf_we_E), .rf_we_M(rf_we_M), .rf_we_W(rf_we_W), .pc_src_E(pc_src_E),
                          .rs_D(rs_D), .rt_D(rt_D), .rs_E(rs_E), .rt_E(rt_E), .rf_wa_E(rf_wa_E), .rf_wa_M(rf_wa_M), .rf_wa_W(rf_wa_W),
                          .stall_F(stall_F), .stall_D(stall_D), .flush_D(flush_D), .flush_E(flush_E),
                          .br_fwdA_D(br_fwdA_D), .br_fwdB_D(br_fwdB_D), .mul_fwdA_D(mul_fwdA_D), .mul_fwdB_D(mul_fwdB_D), .alu_fwdA_E(alu_fwdA_E), .alu_fwdB_E(alu_fwdB_E) );
