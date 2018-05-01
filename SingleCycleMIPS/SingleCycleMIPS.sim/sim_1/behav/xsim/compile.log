@@ -1,5 +1,6 @@
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/AD.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module AD
+INFO: [VRFC 10-311] analyzing module FA_AD
+INFO: [VRFC 10-311] analyzing module GPIO_AD
 INFO: [VRFC 10-311] analyzing module SoC_AD
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/FA.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module FA
@@ -39,4 +40,3 @@ INFO: [VRFC 10-311] analyzing module imem
 INFO: [VRFC 10-311] analyzing module dmem
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sim_1/new/tb_SoC.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module tb_SoC
-WARNING: [VRFC 10-2019] loop variable declaration is not allowed in this mode of verilog [C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sim_1/new/tb_SoC.v:59]
