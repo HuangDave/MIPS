@@ -23,7 +23,7 @@ module mux4 #(parameter WIDTH=32) (
     input [WIDTH-1:0] a, b, c, d,
     output reg [WIDTH-1:0] y );
 
-    always @ (*) begin
+    always @ ( sel, a, b, c, d ) begin
         case (sel)
             2'b00: y = a;
             2'b01: y = b;
@@ -50,8 +50,8 @@ module alu (
     input [2:0] op,
     input [31:0] a, b,
     output reg [31:0] y );
-
     always @ (op, a ,b) begin
+        y = 32'b0;
         case (op)
             3'b000: y = a & b;
             3'b001: y = a | b;

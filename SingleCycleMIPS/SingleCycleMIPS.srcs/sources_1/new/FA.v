@@ -28,17 +28,7 @@ module FA(
                              .n(n),
                              .done(f_done), .error(f_err),
                              .nf(nf), .cs(DONT_USE) );
-/*
-    always @ ( go_pulse_cmb, f_done, done ) begin
-        if      (go_pulse_cmb) done <= 1'b0;
-        else if (f_done)       done <= f_done;
-    end
-
-    always @ ( go_pulse_cmb, f_err, err ) begin
-        if      (go_pulse_cmb) err <= 1'b0;
-        else if (f_err)        err <= f_err;
-    end
-*/
+                             
     always @ ( sel, n, go, done, err, result ) begin
         case (sel)
             2'b00:   rd = { 28'b0, n };

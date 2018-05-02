@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1525174662">
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1525231222">
   <File Type="PA-TCL" Name="SoC_fpga.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="SoC_fpga_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="SoC_fpga_reports.tcl"/>
@@ -149,6 +149,7 @@
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
       <Option Name="TopModule" Val="SoC_fpga"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">

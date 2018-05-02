@@ -14,7 +14,7 @@ module SoC(
     wire        we_dm;
     wire [31:0] address, dm_wd, dm_rd;
 
-    SoC_AD   ad   ( .we(we_dm), .a(address), .wem(wem), .we1(we1), .we2(we2), .sel(sel) );
+    SoC_AD   ad   ( .we(we_dm), .a(address[11:8]), .wem(wem), .we1(we1), .we2(we2), .sel(sel) );
 
     MIPS     mips ( .clk(clk), .rst(rst),
                     .rf_ra3(rf_ra3),
@@ -30,7 +30,7 @@ module SoC(
                     .we(we2), .a(address[3:2]), .wd(dm_wd), .gpi1(gpi1), .gpi2(gpi2),
                     .gpo1(gpo1), .gpo2(gpo2), .rd(gpio_rd) );
 
-    always @ ( * ) begin
+    always @ ( sel, dm_rd, fact_rd, gpio_rd ) begin
         case (sel)
             2'b00:   soc_rd = dm_rd;
             2'b01:   soc_rd = dm_rd;

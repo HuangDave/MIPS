@@ -1,26 +1,54 @@
 Vivado Simulator 2017.4
 Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto 0c1f0db720af4cc1b43e204ef9c0830c --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L secureip --snapshot tb_MIPS_func_synth xil_defaultlib.tb_MIPS xil_defaultlib.glbl -log elaborate.log 
+Running: C:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto 0c1f0db720af4cc1b43e204ef9c0830c --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L secureip --snapshot tb_SoC_func_synth xil_defaultlib.tb_SoC xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
-ERROR: [VRFC 10-426] cannot find port pc_src_D__0 on this module [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.sim/sim_1/synth/func/xsim/tb_MIPS_func_synth.v:7221]
-ERROR: [VRFC 10-426] cannot find port o_rf_we_reg on this module [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.sim/sim_1/synth/func/xsim/tb_MIPS_func_synth.v:7220]
-ERROR: [VRFC 10-426] cannot find port o_rf_wa_reg[4] on this module [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.sim/sim_1/synth/func/xsim/tb_MIPS_func_synth.v:7219]
-ERROR: [VRFC 10-426] cannot find port o_rf_wa_reg[2] on this module [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.sim/sim_1/synth/func/xsim/tb_MIPS_func_synth.v:7218]
-ERROR: [VRFC 10-426] cannot find port o_res2reg_reg[1] on this module [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.sim/sim_1/synth/func/xsim/tb_MIPS_func_synth.v:7217]
-ERROR: [VRFC 10-426] cannot find port o_pc_plus8_reg[4] on this module [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.sim/sim_1/synth/func/xsim/tb_MIPS_func_synth.v:7216]
-ERROR: [VRFC 10-426] cannot find port o_pc_plus8_reg[1] on this module [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.sim/sim_1/synth/func/xsim/tb_MIPS_func_synth.v:7215]
-ERROR: [VRFC 10-426] cannot find port o_pc_plus4_reg[29]_0 on this module [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.sim/sim_1/synth/func/xsim/tb_MIPS_func_synth.v:7214]
-ERROR: [VRFC 10-426] cannot find port o_pc_plus4_reg[27]_0 on this module [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.sim/sim_1/synth/func/xsim/tb_MIPS_func_synth.v:7213]
-ERROR: [VRFC 10-426] cannot find port o_pc_plus4_reg[23]_0 on this module [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.sim/sim_1/synth/func/xsim/tb_MIPS_func_synth.v:7212]
-ERROR: [VRFC 10-426] cannot find port o_pc_plus4_reg[19]_0 on this module [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.sim/sim_1/synth/func/xsim/tb_MIPS_func_synth.v:7211]
-ERROR: [VRFC 10-426] cannot find port o_instr_reg[31]_1 on this module [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.sim/sim_1/synth/func/xsim/tb_MIPS_func_synth.v:7210]
-ERROR: [VRFC 10-426] cannot find port o_instr_reg[31]_0 on this module [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.sim/sim_1/synth/func/xsim/tb_MIPS_func_synth.v:7209]
-ERROR: [VRFC 10-426] cannot find port o_instr_reg[14]_0 on this module [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.sim/sim_1/synth/func/xsim/tb_MIPS_func_synth.v:7208]
-ERROR: [VRFC 10-426] cannot find port o_instr_reg[13]_1 on this module [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.sim/sim_1/synth/func/xsim/tb_MIPS_func_synth.v:7207]
-ERROR: [VRFC 10-426] cannot find port o_instr_reg[13]_0 on this module [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.sim/sim_1/synth/func/xsim/tb_MIPS_func_synth.v:7206]
-ERROR: [VRFC 10-426] cannot find port o_dm2reg_reg on this module [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.sim/sim_1/synth/func/xsim/tb_MIPS_func_synth.v:7205]
-ERROR: [VRFC 10-426] cannot find port o_alu_src_reg on this module [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.sim/sim_1/synth/func/xsim/tb_MIPS_func_synth.v:7204]
-ERROR: [VRFC 10-426] cannot find port jr on this module [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.sim/sim_1/synth/func/xsim/tb_MIPS_func_synth.v:7203]
-INFO: [#UNDEF] Sorry, too many errors..
-ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.SoC_AD
+Compiling module xil_defaultlib.mux4
+Compiling module xil_defaultlib.dreg
+Compiling module xil_defaultlib.imem
+Compiling module xil_defaultlib.adder
+Compiling module xil_defaultlib.DECODE
+Compiling module xil_defaultlib.regfile
+Compiling module xil_defaultlib.mux3(WIDTH=5)
+Compiling module xil_defaultlib.signext
+Compiling module xil_defaultlib.EXECUTE
+Compiling module xil_defaultlib.AND(WIDTH=32)
+Compiling module xil_defaultlib.half_adder
+Compiling module xil_defaultlib.CLA4_default
+Compiling module xil_defaultlib.CLA32_default
+Compiling module xil_defaultlib.CLA64
+Compiling module xil_defaultlib.dreg(WIDTH=64)
+Compiling module xil_defaultlib.pipelined_mul
+Compiling module xil_defaultlib.mux2
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.MEMORY
+Compiling module xil_defaultlib.dmem
+Compiling module xil_defaultlib.WRITEBACK
+Compiling module xil_defaultlib.dreg(WIDTH=1)
+Compiling module xil_defaultlib.hazard_unit
+Compiling module xil_defaultlib.datapath
+Compiling module xil_defaultlib.maindec
+Compiling module xil_defaultlib.auxdec
+Compiling module xil_defaultlib.control_unit
+Compiling module xil_defaultlib.MIPS
+Compiling module xil_defaultlib.FA_AD
+Compiling module xil_defaultlib.dreg(WIDTH=4)
+Compiling module xil_defaultlib.sr_reg(WIDTH=1)
+Compiling module xil_defaultlib.counter
+Compiling module xil_defaultlib.comparator(WIDTH=4)
+Compiling module xil_defaultlib.mul
+Compiling module xil_defaultlib.fact_DP
+Compiling module xil_defaultlib.fact_CU
+Compiling module xil_defaultlib.fact
+Compiling module xil_defaultlib.FA
+Compiling module xil_defaultlib.GPIO_AD
+Compiling module xil_defaultlib.GPIO
+Compiling module xil_defaultlib.SoC
+Compiling module xil_defaultlib.tb_SoC
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_SoC_func_synth

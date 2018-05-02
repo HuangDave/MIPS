@@ -13,10 +13,9 @@ module SoC_fpga(
     wire [4:0]  rf_ra3 = 0;
     wire [31:0] rf_rd3 = 0;
 
-    assign gpi1 = { 27'b0, sw };
-    assign gpi2 = gpo1;
     assign sel  = gpo1[4];
     assign err  = gpo1[0];
+    
     assign { hex[7], hex[6], hex[5], hex[4], hex[3], hex[2], hex[1], hex[0] } = gpo2;
 
     clk_gen     clk_gen ( .clk100MHz(clk), .rst(rst), .clk_sec(DONT_USE), .clk_5KHz(clk_5KHz) );
@@ -24,7 +23,7 @@ module SoC_fpga(
 
     SoC         SoC     ( .clk(clk_pb), .rst(rst),
                           .rf_ra3(rf_ra3), .rf_rd3(rf_rd3),
-                          .gpi1(gpi1), .gpi2(gpi2),
+                          .gpi1({ 27'b0, sw }), .gpi2(gpo1),
                           .gpo1(gpo1), .gpo2(gpo2) );
 
     bcd_to_7seg bcd7    ( .num(hex[7]), .out(digit[7]) );
@@ -42,3 +41,4 @@ module SoC_fpga(
                           .LEDSEL(LEDSEL), .LEDOUT(LEDOUT) );
 
 endmodule
+

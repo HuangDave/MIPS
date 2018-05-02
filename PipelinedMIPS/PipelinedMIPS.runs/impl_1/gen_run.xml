@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1525174662">
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1525231223">
   <File Type="PWROPT-DCP" Name="SoC_fpga_pwropt.dcp"/>
   <File Type="ROUTE-PWR" Name="SoC_fpga_power_routed.rpt"/>
   <File Type="PA-TCL" Name="SoC_fpga.tcl"/>
@@ -203,6 +203,7 @@
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
       <Option Name="TopModule" Val="SoC_fpga"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
