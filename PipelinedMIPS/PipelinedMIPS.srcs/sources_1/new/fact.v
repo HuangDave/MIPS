@@ -78,13 +78,15 @@ module fact_DP #(parameter IN_WIDTH=4, OUT_WIDTH=32) (
 
     assign err = (n > 4'b1100) ? 1'b1 : 1'b0;
 
+    wire [31:0] DONT_USE;
+
     mux2       #(OUT_WIDTH) MUX1 ( .sel(sel), .a(mul_out), .b(vcc), .y(reg_in) );
 
     counter    #(IN_WIDTH)  CNT  ( .rst(rst), .clk(clk), .load(load_cnt), .en(en_cnt), .D(n), .Q(cnt_out) );
     comparator #(IN_WIDTH)  CMP  ( .a(cnt_out), .b(vcc[IN_WIDTH-1:0]), .gt(gt) );
 
     dreg       #(OUT_WIDTH) REG  ( .clk(clk), .rst(rst), .en(load_reg), .D(reg_in), .Q(reg_out) );
-    mul        #(OUT_WIDTH) MUL  ( .A({28'b0, cnt_out}), .B(reg_out), .Y(mul_out) );
+    mul        #(OUT_WIDTH) MUL  ( .A({28'b0, cnt_out}), .B(reg_out), .hi(DONT_USE), .lo(mul_out) );
 
     mux2       #(OUT_WIDTH) MUX2 ( .sel(OE), .a(gnd), .b(reg_out), .y(out) );
 

@@ -43,6 +43,7 @@ INFO: [VRFC 10-311] analyzing module dmem
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/mul.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module pipelined_mul
 INFO: [VRFC 10-311] analyzing module CLA64
+INFO: [VRFC 10-2458] undeclared symbol DONT_USE, assumed default net type wire [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/mul.v:111]
 INFO: [VRFC 10-311] analyzing module CLA32
 INFO: [VRFC 10-311] analyzing module CLA4
 INFO: [VRFC 10-311] analyzing module AND

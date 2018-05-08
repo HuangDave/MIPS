@@ -1,7 +1,8 @@
 
 module maindec (
-    input [5:0] opcode, funct,
-    output branch, jump, jal, jr, shift, alu_src, we_hi_lo, we_dm, rf_we, dm2reg, [1:0] res2reg, alu_op );
+    input  [5:0] opcode, funct,
+    output       branch, jump, jal, jr, shift, alu_src, we_hi_lo, we_dm, rf_we, dm2reg,
+    output [1:0] res2reg, alu_op );
 
     reg [13:0] ctrl;
 
@@ -11,8 +12,8 @@ module maindec (
         case (opcode)
             6'b000000: begin
                 case (funct)
-                    6'b00_0000: ctrl = 14'b0_000_10_0010_00_xx;  // sll, nop
-                    6'b00_0010: ctrl = 14'b0_000_10_0010_00_xx;  // slr
+                    6'b00_0000: ctrl = 14'b0_000_10_0010_00_10;  // sll, nop
+                    6'b00_0010: ctrl = 14'b0_000_10_0010_00_10;  // slr
                     6'b01_1001: ctrl = 14'b0_000_00_1000_00_xx;  // multu
                     6'b01_0000: ctrl = 14'b0_000_00_0010_01_xx;  // mfhi
                     6'b01_0010: ctrl = 14'b0_000_00_0010_10_xx;  // mflo
@@ -32,9 +33,11 @@ module maindec (
 endmodule
 
 module auxdec (
-    input [1:0] alu_op, [5:0] funct, output [2:0] alu_ctrl );
-    reg [2:0] ctrl;
+    input  [1:0] alu_op,
+    input  [5:0] funct,
+    output [2:0] alu_ctrl );
 
+    reg [2:0] ctrl;
     assign alu_ctrl = ctrl;
 
     always @ ( alu_op, funct ) begin

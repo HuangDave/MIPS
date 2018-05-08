@@ -37,10 +37,10 @@ module GPIO_AD (
 endmodule
 
 module SoC_AD (
-    input         we,
-    input  [31:0] a,
-    output reg    wem, we1, we2, // we for dm, fa, gpio respectively
-    output reg [1:0]  sel );         // rd sel
+    input            we,
+    input      [3:0] a,
+    output reg       wem, we1, we2, // we for dm, fa, gpio respectively
+    output reg [1:0] sel );         // rd sel
 
     initial begin
         wem = 1'b0;
@@ -49,7 +49,7 @@ module SoC_AD (
     end
 
     always @ ( we, a ) begin
-        case (a[11:8])
+        case (a)
             4'h9:    begin { wem, we1, we2 } = { 1'b0, 1'b0, we }; sel = 2'b11; end // GPIO
             4'h8:    begin { wem, we1, we2 } = { 1'b0, we, 1'b0 }; sel = 2'b10; end // Factorial Accelerator
             default: begin { wem, we1, we2 } = { we, 1'b0, 1'b0 }; sel = 2'b00; end // Data Memory

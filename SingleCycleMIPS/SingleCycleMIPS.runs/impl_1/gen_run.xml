@@ -1,65 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1525174415">
-  <File Type="PWROPT-DCP" Name="SoC_fpga_pwropt.dcp"/>
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1525253397">
   <File Type="ROUTE-PWR" Name="SoC_fpga_power_routed.rpt"/>
   <File Type="PA-TCL" Name="SoC_fpga.tcl"/>
+  <File Type="PWROPT-DCP" Name="SoC_fpga_pwropt.dcp"/>
   <File Type="ROUTE-PWR-SUM" Name="SoC_fpga_power_summary_routed.pb"/>
   <File Type="REPORTS-TCL" Name="SoC_fpga_reports.tcl"/>
   <File Type="BG-DRC" Name="SoC_fpga.drc"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="SoC_fpga_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="SoC_fpga_timing_summary_init.rpt"/>
   <File Type="OPT-HWDEF" Name="SoC_fpga.hwdef"/>
   <File Type="OPT-DCP" Name="SoC_fpga_opt.dcp"/>
   <File Type="OPT-DRC" Name="SoC_fpga_drc_opted.rpt"/>
-  <File Type="OPT-TIMING" Name="SoC_fpga_timing_summary_opted.rpt"/>
-  <File Type="PWROPT-DRC" Name="SoC_fpga_drc_pwropted.rpt"/>
-  <File Type="PWROPT-TIMING" Name="SoC_fpga_timing_summary_pwropted.rpt"/>
   <File Type="PLACE-DCP" Name="SoC_fpga_placed.dcp"/>
   <File Type="PLACE-IO" Name="SoC_fpga_io_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="SoC_fpga_clock_utilization_placed.rpt"/>
   <File Type="PLACE-UTIL" Name="SoC_fpga_utilization_placed.rpt"/>
   <File Type="PLACE-UTIL-PB" Name="SoC_fpga_utilization_placed.pb"/>
   <File Type="PLACE-CTRL" Name="SoC_fpga_control_sets_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="SoC_fpga_incremental_reuse_placed.rpt"/>
   <File Type="PLACE-PRE-SIMILARITY" Name="SoC_fpga_incremental_reuse_pre_placed.rpt"/>
-  <File Type="PLACE-TIMING" Name="SoC_fpga_timing_summary_placed.rpt"/>
   <File Type="POSTPLACE-PWROPT-DCP" Name="SoC_fpga_postplace_pwropt.dcp"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="SoC_fpga_timing_summary_postplace_pwropted.rpt"/>
   <File Type="PHYSOPT-DCP" Name="SoC_fpga_physopt.dcp"/>
-  <File Type="PHYSOPT-DRC" Name="SoC_fpga_drc_physopted.rpt"/>
   <File Type="BG-BIT" Name="SoC_fpga.bit"/>
-  <File Type="PHYSOPT-TIMING" Name="SoC_fpga_timing_summary_physopted.rpt"/>
   <File Type="ROUTE-ERROR-DCP" Name="SoC_fpga_routed_error.dcp"/>
   <File Type="ROUTE-DCP" Name="SoC_fpga_routed.dcp"/>
   <File Type="ROUTE-BLACKBOX-DCP" Name="SoC_fpga_routed_bb.dcp"/>
   <File Type="ROUTE-DRC" Name="SoC_fpga_drc_routed.rpt"/>
   <File Type="ROUTE-DRC-PB" Name="SoC_fpga_drc_routed.pb"/>
-  <File Type="BITSTR-MSK" Name="SoC_fpga.msk"/>
   <File Type="ROUTE-DRC-RPX" Name="SoC_fpga_drc_routed.rpx"/>
-  <File Type="BG-BGN" Name="SoC_fpga.bgn"/>
+  <File Type="BITSTR-MSK" Name="SoC_fpga.msk"/>
   <File Type="ROUTE-METHODOLOGY-DRC" Name="SoC_fpga_methodology_drc_routed.rpt"/>
-  <File Type="BITSTR-RBT" Name="SoC_fpga.rbt"/>
+  <File Type="BG-BGN" Name="SoC_fpga.bgn"/>
   <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="SoC_fpga_methodology_drc_routed.rpx"/>
-  <File Type="BG-BIN" Name="SoC_fpga.bin"/>
+  <File Type="BITSTR-RBT" Name="SoC_fpga.rbt"/>
   <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="SoC_fpga_methodology_drc_routed.pb"/>
+  <File Type="BG-BIN" Name="SoC_fpga.bin"/>
   <File Type="ROUTE-PWR-RPX" Name="SoC_fpga_power_routed.rpx"/>
   <File Type="ROUTE-STATUS" Name="SoC_fpga_route_status.rpt"/>
   <File Type="ROUTE-STATUS-PB" Name="SoC_fpga_route_status.pb"/>
   <File Type="ROUTE-TIMINGSUMMARY" Name="SoC_fpga_timing_summary_routed.rpt"/>
   <File Type="ROUTE-TIMING-PB" Name="SoC_fpga_timing_summary_routed.pb"/>
   <File Type="ROUTE-TIMING-RPX" Name="SoC_fpga_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-SIMILARITY" Name="SoC_fpga_incremental_reuse_routed.rpt"/>
-  <File Type="RDI-RDI" Name="SoC_fpga.vdi"/>
   <File Type="ROUTE-CLK" Name="SoC_fpga_clock_utilization_routed.rpt"/>
+  <File Type="RDI-RDI" Name="SoC_fpga.vdi"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="SoC_fpga_postroute_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="SoC_fpga_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="SoC_fpga_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="SoC_fpga_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="SoC_fpga_timing_summary_postroute_physopted.rpx"/>
   <File Type="BITSTR-NKY" Name="SoC_fpga.nky"/>
   <File Type="BITSTR-BMM" Name="SoC_fpga_bd.bmm"/>
   <File Type="BITSTR-MMI" Name="SoC_fpga.mmi"/>
-  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
   <File Type="BITSTR-LTX" Name="SoC_fpga.ltx"/>
   <File Type="BITSTR-SYSDEF" Name="SoC_fpga.sysdef"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>

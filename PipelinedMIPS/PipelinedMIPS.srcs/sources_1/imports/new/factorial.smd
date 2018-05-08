@@ -19,4 +19,4 @@ else:       addi    $a0, $a0, -1    # n = n - 1
             multu   $a0, $v0        # n * factorial(n-1)
             mflo    $v0             # mv result into $v0
             jr      $ra
-end:        nop
+end:        

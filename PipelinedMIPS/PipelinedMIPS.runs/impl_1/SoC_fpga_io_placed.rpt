@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-| Date                      : Tue May  1 04:39:42 2018
+| Date                      : Fri May  4 17:54:34 2018
 | Host                      : DESKTOP-OQNQAOP running 64-bit major release  (build 9200)
 | Command                   : report_io -file SoC_fpga_io_placed.rpt
 | Design                    : SoC_fpga
@@ -264,7 +264,7 @@ Table of Contents
 | N11        |             |            | VCCINT                       | VCCINT      |             |         |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | N12        |             |            | GND                          | GND         |             |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |
 | N13        |             | High Range | VCCO_14                      | VCCO        |             |      14 |            |      |                     |                      |    3.30 |            |           |          |      |                  |              |                   |              |
-| N14        | go          | High Range | IO_L8P_T1_D11_14             | OUTPUT      | LVCMOS33    |      14 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
+| N14        | sel         | High Range | IO_L8P_T1_D11_14             | OUTPUT      | LVCMOS33    |      14 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | N15        |             | High Range | IO_L11P_T1_SRCC_14           | User IO     |             |      14 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | N16        |             | High Range | IO_L11N_T1_SRCC_14           | User IO     |             |      14 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | N17        | button      | High Range | IO_L9P_T1_DQS_14             | INPUT       | LVCMOS33    |      14 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |

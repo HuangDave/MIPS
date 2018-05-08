@@ -15,13 +15,12 @@ module GPIO(
     dreg gpio1_reg ( .clk(clk), .rst(rst), .en(we1), .D(wd), .Q(gpo1) );
     dreg gpio2_reg ( .clk(clk), .rst(rst), .en(we2), .D(wd), .Q(gpo2) );
 
-    always @ ( * ) begin
+    always @ ( sel, gpi1, gpi2, gpo1, gpo2 ) begin
         case (sel)
             2'b00:   rd = gpi1;
             2'b01:   rd = gpi2;
             2'b10:   rd = gpo1;
             2'b11:   rd = gpo2;
-            default: rd = 32'bx;
         endcase
     end
 endmodule

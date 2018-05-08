@@ -6,7 +6,7 @@ C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.sim/sim_
 C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sim_1/new/tb_MIPS.v,1522887284,verilog,,,,tb_MIPS,,,,,,,,
 C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sim_1/new/tb_SoC.v,1525074841,verilog,,,,tb_SoC,,,,,,,,
 C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/AD.v,1525126008,verilog,,C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/FA.v,,FA_AD;GPIO_AD;SoC_AD,,,,,,,,
-C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/FA.v,1525126000,verilog,,C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/GPIO.v,,FA,,,,,,,,
+C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/FA.v,1525229696,verilog,,C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/GPIO.v,,FA,,,,,,,,
 C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/GPIO.v,1525126004,verilog,,C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/MIPS.v,,GPIO,,,,,,,,
 C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/MIPS.v,1525076805,verilog,,C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/SoC.v,,MIPS,,,,,,,,
 C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/SoC.v,1525076805,verilog,,C:/Users/huang/Documents/School/CMPE140/SingleCycleMIPS/SingleCycleMIPS.srcs/sources_1/new/control_unit.v,,SoC,,,,,,,,
