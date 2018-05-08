@@ -2,8 +2,8 @@
 # Webtalk v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Tue May  1 20:20:05 2018
-# Process ID: 26428
+# Start of session at: Thu May  3 01:00:10 2018
+# Process ID: 25408
 # Current directory: C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.sim/sim_1/synth/func/xsim
 # Command line: wbtcv.exe -mode batch -source C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.sim/sim_1/synth/func/xsim/xsim.dir/tb_SoC_func_synth/webtalk/xsim_webtalk.tcl -notrace
 # Log file: C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.sim/sim_1/synth/func/xsim/webtalk.log

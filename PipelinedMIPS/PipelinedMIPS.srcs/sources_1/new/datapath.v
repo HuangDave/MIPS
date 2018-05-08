@@ -113,7 +113,7 @@ module datapath (
 
     assign address_M = alu_out_M;
 
-    MEMORY  MEMORY      ( .clk(clk), .rst(rst),
+    MEMORY  MEMORY      ( .clk(clk), 
                           .i_we_hi_lo(we_hi_lo_E), .i_we_dm(we_dm_E), .i_rf_we(rf_we_E), .i_dm2reg(dm2reg_E), .i_res2reg(res2reg_E),
                           .o_we_hi_lo(we_hi_lo_M), .o_we_dm(we_dm_M), .o_rf_we(rf_we_M), .o_dm2reg(dm2reg_M), .o_res2reg(res2reg_M),
                           .i_rf_wa(rf_wa_E), .i_alu_out(alu_out_E), .i_dm_wd(dm_wd_E), .i_pc_plus4(pc_plus4_E),

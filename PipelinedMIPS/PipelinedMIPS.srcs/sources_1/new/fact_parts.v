@@ -16,13 +16,13 @@ module comparator #(WIDTH=16)(
     output reg gt );
 
     always @(a, b) begin
-        if (a == b) gt <= 1'b0;
-        else        gt <= (a > b);
+        if (a == b) gt = 1'b0;
+        else        gt = (a > b);
     end
 endmodule
 
 module mul #(WIDTH=32) (
     input  [WIDTH-1:0] A, B,
-    output [WIDTH-1:0] Y );
-    assign Y = A * B;
+    output [WIDTH-1:0] hi, lo );
+    assign { hi, lo } = A * B;
 endmodule

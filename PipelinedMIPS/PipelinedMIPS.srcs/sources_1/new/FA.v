@@ -35,7 +35,6 @@ module FA(
             2'b01:   rd = { 31'b0, go };
             2'b10:   rd = { 30'b0, err, done };
             2'b11:   rd = result;
-            default: rd = 32'bx;
         endcase
     end
 

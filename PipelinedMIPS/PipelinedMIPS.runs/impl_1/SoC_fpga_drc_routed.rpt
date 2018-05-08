@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-| Date         : Tue May  1 20:23:16 2018
+| Date         : Fri May  4 17:55:15 2018
 | Host         : DESKTOP-OQNQAOP running 64-bit major release  (build 9200)
 | Command      : report_drc -file SoC_fpga_drc_routed.rpt -pb SoC_fpga_drc_routed.pb -rpx SoC_fpga_drc_routed.rpx
 | Design       : SoC_fpga
@@ -51,42 +51,42 @@ Related violations: <none>
 
 DPIP-1#1 Warning
 Input pipelining  
-DSP SoC/fa/fact/dp/MUL/Y input SoC/fa/fact/dp/MUL/Y/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP SoC/fa/fact/dp/MUL/hi0 input SoC/fa/fact/dp/MUL/hi0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#2 Warning
 Input pipelining  
-DSP SoC/fa/fact/dp/MUL/Y input SoC/fa/fact/dp/MUL/Y/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP SoC/fa/fact/dp/MUL/hi0 input SoC/fa/fact/dp/MUL/hi0/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#3 Warning
 Input pipelining  
-DSP SoC/fa/fact/dp/MUL/Y__0 input SoC/fa/fact/dp/MUL/Y__0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP SoC/fa/fact/dp/MUL/hi0__0 input SoC/fa/fact/dp/MUL/hi0__0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#4 Warning
 Input pipelining  
-DSP SoC/fa/fact/dp/MUL/Y__0 input SoC/fa/fact/dp/MUL/Y__0/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP SoC/fa/fact/dp/MUL/hi0__0 input SoC/fa/fact/dp/MUL/hi0__0/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPOP-1#1 Warning
 PREG Output pipelining  
-DSP SoC/fa/fact/dp/MUL/Y output SoC/fa/fact/dp/MUL/Y/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+DSP SoC/fa/fact/dp/MUL/hi0 output SoC/fa/fact/dp/MUL/hi0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
 Related violations: <none>
 
 DPOP-1#2 Warning
 PREG Output pipelining  
-DSP SoC/fa/fact/dp/MUL/Y__0 output SoC/fa/fact/dp/MUL/Y__0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+DSP SoC/fa/fact/dp/MUL/hi0__0 output SoC/fa/fact/dp/MUL/hi0__0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
 Related violations: <none>
 
 DPOP-2#1 Warning
 MREG Output pipelining  
-DSP SoC/fa/fact/dp/MUL/Y multiplier stage SoC/fa/fact/dp/MUL/Y/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+DSP SoC/fa/fact/dp/MUL/hi0 multiplier stage SoC/fa/fact/dp/MUL/hi0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
 Related violations: <none>
 
 DPOP-2#2 Warning
 MREG Output pipelining  
-DSP SoC/fa/fact/dp/MUL/Y__0 multiplier stage SoC/fa/fact/dp/MUL/Y__0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+DSP SoC/fa/fact/dp/MUL/hi0__0 multiplier stage SoC/fa/fact/dp/MUL/hi0__0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
 Related violations: <none>
 
 

@@ -15,7 +15,7 @@ module SoC_fpga(
 
     assign sel  = gpo1[4];
     assign err  = gpo1[0];
-    
+
     assign { hex[7], hex[6], hex[5], hex[4], hex[3], hex[2], hex[1], hex[0] } = gpo2;
 
     clk_gen     clk_gen ( .clk100MHz(clk), .rst(rst), .clk_sec(DONT_USE), .clk_5KHz(clk_5KHz) );
@@ -41,4 +41,3 @@ module SoC_fpga(
                           .LEDSEL(LEDSEL), .LEDOUT(LEDOUT) );
 
 endmodule
-

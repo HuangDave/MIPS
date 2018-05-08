@@ -21,7 +21,6 @@ module GPIO(
             2'b01:   rd = gpi2;
             2'b10:   rd = gpo1;
             2'b11:   rd = gpo2;
-            default: rd = 32'bx;
         endcase
     end
 endmodule

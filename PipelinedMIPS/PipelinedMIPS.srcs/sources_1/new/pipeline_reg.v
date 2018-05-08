@@ -3,19 +3,9 @@ module DECODE (
     input             clk, rst, en,
     input      [31:0] i_instr, i_pc_plus4,
     output     [31:0] o_instr, o_pc_plus4 );
-    //output reg [31:0] o_instr, o_pc_plus4 );
-
-    //initial o_instr = 32'b0;
 
     dreg u0 ( clk, rst, ~en, i_instr, o_instr );
     dreg u1 ( clk, rst, ~en, i_pc_plus4, o_pc_plus4);
-
-/*
-    always @ ( posedge clk, posedge rst ) begin
-        o_instr    <= rst ? 0 : ( en ? o_instr    : i_instr );
-        o_pc_plus4 <= rst ? 0 : ( en ? o_pc_plus4 : i_pc_plus4 );
-    end */
-
 endmodule
 
 module EXECUTE (
@@ -50,23 +40,23 @@ module EXECUTE (
 endmodule
 
 module MEMORY (
-    input            clk, rst,
+    input            clk,
     input            i_we_hi_lo, i_we_dm, i_rf_we, i_dm2reg,     [1:0] i_res2reg,
     output reg       o_we_hi_lo, o_we_dm, o_rf_we, o_dm2reg, reg [1:0] o_res2reg,
     input      [4:0] i_rf_wa,     [31:0] i_alu_out, i_dm_wd, i_pc_plus4,
     output reg [4:0] o_rf_wa, reg [31:0] o_alu_out, o_dm_wd, o_pc_plus4);
 
     always @ ( posedge clk ) begin
-        o_we_hi_lo <= rst ? 0 : i_we_hi_lo;
-        o_we_dm    <= rst ? 0 : i_we_dm   ;
-        o_rf_we    <= rst ? 0 : i_rf_we   ;
-        o_dm2reg   <= rst ? 0 : i_dm2reg  ;
-        o_res2reg  <= rst ? 0 : i_res2reg ;
+        o_we_hi_lo <= i_we_hi_lo;
+        o_we_dm    <= i_we_dm   ;
+        o_rf_we    <= i_rf_we   ;
+        o_dm2reg   <= i_dm2reg  ;
+        o_res2reg  <= i_res2reg ;
 
-        o_rf_wa    <= rst ? 0 : i_rf_wa   ;
-        o_alu_out  <= rst ? 0 : i_alu_out ;
-        o_dm_wd    <= rst ? 0 : i_dm_wd   ;
-        o_pc_plus4 <= rst ? 0 : i_pc_plus4;
+        o_rf_wa    <= i_rf_wa   ;
+        o_alu_out  <= i_alu_out ;
+        o_dm_wd    <= i_dm_wd   ;
+        o_pc_plus4 <= i_pc_plus4;
     end
 endmodule
 

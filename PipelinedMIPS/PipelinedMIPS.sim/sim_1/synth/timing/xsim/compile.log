@@ -1,48 +1,36 @@
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.sim/sim_1/synth/timing/xsim/tb_SoC_time_synth.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module RAM32M_UNIQ_BASE_
-INFO: [VRFC 10-311] analyzing module RAM32M_HD18510
-INFO: [VRFC 10-311] analyzing module RAM32M_HD18511
-INFO: [VRFC 10-311] analyzing module RAM32M_HD18512
-INFO: [VRFC 10-311] analyzing module RAM32M_HD18513
-INFO: [VRFC 10-311] analyzing module RAM32M_HD18514
-INFO: [VRFC 10-311] analyzing module RAM32M_HD18515
-INFO: [VRFC 10-311] analyzing module RAM32M_HD18516
-INFO: [VRFC 10-311] analyzing module RAM32M_HD18517
-INFO: [VRFC 10-311] analyzing module RAM32M_HD18518
-INFO: [VRFC 10-311] analyzing module RAM32M_HD18519
-INFO: [VRFC 10-311] analyzing module RAM32M_HD18520
 INFO: [VRFC 10-311] analyzing module RAM64X1S_UNIQ_BASE_
-INFO: [VRFC 10-311] analyzing module RAM64X1S_HD18479
-INFO: [VRFC 10-311] analyzing module RAM64X1S_HD18480
-INFO: [VRFC 10-311] analyzing module RAM64X1S_HD18481
-INFO: [VRFC 10-311] analyzing module RAM64X1S_HD18482
-INFO: [VRFC 10-311] analyzing module RAM64X1S_HD18483
-INFO: [VRFC 10-311] analyzing module RAM64X1S_HD18484
-INFO: [VRFC 10-311] analyzing module RAM64X1S_HD18485
-INFO: [VRFC 10-311] analyzing module RAM64X1S_HD18486
-INFO: [VRFC 10-311] analyzing module RAM64X1S_HD18487
-INFO: [VRFC 10-311] analyzing module RAM64X1S_HD18488
-INFO: [VRFC 10-311] analyzing module RAM64X1S_HD18489
-INFO: [VRFC 10-311] analyzing module RAM64X1S_HD18490
-INFO: [VRFC 10-311] analyzing module RAM64X1S_HD18491
-INFO: [VRFC 10-311] analyzing module RAM64X1S_HD18492
-INFO: [VRFC 10-311] analyzing module RAM64X1S_HD18493
-INFO: [VRFC 10-311] analyzing module RAM64X1S_HD18494
-INFO: [VRFC 10-311] analyzing module RAM64X1S_HD18495
-INFO: [VRFC 10-311] analyzing module RAM64X1S_HD18496
-INFO: [VRFC 10-311] analyzing module RAM64X1S_HD18497
-INFO: [VRFC 10-311] analyzing module RAM64X1S_HD18498
-INFO: [VRFC 10-311] analyzing module RAM64X1S_HD18499
-INFO: [VRFC 10-311] analyzing module RAM64X1S_HD18500
-INFO: [VRFC 10-311] analyzing module RAM64X1S_HD18501
-INFO: [VRFC 10-311] analyzing module RAM64X1S_HD18502
-INFO: [VRFC 10-311] analyzing module RAM64X1S_HD18503
-INFO: [VRFC 10-311] analyzing module RAM64X1S_HD18504
-INFO: [VRFC 10-311] analyzing module RAM64X1S_HD18505
-INFO: [VRFC 10-311] analyzing module RAM64X1S_HD18506
-INFO: [VRFC 10-311] analyzing module RAM64X1S_HD18507
-INFO: [VRFC 10-311] analyzing module RAM64X1S_HD18508
-INFO: [VRFC 10-311] analyzing module RAM64X1S_HD18509
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD1
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD10
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD11
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD12
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD13
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD14
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD15
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD16
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD17
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD18
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD19
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD2
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD20
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD21
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD22
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD23
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD24
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD25
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD26
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD27
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD28
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD29
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD3
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD30
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD31
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD4
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD5
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD6
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD7
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD8
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD9
 INFO: [VRFC 10-311] analyzing module DECODE
 INFO: [VRFC 10-311] analyzing module EXECUTE
 INFO: [VRFC 10-311] analyzing module FA
@@ -53,7 +41,7 @@ INFO: [VRFC 10-311] analyzing module SoC
 INFO: [VRFC 10-311] analyzing module SoC_fpga
 INFO: [VRFC 10-311] analyzing module WRITEBACK
 INFO: [VRFC 10-311] analyzing module adder
-INFO: [VRFC 10-311] analyzing module adder_0
+INFO: [VRFC 10-311] analyzing module adder_1
 INFO: [VRFC 10-311] analyzing module alu
 INFO: [VRFC 10-311] analyzing module bdebouncer
 INFO: [VRFC 10-311] analyzing module clk_gen
@@ -61,14 +49,16 @@ INFO: [VRFC 10-311] analyzing module counter
 INFO: [VRFC 10-311] analyzing module datapath
 INFO: [VRFC 10-311] analyzing module dmem
 INFO: [VRFC 10-311] analyzing module dreg
-INFO: [VRFC 10-311] analyzing module dreg_1
+INFO: [VRFC 10-311] analyzing module dreg_0
 INFO: [VRFC 10-311] analyzing module dreg_2
 INFO: [VRFC 10-311] analyzing module dreg_3
 INFO: [VRFC 10-311] analyzing module dreg_4
-INFO: [VRFC 10-311] analyzing module dreg_8
+INFO: [VRFC 10-311] analyzing module dreg_5
+INFO: [VRFC 10-311] analyzing module dreg_9
+INFO: [VRFC 10-311] analyzing module dreg__hierPathDup__1
 INFO: [VRFC 10-311] analyzing module dreg__parameterized1
-INFO: [VRFC 10-311] analyzing module dreg__parameterized1_6
 INFO: [VRFC 10-311] analyzing module dreg__parameterized1_7
+INFO: [VRFC 10-311] analyzing module dreg__parameterized1_8
 INFO: [VRFC 10-311] analyzing module dreg__parameterized2
 INFO: [VRFC 10-311] analyzing module dreg__parameterized3
 INFO: [VRFC 10-311] analyzing module fact
@@ -79,7 +69,7 @@ INFO: [VRFC 10-311] analyzing module led_mux
 INFO: [VRFC 10-311] analyzing module mul
 INFO: [VRFC 10-311] analyzing module regfile
 INFO: [VRFC 10-311] analyzing module sr_reg
-INFO: [VRFC 10-311] analyzing module sr_reg_5
+INFO: [VRFC 10-311] analyzing module sr_reg_6
 INFO: [VRFC 10-311] analyzing module glbl
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/AD.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module FA_AD
@@ -132,7 +122,7 @@ INFO: [VRFC 10-311] analyzing module counter
 WARNING: [VRFC 10-1195] overwriting previous definition of module counter [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/fact_parts.v:2]
 INFO: [VRFC 10-311] analyzing module comparator
 INFO: [VRFC 10-311] analyzing module mul
-WARNING: [VRFC 10-1195] overwriting previous definition of module mul [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/fact_parts.v:25]
+WARNING: [VRFC 10-1195] overwriting previous definition of module mul [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/fact_parts.v:24]
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/hazard_unit.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module hazard_unit
 WARNING: [VRFC 10-1195] overwriting previous definition of module hazard_unit [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/hazard_unit.v:2]
@@ -152,10 +142,10 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/huang/Documents/School/CMP
 INFO: [VRFC 10-311] analyzing module DECODE
 WARNING: [VRFC 10-1195] overwriting previous definition of module DECODE [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/pipeline_reg.v:2]
 INFO: [VRFC 10-311] analyzing module EXECUTE
-WARNING: [VRFC 10-1195] overwriting previous definition of module EXECUTE [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/pipeline_reg.v:21]
+WARNING: [VRFC 10-1195] overwriting previous definition of module EXECUTE [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/pipeline_reg.v:11]
 INFO: [VRFC 10-311] analyzing module MEMORY
-WARNING: [VRFC 10-1195] overwriting previous definition of module MEMORY [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/pipeline_reg.v:52]
+WARNING: [VRFC 10-1195] overwriting previous definition of module MEMORY [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/pipeline_reg.v:42]
 INFO: [VRFC 10-311] analyzing module WRITEBACK
-WARNING: [VRFC 10-1195] overwriting previous definition of module WRITEBACK [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/pipeline_reg.v:73]
+WARNING: [VRFC 10-1195] overwriting previous definition of module WRITEBACK [C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/pipeline_reg.v:63]
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sim_1/new/tb_SoC.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module tb_SoC

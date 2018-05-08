@@ -2,7 +2,7 @@
 2017.4
 Dec 15 2017
 21:07:18
-C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.sim/sim_1/impl/func/xsim/tb_SoC_func_impl.v,1525231791,verilog,,C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/AD.v,,SoC_fpga;adder_0;bdebouncer;clk_gen;dreg_1;dreg_2;dreg_3;dreg_4;dreg_8;dreg__parameterized1;dreg__parameterized1_6;dreg__parameterized1_7;dreg__parameterized2;dreg__parameterized3;glbl;led_mux;sr_reg_5,,,,,,,,
+C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.sim/sim_1/impl/func/xsim/tb_SoC_func_impl.v,1525297490,verilog,,C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/AD.v,,SoC_fpga;adder_0;bdebouncer;clk_gen;dreg_1;dreg_2;dreg_3;dreg_4;dreg_8;dreg__parameterized1;dreg__parameterized1_6;dreg__parameterized1_7;dreg__parameterized2;dreg__parameterized3;glbl;led_mux;sr_reg_5,,,,,,,,
 C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sim_1/new/tb_SoC.v,1525230005,verilog,,,,tb_SoC,,,,,,,,
 C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/AD.v,1525224378,verilog,,C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/FA.v,,FA_AD;GPIO_AD;SoC_AD,,,,,,,,
 C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/FA.v,1525105404,verilog,,C:/Users/huang/Documents/School/CMPE140/PipelinedMIPS/PipelinedMIPS.srcs/sources_1/new/GPIO.v,,FA,,,,,,,,

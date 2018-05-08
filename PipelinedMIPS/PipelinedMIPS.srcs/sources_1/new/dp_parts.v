@@ -50,7 +50,7 @@ module alu (
     input [2:0] op,
     input [31:0] a, b,
     output reg [31:0] y );
-    always @ (op, a ,b) begin
+    always @ (op, a, b) begin
         y = 32'b0;
         case (op)
             3'b000: y = a & b;

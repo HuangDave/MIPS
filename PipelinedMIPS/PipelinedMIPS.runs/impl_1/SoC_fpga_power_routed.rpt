@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-| Date             : Tue May  1 20:23:19 2018
+| Date             : Fri May  4 17:55:19 2018
 | Host             : DESKTOP-OQNQAOP running 64-bit major release  (build 9200)
 | Command          : report_power -file SoC_fpga_power_routed.rpt -pb SoC_fpga_power_summary_routed.pb -rpx SoC_fpga_power_routed.rpx
 | Design           : SoC_fpga
@@ -53,14 +53,15 @@ Table of Contents
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |    <0.001 |        3 |       --- |             --- |
-| Slice Logic              |    <0.001 |     1477 |       --- |             --- |
-|   LUT as Logic           |    <0.001 |      757 |     63400 |            1.19 |
-|   CARRY4                 |    <0.001 |       22 |     15850 |            0.14 |
-|   Register               |    <0.001 |      465 |    126800 |            0.37 |
-|   Others                 |     0.000 |       30 |       --- |             --- |
+| Slice Logic              |    <0.001 |     1780 |       --- |             --- |
+|   LUT as Logic           |    <0.001 |      954 |     63400 |            1.50 |
+|   CARRY4                 |    <0.001 |       26 |     15850 |            0.16 |
+|   Register               |    <0.001 |      467 |    126800 |            0.37 |
+|   Others                 |     0.000 |       33 |       --- |             --- |
+|   F7/F8 Muxes            |     0.000 |        4 |     63400 |           <0.01 |
 |   LUT as Distributed RAM |     0.000 |       80 |     19000 |            0.42 |
 |   BUFG                   |     0.000 |        1 |        32 |            3.13 |
-| Signals                  |    <0.001 |     1328 |       --- |             --- |
+| Signals                  |    <0.001 |     1537 |       --- |             --- |
 | DSPs                     |     0.000 |        2 |       240 |            0.83 |
 | I/O                      |     0.012 |       26 |       210 |           12.38 |
 | Static Power             |     0.097 |          |           |                 |

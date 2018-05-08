@@ -16,7 +16,7 @@ module clk_gen
                 clk_sec = ~clk_sec;
                 count1 = 0;
             end
-            if (count2 == 10000)
+            if (count2 == 1000)
             begin
                 clk_5KHz = ~clk_5KHz;
                 count2 = 0;
