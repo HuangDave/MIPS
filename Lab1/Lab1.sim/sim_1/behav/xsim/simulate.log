@@ -1,6 +1,0 @@
-Vivado Simulator 2017.3
-Time resolution is 1 ps
-
-Simulation Finished
-total failures:           0
-$finish called at time : 50 ns : File "C:/Users/huang/Documents/School/CMPE140/Lab1/Lab1.srcs/sim_1/new/tb_factorial_CU.v" Line 79

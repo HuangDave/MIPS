@@ -1,9 +1,0 @@
-main:   addiu   $a0, $0, 5      # n = 5
-        addiu   $s0, $0, 1      # f = 1
-        sw      $a0, 0($0)      # stone n in 0x00
-loop:   beq     $a0, $0, exit   # while(n>1)
-        multu   $16, $4         # f = f * n
-        mflo    $16
-        subi    $4, $4, 1       # n = n - 1
-        jal     loop
-exit:   sw      $16, 16($0)
